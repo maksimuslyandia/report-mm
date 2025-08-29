@@ -70,6 +70,7 @@ php artisan view:clear
 php artisan optimize
 
 php artisan config:cache
+
 php artisan config:clear
 ```
 #### or
