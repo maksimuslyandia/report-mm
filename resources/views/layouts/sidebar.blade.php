@@ -18,6 +18,12 @@
         <li class="nav-item {{ Route::currentRouteName() == 'settings' ? 'active' : '' }}">
             <a href="{{ route('settings') }}" class="nav-link d-flex align-items-center">
                 <i class="bi bi-gear"></i>
+                <span> {{ __('devices') }} </span>
+            </a>
+        </li>
+        <li class="nav-item {{ Route::currentRouteName() == 'settings' ? 'active' : '' }}">
+            <a href="{{ route('settings') }}" class="nav-link d-flex align-items-center">
+                <i class="bi bi-gear"></i>
                 <span> {{ __('Settings') }} </span>
             </a>
         </li>
