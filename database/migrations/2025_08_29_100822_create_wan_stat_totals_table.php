@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('link_name');
             $table->string('link_type');
+            $table->string('region');
             $table->integer('bandwidth_bits');
             $table->foreignId('pool_id');
             $table->bigInteger('traffic_in');

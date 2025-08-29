@@ -3,63 +3,66 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pool;
+use App\Models\Device;
+use App\Models\InterfaceModel; // assuming your interface model
 use Illuminate\Http\Request;
 
 class PoolController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $pools = Pool::with(['device', 'interface'])->get();
+        return view('pools.index', compact('pools'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        $devices = Device::all();
+        $interfaces = InterfaceModel::all();
+        return view('pools.create', compact('devices', 'interfaces'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'device_id' => 'required|exists:devices,id',
+            'interface_id' => 'required|exists:interfaces,id',
+        ]);
+
+        Pool::create($request->all());
+
+        return redirect()->route('pools.index')->with('success', 'Pool created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Pool $pool)
     {
-        //
+        return view('pools.show', compact('pool'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Pool $pool)
     {
-        //
+        $devices = Device::all();
+        $interfaces = InterfaceModel::all();
+        return view('pools.edit', compact('pool', 'devices', 'interfaces'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Pool $pool)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'device_id' => 'required|exists:devices,id',
+            'interface_id' => 'required|exists:interfaces,id',
+        ]);
+
+        $pool->update($request->all());
+
+        return redirect()->route('pools.index')->with('success', 'Pool updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Pool $pool)
     {
-        //
+        $pool->delete();
+        return redirect()->route('pools.index')->with('success', 'Pool deleted successfully.');
     }
 }

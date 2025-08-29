@@ -3,15 +3,15 @@
     <div class="container-fluid">
         <a class="navbar-brand" href="#"></a>
         <ul style="list-style: none;" class="my-auto ml-auto row">
-            <li class="nav-item col">
-                <a class="nav-link active" aria-current="page" href="#">LAN</a>
-            </li>
-            <li class="nav-item col">
-                <a class="nav-link active" aria-current="page" href="#">NOC</a>
-            </li>
-            <li class="nav-item col">
-                <a class="nav-link active" aria-current="page" href="#">DNS</a>
-            </li>
+{{--            <li class="nav-item col">--}}
+{{--                <a class="nav-link active" aria-current="page" href="#">LAN</a>--}}
+{{--            </li>--}}
+{{--            <li class="nav-item col">--}}
+{{--                <a class="nav-link active" aria-current="page" href="#">NOC</a>--}}
+{{--            </li>--}}
+{{--            <li class="nav-item col">--}}
+{{--                <a class="nav-link active" aria-current="page" href="#">DNS</a>--}}
+{{--            </li>--}}
             <li style="margin-right: 10px" class="nav-item dropdown col">
                 @auth
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

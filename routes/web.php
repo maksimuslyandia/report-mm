@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Auth\CustomAuthController;
+use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\MetricsController;
+use App\Http\Controllers\PoolController;
 use App\Http\Controllers\SumMetricsController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,9 +33,8 @@ Route::get('logout', [CustomAuthController::class, 'signOut'])->name('logout');
 Route::middleware('auth')->group(function () {
     Route::get('dashboard', [CustomAuthController::class, 'dashboard'])->name('dashboard');
 
-    Route::get('/devices', function () {
-        return view('dashboard');
-    })->name('users');
+    Route::resource('devices', DeviceController::class);
+    Route::resource('pools', PoolController::class);
 
     Route::get('/settings', function () {
         return view('dashboard');

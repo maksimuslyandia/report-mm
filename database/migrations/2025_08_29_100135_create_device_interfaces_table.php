@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('deviice_interfaces', function (Blueprint $table) {
+        Schema::create('device_interfaces', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->foreignId('device_id');
+            $table->foreignId('device_interface_id');
+
             $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('deviice_interfaces');
+        Schema::dropIfExists('device_interfaces');
     }
 };

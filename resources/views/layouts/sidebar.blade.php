@@ -15,10 +15,16 @@
                 <span> {{ __('Dashboard') }} </span>
             </a>
         </li>
-        <li class="nav-item {{ Route::currentRouteName() == 'settings' ? 'active' : '' }}">
-            <a href="{{ route('settings') }}" class="nav-link d-flex align-items-center">
+        <li class="nav-item {{ Route::currentRouteName() == 'devices' ? 'active' : '' }}">
+            <a href="{{ route('devices.index') }}" class="nav-link d-flex align-items-center">
                 <i class="bi bi-gear"></i>
-                <span> {{ __('devices') }} </span>
+                <span> {{ __('Devices') }} </span>
+            </a>
+        </li>
+        <li class="nav-item {{ Route::currentRouteName() == 'devices' ? 'active' : '' }}">
+            <a href="{{ route('pools.index') }}" class="nav-link d-flex align-items-center">
+                <i class="bi bi-gear"></i>
+                <span> {{ __('Pools') }} </span>
             </a>
         </li>
         <li class="nav-item {{ Route::currentRouteName() == 'settings' ? 'active' : '' }}">
