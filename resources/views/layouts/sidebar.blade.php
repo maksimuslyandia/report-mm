@@ -9,31 +9,31 @@
 
 
     <ul>
-        <li class="nav-item {{ Route::currentRouteName() == 'dashboard' ? 'active' : '' }}">
+        <li class="nav-item {{ Route::currentRouteName() == 'dashboard.' ? 'active' : '' }}">
             <a href="{{ route('dashboard') }}" class="nav-link d-flex align-items-center">
                 <i class="fa-solid fa-chart-line me-2"></i>
                 <span> {{ __('Dashboard') }} </span>
             </a>
         </li>
-        <li class="nav-item {{ Route::currentRouteName() == 'devices' ? 'active' : '' }}">
+        <li class="nav-item {{ Route::currentRouteName() == 'devices.' ? 'active' : '' }}">
             <a href="{{ route('devices.index') }}" class="nav-link d-flex align-items-center">
                 <i class="bi bi-gear"></i>
                 <span> {{ __('Devices') }} </span>
             </a>
         </li>
-        <li class="nav-item {{ Route::currentRouteName() == 'devices' ? 'active' : '' }}">
+        <li class="nav-item {{ Route::currentRouteName() == 'devices.' ? 'active' : '' }}">
             <a href="{{ route('pools.index') }}" class="nav-link d-flex align-items-center">
                 <i class="bi bi-gear"></i>
                 <span> {{ __('Pools') }} </span>
             </a>
         </li>
-        <li class="nav-item {{ Route::currentRouteName() == 'wan_stats' ? 'active' : '' }}">
+        <li class="nav-item {{ Route::currentRouteName() == 'wan_stats.' ? 'active' : '' }}">
             <a href="{{ route('wan_stats.index') }}" class="nav-link d-flex align-items-center">
                 <i class="bi bi-gear"></i>
                 <span> {{ __('WAN Stats') }} </span>
             </a>
         </li>
-        <li class="nav-item {{ Route::currentRouteName() == 'settings' ? 'active' : '' }}">
+        <li class="nav-item {{ Route::currentRouteName() == 'settings.' ? 'active' : '' }}">
             <a href="{{ route('settings') }}" class="nav-link d-flex align-items-center">
                 <i class="bi bi-gear"></i>
                 <span> {{ __('Settings') }} </span>
