@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('devices', function (Blueprint $table) {
             $table->id();
-            $table->string('hostname');
+            $table->string('hostname')->unique();
             $table->timestamps();
         });
     }

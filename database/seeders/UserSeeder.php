@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
             ['email' => 'mmedynskyi@worldbankgroup.org'], // search condition
             [
                 'name' => 'M Medynskyi',
-                'password' => Hash::make('mmedynskyi@worldbankgroup.org'), // change to a strong password
+                'password' => Hash::make('mmedynskyi'), // change to a strong password
                 'email_verified_at' => now(),
             ]
         );

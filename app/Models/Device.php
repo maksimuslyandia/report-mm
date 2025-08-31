@@ -9,4 +9,9 @@ class Device extends Model
     protected $fillable = [
         'hostname',
     ];
+
+    public function interfaces(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(DeviceInterface::class);
+    }
 }

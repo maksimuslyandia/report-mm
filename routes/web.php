@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\Auth\CustomAuthController;
 use App\Http\Controllers\DeviceController;
+use App\Http\Controllers\DeviceInterfaceController;
 use App\Http\Controllers\MetricsController;
 use App\Http\Controllers\PoolController;
 use App\Http\Controllers\SumMetricsController;
+use App\Http\Controllers\WanStatTotalController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -34,7 +36,9 @@ Route::middleware('auth')->group(function () {
     Route::get('dashboard', [CustomAuthController::class, 'dashboard'])->name('dashboard');
 
     Route::resource('devices', DeviceController::class);
+    Route::resource('device_interfaces', DeviceInterfaceController::class);
     Route::resource('pools', PoolController::class);
+    Route::resource('wan_stats', WanStatTotalController::class);
 
     Route::get('/settings', function () {
         return view('dashboard');

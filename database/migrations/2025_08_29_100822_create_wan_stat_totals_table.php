@@ -16,8 +16,7 @@ return new class extends Migration
             $table->string('link_name');
             $table->string('link_type');
             $table->string('region');
-            $table->integer('bandwidth_bits');
-            $table->foreignId('pool_id');
+            $table->bigInteger('bandwidth_bits');
             $table->bigInteger('traffic_in');
             $table->bigInteger('traffic_out');
             $table->bigInteger('q_95_in');
@@ -25,6 +24,11 @@ return new class extends Migration
             $table->dateTime('start_datetime');
             $table->dateTime('end_datetime');
             $table->timestamps();
+
+            $table->unique(
+                ['link_name', 'link_type', 'region', 'start_datetime', 'end_datetime'],
+                'wan_stat_totals_unique_idx'
+            );
         });
     }
 

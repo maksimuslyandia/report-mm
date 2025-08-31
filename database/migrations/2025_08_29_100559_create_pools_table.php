@@ -17,6 +17,8 @@ return new class extends Migration
             $table->foreignId('device_id');
             $table->foreignId('interface_id');
             $table->timestamps();
+            // ✅ unique combination of (name, device_id, interface_id)
+            $table->unique(['name', 'device_id', 'interface_id']);
         });
     }
 

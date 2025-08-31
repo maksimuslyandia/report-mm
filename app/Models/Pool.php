@@ -13,13 +13,13 @@ class Pool extends Model
     ];
 
     // Relationships
-    public function device()
+    public function device(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Device::class);
     }
 
-    public function interface()
+    public function interface(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(Interface::class);
+        return $this->belongsTo(DeviceInterface::class);
     }
 }
