@@ -5,6 +5,10 @@
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h2>WAN Stat Totals</h2>
             <a href="{{ route('wan_stats.create') }}" class="btn btn-primary">+ Add New</a>
+            <a href="{{ route('wan_stats.export') }}" class="btn btn-success mb-3">
+                Download Current Month CSV
+            </a>
+
         </div>
 
         @if ($message = Session::get('success'))
@@ -59,6 +63,7 @@
                             </thead>
                             <tbody>
                             @foreach ($stats as $stat)
+
                                 <tr>
                                     <td>{{ $stat->link_name }}</td>
                                     <td>{{ $stat->link_type }}</td>

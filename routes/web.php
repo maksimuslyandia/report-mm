@@ -39,6 +39,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('device_interfaces', DeviceInterfaceController::class);
     Route::resource('pools', PoolController::class);
     Route::resource('wan_stats', WanStatTotalController::class);
+    Route::get('/wan-stats/export', [WanStatTotalController::class, 'exportCsv'])
+        ->name('wan_stats.export');
 
     Route::get('/settings', function () {
         return view('dashboard');
