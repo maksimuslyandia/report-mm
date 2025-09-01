@@ -76,7 +76,7 @@ class ImportDevicesFromCsv extends Command
                 if (!str_contains($if, ':')) continue;
 
                 [$deviceName, $interfaceName] = explode(':', $if, 2);
-                
+
                 // Normalize interface names
                 $interfaceName = trim($interfaceName);
                 $replacements = [
@@ -140,8 +140,8 @@ dump($record['Link']);
                 if (!$exists) {
                     $trafficIn  = isset($record['Total In - Bits']) ? (float) str_replace(',', '', $record['Total In - Bits']) * $factor : 0;
                     $trafficOut = isset($record['Total Out - Bits']) ? (float) str_replace(',', '', $record['Total Out - Bits']) * $factor : 0;
-                    $q95In  = isset($record['95Percentile-In(Bits/s)']) ? (float) str_replace(',', '', $record['Total In - Bits']) * $factor : 0;
-                    $q95Out = isset($record['95Percentile-Out(Bits/s)']) ? (float) str_replace(',', '', $record['Total Out - Bits']) * $factor : 0;
+                    $q95In  = isset($record['95Percentile-In(Bits/s)']) ? (float) str_replace(',', '', $record['95Percentile-In(Bits/s)']) * $factor : 0;
+                    $q95Out = isset($record['95Percentile-Out(Bits/s)']) ? (float) str_replace(',', '', $record['95Percentile-Out(Bits/s)']) * $factor : 0;
 
                     WanStatTotal::updateOrCreate(
                         [

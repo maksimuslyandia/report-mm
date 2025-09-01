@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\WanStatTotal;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use InfluxDB2\Client;
 use InfluxDB2\Model\FluxTable;
 use Illuminate\Http\JsonResponse;
 use InfluxDB2\Model\WritePrecision;
+use App\Models\Pool;
+use App\Models\Device;
+use App\Models\DeviceInterface;
 
 
 class SumMetricsController extends Controller
@@ -370,8 +375,72 @@ class SumMetricsController extends Controller
         $key = implode('|', $flattened);
         return $this->predefinedMetricsMay[$key] ?? null;
     }
-    
+
+
     public function getSumMetrics(Request $request)
+    {
+        $pairs = [];
+
+        for ($i = 1; $i <= 4; $i++) {
+            $hostname = $request->input("hostname{$i}");
+            $interfaceA = $request->input("interface{$i}_isp_a");
+            $interfaceB = $request->input("interface{$i}_isp_b");
+
+            if ($hostname && ($interfaceA || $interfaceB)) {
+                $interfaces = array_filter([$interfaceA, $interfaceB]);
+                $pairs[] = [
+                    'hostname' => $hostname,
+                    'interfaces' => $interfaces,
+                ];
+            }
+        }
+
+        // Get matching pools
+        $pools = Pool::where(function ($query) use ($pairs) {
+            foreach ($pairs as $pair) {
+                $query->orWhere(function ($q) use ($pair) {
+                    $q->whereHas('device', fn($q) => $q->where('hostname', $pair['hostname']))
+                        ->whereHas('interface', fn($q) => $q->whereIn('name', $pair['interfaces']));
+                });
+            }
+        })->first();
+        // Determine previous month range
+        $startPrevMonthStr = Carbon::now()->subMonth()->startOfMonth()->toDateTimeString();
+
+        // Initialize totals
+        $totalSumIn = 0;
+        $totalSumOut = 0;
+        $quantile95In = 0;
+        $quantile95Out = 0;
+        $count = 0;
+
+        $wanStat = WanStatTotal::where('link_name', $pools->name)
+                ->where('start_datetime', $startPrevMonthStr)
+                ->first();
+
+        if ($wanStat) {
+                $totalSumIn += $wanStat->traffic_in;
+                $totalSumOut += $wanStat->traffic_out;
+                $quantile95In += $wanStat->q_95_in;
+                $quantile95Out += $wanStat->q_95_out;
+                $count++;
+            }
+
+
+        // Compute average 95th percentile if multiple pools
+        if ($count > 0) {
+            $quantile95In /= $count;
+            $quantile95Out /= $count;
+        }
+
+        return response()->json([
+            'quantile_95_in' => $quantile95In,
+            'quantile_95_out' => $quantile95Out,
+            'total_sum_in' => $totalSumIn,
+            'total_sum_out' => $totalSumOut,
+        ]);
+    }
+    public function getSumMetrics_norm(Request $request)
     {
         $pairs = [];
 
