@@ -19,4 +19,9 @@ class WanStatTotal extends Model
         'start_datetime',
         'end_datetime',
     ];
+    protected $casts = [
+        'start_datetime' => 'datetime',
+        'end_datetime' => 'datetime',
+    ];
+
 }

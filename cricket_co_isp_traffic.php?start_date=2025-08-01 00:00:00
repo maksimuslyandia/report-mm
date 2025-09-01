@@ -1,0 +1,1005 @@
+
+<link rel="stylesheet" type="text/css" href="http://ntools/wan_stats/css/style.css">
+<style>
+
+ a.demo_img {
+        display: block;
+        width:300px;
+        position:relative;
+        line-height:25px;
+ }
+
+ a.demo_img>div {
+        position:absolute;
+        padding:0;
+        margin:0;
+        left: 100px; /* change this value to one that works best for you */
+        top: 20px; /* change this value to one that works best for you */
+        background: transparent  left 23px no-repeat;
+
+        opacity:0;
+        height: 0;
+        overflow: hidden;
+
+        /* Enable transitions */
+        /*-webkit-transition: all .3s ease .15s;
+        -moz-transition: all .3s ease .15s;
+        -o-transition: all .3s ease .15s;
+        -ms-transition: all .3s ease .15s;
+        transition: all .3s ease .15s;*/
+ }
+
+ a.demo_img>div img {
+        padding:8px;
+        margin-left:4px;
+        border:1px solid #BCBDC0;
+        background-color:#BCBDC0;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+             border-radius: 5px;
+
+        -webkit-box-sizing:border-box; 
+           -moz-box-sizing:border-box; 
+             box-sizing:border-box;
+ }
+ a.demo_img:hover>div {
+
+        opacity:1;
+        height: 300px;
+        padding: 8px;   
+
+        z-index:1;
+ }
+
+</style>
+
+<title>Cricket-Traffic Total - CO Links Only</title>
+<h1>Cricket Traffic (CO Links Only)</h1>
+<a href="?range=30hours&server=neta">30 Hours</a> | <a href="?range=7days&server=neta">7 days</a> | <a href="?range=30days&server=neta">30 days</a> | <a href="?range=lastmonth&server=neta">Last Month</a><h2>Traffic from  2025-09-01 00:00:00 to 2025-09-01 00:00:00  [server: neta] - Change to<a href="?server=neta&start_date=2025-09-01 00:00:00&end_date=2025-09-01 00:00:00">neta </a> | <a href="?server=netb&start_date=2025-09-01 00:00:00&end_date=2025-09-01 00:00:00">netb </a> | </h2>
+<br> Report run on  2025-09-01 03:02:26 - <a href="cricket_co_isp_traffic.php?start_date=2025-09-01 00:00:00&end_date=2025-09-01 00:00:00&no_cache=yes">click here to clear cache</a><br>
+<table  class="blueTable" style="width:800px" align=center id="summary_report" >
+<tr><th colspan=8 align="center">Summary Report</th></tr>
+<tr><td>Interface </td> <td>LinkType </td> <td># Link </td><td>(0%-20%) </td><td>(20%-40%) </td><td>(40%-60%) </td> <td>(60%-80%)</td> <td>(80%-100%) </td> </tr><tr><th rowspan=10 align="center">OUT</th></tr><tr><td>MPLS</td><td>24</td><td>23</td><td>1</td><td>0</td><td style='background-color:orange;font-weight:bold'>0</td><td style='background-color:darkred;color:white;font-weight:bold'>0</td></tr><tr><td>IPLC</td><td>1</td><td>1</td><td>0</td><td>0</td><td style='background-color:orange;font-weight:bold'>0</td><td style='background-color:darkred;color:white;font-weight:bold'>0</td></tr><tr><td>ISP</td><td>257</td><td>256</td><td>0</td><td style='background-color:orange;font-weight:bold'>1</td><td style='background-color:darkred;color:white;font-weight:bold'>0</td><td style='background-color:darkred;color:white;font-weight:bold'>0</td></tr><tr><td>INTERNET2</td><td>11</td><td>11</td><td>0</td><td style='background-color:orange;font-weight:bold'>0</td><td style='background-color:darkred;color:white;font-weight:bold'>0</td><td style='background-color:darkred;color:white;font-weight:bold'>0</td></tr><tr><td>VSAT</td><td>5</td><td>5</td><td>0</td><td>0</td><td style='background-color:orange;font-weight:bold'>0</td><td style='background-color:darkred;color:white;font-weight:bold'>0</td></tr><tr><td>ODC</td><td>3</td><td>3</td><td>0</td><td>0</td><td style='background-color:orange;font-weight:bold'>0</td><td style='background-color:darkred;color:white;font-weight:bold'>0</td></tr><tr><td>Fiber</td><td>11</td><td>11</td><td>0</td><td>0</td><td style='background-color:orange;font-weight:bold'>0</td><td style='background-color:darkred;color:white;font-weight:bold'>0</td></tr><tr><th>Total</th> <th>312</th> <th>310</th><th>1</th><th>1</th><th>0</th><th style='color:red;font-weight:bold'>0</th></tr><tr><th rowspan=10 align="center">IN</th></tr><tr><td>MPLS</td><td>24</td><td>24</td><td>0</td><td>0</td><td style='background-color:orange;font-weight:bold'>0</td><td style='background-color:darkred;color:white;font-weight:bold'>0</td></tr><tr><td>IPLC</td><td>1</td><td>1</td><td>0</td><td>0</td><td style='background-color:orange;font-weight:bold'>0</td><td style='background-color:darkred;color:white;font-weight:bold'>0</td></tr><tr><td>ISP</td><td>257</td><td>257</td><td>0</td><td style='background-color:orange;font-weight:bold'>0</td><td style='background-color:darkred;color:white;font-weight:bold'>0</td><td style='background-color:darkred;color:white;font-weight:bold'>0</td></tr><tr><td>INTERNET2</td><td>11</td><td>11</td><td>0</td><td style='background-color:orange;font-weight:bold'>0</td><td style='background-color:darkred;color:white;font-weight:bold'>0</td><td style='background-color:darkred;color:white;font-weight:bold'>0</td></tr><tr><td>VSAT</td><td>5</td><td>5</td><td>0</td><td>0</td><td style='background-color:orange;font-weight:bold'>0</td><td style='background-color:darkred;color:white;font-weight:bold'>0</td></tr><tr><td>ODC</td><td>3</td><td>3</td><td>0</td><td>0</td><td style='background-color:orange;font-weight:bold'>0</td><td style='background-color:darkred;color:white;font-weight:bold'>0</td></tr><tr><td>Fiber</td><td>11</td><td>11</td><td>0</td><td>0</td><td style='background-color:orange;font-weight:bold'>0</td><td style='background-color:darkred;color:white;font-weight:bold'>0</td></tr><tr><th>Total</th> <th>312</th> <th>312</th><th>0</th><th>0</th><th>0</th><th style='color:red;font-weight:bold'>0</th></tr></table><br>
+<center><a href="?start_date=2025-09-01 00:00:00&end_date=2025-09-01 00:00:00&download=csv&server=netb">Download As CSV file</a></center>
+<table width=100% class="blueTable">
+
+<tr><th>Link</th><th>Type</th><th>BW</th><th>BW-Unit</th><th>Item</th><th>VLAN_WB</th><th>Interface</th><th>RegionVPU</th><th>Total In - Bits</th><th> Total Out - Bits</th> <th> 95Percentile-In(Bits/s)</th><th> 95Percentile-Out (Bits/s)</th> <th>Utilize(In)</th> <th>Utilize(Out)</th></tr>    <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/afghanistan~kabul-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">AFGHANISTAN KABUL-ISP </a></td><td>ISP</td><td>150</td><td>Mb</td><td>Primary</td><td>pakbl0:ethernet1/1</td><td>crkbl0:gigabitethernet0/0/1, cskbl0:gigabitethernet0/0/1, pakbl0:ethernet1/1</td><td>CO-SAR</td><td>-4,771,644,986,541,360.00</td> <td>-5,165,625,197,233,752.00</td><td> 0</td>  <td> 2940528.64</td> <td> 0.00%</td> <td> 1.96%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/afghanistan~kabul-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">AFGHANISTAN KABUL-ISP2 </a></td><td>ISP</td><td>150</td><td>Mb</td><td>Secondary</td><td>pakbl0:ethernet1/8</td><td>crkbl0:gigabitethernet0/0/2, cskbl0:gigabitethernet0/0/2, pakbl0:ethernet1/8</td><td>CO-SAR</td><td>-68,887,819,186,694,784.00</td> <td>-12,010,176,235,505,872.00</td><td> 0</td>  <td> 6836784.68</td> <td> 0.00%</td> <td> 4.56%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/albania-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">ALBANIA-ISP </a></td><td>ISP</td><td>300</td><td>Mb</td><td>Secondary</td><td>patia0:ethernet1/8</td><td>crtia0:gigabitethernet0/0/2, cstia0:gigabitethernet0/0/2, patia0:ethernet1/8</td><td>CO-ECA</td><td>-531,858,534,989,450.50</td> <td>-208,513,385,694,533.53</td><td> 0</td>  <td> 118696.10</td> <td> 0.00%</td> <td> 0.04%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/albania-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">ALBANIA-ISP2 </a></td><td>ISP</td><td>300</td><td>Mb</td><td>Primary</td><td>patia0:ethernet1/1</td><td>crtia0:gigabitethernet0/0/1, cstia0:gigabitethernet0/0/1, patia0:ethernet1/1</td><td>CO-ECA</td><td>-527,189,602,009,652.31</td> <td>-845,276,883,336,080.38</td><td> 0</td>  <td> 481173.29</td> <td> 0.00%</td> <td> 0.16%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/algeria-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">ALGERIA-ISP </a></td><td>ISP</td><td>50</td><td>Mb</td><td>Primary</td><td>paalg0:ethernet1/1</td><td>cralg0:gigabitethernet0/0/1, csalg0:gigabitethernet0/0/1, paalg0:ethernet1/1</td><td>CO-MNA</td><td>-313,427,994,955,788.81</td> <td>-457,793,267,046,422.19</td><td> 0</td>  <td> 260598.51</td> <td> 0.00%</td> <td> 0.52%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/algeria-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">ALGERIA-ISP2 </a></td><td>ISP</td><td>50</td><td>Mb</td><td>Secondary</td><td>paalg0:ethernet1/8</td><td>cralg0:gigabitethernet0/0/2, csalg0:gigabitethernet0/0/2, paalg0:ethernet1/8</td><td>CO-MNA</td><td>-503,737,817,002,008.31</td> <td>-117,446,825,224,884.39</td><td> 0</td>  <td> 66856.53</td> <td> 0.00%</td> <td> 0.13%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/angola-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">ANGOLA-ISP </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Primary</td><td>palad0:ethernet1/1</td><td>crlad0:gigabitethernet0/0/1, cslad0:gigabitethernet0/0/1, palad0:ethernet1/1</td><td>CO-AFR</td><td>-324,483,801,004,837.69</td> <td>-660,993,942,485,840.00</td><td> 0</td>  <td> 376270.35</td> <td> 0.00%</td> <td> 0.38%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/angola-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">ANGOLA-ISP2 </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Secondary</td><td>palad0:ethernet1/8</td><td>crlad0:gigabitethernet0/0/2, cslad0:gigabitethernet0/0/2, palad0:ethernet1/8</td><td>CO-AFR</td><td>-466,934,145,124,309.38</td> <td>-118,062,395,839,425.75</td><td> 0</td>  <td> 67206.94</td> <td> 0.00%</td> <td> 0.07%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/argentina-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">ARGENTINA-ISP </a></td><td>ISP</td><td>1</td><td>Gb</td><td>Primary</td><td>pabue0:ethernet1/1</td><td>crbue0:gigabitethernet0/0/1, csbue0:gigabitethernet0/0/1, pabue0:ethernet1/1</td><td>CO-LCR</td><td>-1,004,863,280,199,883.75</td> <td>-1,631,112,817,452,962.25</td><td> 0</td>  <td> 928509.87</td> <td> 0.00%</td> <td> 0.09%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/argentina-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">ARGENTINA-ISP2 </a></td><td>ISP</td><td>1</td><td>Gb</td><td>Secondary</td><td>pabue0:ethernet1/8</td><td>crbue0:gigabitethernet0/0/2, csbue0:gigabitethernet0/0/2, pabue0:ethernet1/8</td><td>CO-LCR</td><td>-816,420,608,675,111.50</td> <td>-278,638,900,753,683.09</td><td> 0</td>  <td> 158615.01</td> <td> 0.00%</td> <td> 0.02%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/armenia-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">ARMENIA-ISP </a></td><td>ISP</td><td>350</td><td>Mb</td><td>Primary</td><td>paevn0:ethernet1/1</td><td>crevn0:gigabitethernet0/0/1, csevn0:gigabitethernet0/0/1, paevn0:ethernet1/1</td><td>CO-ECA</td><td>-708,788,805,874,258.38</td> <td>-1,253,235,481,109,031.00</td><td> 0</td>  <td> 713403.45</td> <td> 0.00%</td> <td> 0.20%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/armenia-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">ARMENIA-ISP2 </a></td><td>ISP</td><td>350</td><td>Mb</td><td>Secondary</td><td>paevn0:ethernet1/8</td><td>crevn0:gigabitethernet0/0/2, csevn0:gigabitethernet0/0/2, paevn0:ethernet1/8</td><td>CO-ECA</td><td>-764,410,861,097,021.75</td> <td>-391,292,580,708,871.31</td><td> 0</td>  <td> 222743.04</td> <td> 0.00%</td> <td> 0.06%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/australia-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">AUSTRALIA-ISP </a></td><td>ISP</td><td>500</td><td>Mb</td><td>Primary</td><td>pasyd0:ethernet1/1</td><td>crsyd0:gigabitethernet0/0/1, cssyd0:gigabitethernet0/0/1, pasyd0:ethernet1/1</td><td>CO-EAP</td><td>-2,309,244,510,557,417.00</td> <td>-2,672,816,068,315,428.50</td><td> 0</td>  <td> 1521498.74</td> <td> 0.00%</td> <td> 0.30%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/australia-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">AUSTRALIA-ISP2 </a></td><td>ISP</td><td>1</td><td>Gb</td><td>Secondary</td><td>PASYD0 ETH 1/8</td><td>crsyd0:gigabitethernet0/0/2, cssyd0:gigabitethernet0/0/2, pasyd0:ethernet1/8</td><td>CO-EAP</td><td>-4,378,572,938,451,303.50</td> <td>-887,379,344,319,081.50</td><td> 0</td>  <td> 505140.09</td> <td> 0.00%</td> <td> 0.05%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/austria-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">AUSTRIA-ISP </a></td><td>ISP</td><td>2</td><td>Gb</td><td>Primary</td><td>pavie0:ethernet1/1</td><td>crvie0:gigabitethernet0/0/1, csvie0:gigabitethernet0/0/1, pavie0:ethernet1/1</td><td>CO-ECA</td><td>-2,177,439,948,218,288.50</td> <td>-2,549,776,929,173,765.50</td><td> 0</td>  <td> 1451458.79</td> <td> 0.00%</td> <td> 0.07%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/austria-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">AUSTRIA-ISP2 </a></td><td>ISP</td><td>1</td><td>Gb</td><td>Secondary</td><td>pavie0:ethernet1/8</td><td>crvie0:gigabitethernet0/0/2, csvie0:gigabitethernet0/0/2, pavie0:ethernet1/8</td><td>CO-ECA</td><td>-995,239,370,159,210.25</td> <td>-845,890,166,967,466.12</td><td> 0</td>  <td> 481522.40</td> <td> 0.00%</td> <td> 0.05%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/azerbaijan-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">AZERBAIJAN-ISP </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>pabak0 port8</td><td>crbak0:gigabitethernet0/0/2, csbak0:gigabitethernet0/0/2, pabak0:ethernet1/8</td><td>CO-ECA</td><td>-574,858,377,432,995.88</td> <td>-287,802,830,295,352.69</td><td> 0</td>  <td> 163831.57</td> <td> 0.00%</td> <td> 0.08%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/azerbaijan-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">AZERBAIJAN-ISP2 </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Primary</td><td>pabak0 port1</td><td>crbak0:gigabitethernet0/0/1, csbak0:gigabitethernet0/0/1, pabak0:ethernet1/1</td><td>CO-ECA</td><td>-449,883,857,207,875.75</td> <td>-833,582,097,117,491.00</td><td> 0</td>  <td> 474516.04</td> <td> 0.00%</td> <td> 0.24%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/bangladesh-ifc-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BANGLADESH-IFC-ISP </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>Padac1:ethernet1/1</td><td>rmdac1:gigabitethernet0/0/2, rhdac1:gigabitethernet0/0/2, padac1:ethernet1/8</td><td>CO-SAR</td><td>-12,651,622,722,666,614.00</td> <td>-2,593,602,605,477,326.50</td><td> 0</td>  <td> 1476406.53</td> <td> 0.00%</td> <td> 0.74%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/bangladesh-ifc-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BANGLADESH-IFC-ISP2 </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Primary</td><td>PADAC1 Ethernet1/8</td><td>rmdac1:gigabitethernet0/0/1, rhdac1:gigabitethernet0/0/1, padac1:ethernet1/1</td><td>CO-SAR</td><td>-11,383,222,957,536,400.00</td> <td>-5,271,140,772,563,979.00</td><td> 0</td>  <td> 3000593.31</td> <td> 0.00%</td> <td> 1.50%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/bangladesh-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BANGLADESH-ISP </a></td><td>ISP</td><td>300</td><td>Mb</td><td>Primary</td><td>PADAC0: Ethernet 1/1</td><td>crdac0:gigabitethernet0/0/1, csdac0:gigabitethernet0/0/1, padac0:ethernet1/1</td><td>CO-SAR</td><td>-33,088,103,761,646,964.00</td> <td>-18,888,953,516,634,948.00</td><td> 0</td>  <td> 10752523.99</td> <td> 0.00%</td> <td> 3.58%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/bangladesh-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BANGLADESH-ISP2 </a></td><td>ISP</td><td>300</td><td>Mb</td><td>Secondary</td><td>padac0:ethernet1/8</td><td>crdac0:gigabitethernet0/0/2, csdac0:gigabitethernet0/0/2, padac0:ethernet1/8</td><td>CO-SAR</td><td>-66,445,504,923,983,168.00</td> <td>-18,444,881,041,667,072.00</td><td> 0</td>  <td> 10499736.03</td> <td> 0.00%</td> <td> 3.50%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/belarus-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BELARUS-ISP2 </a></td><td>ISP</td><td>35</td><td>Mb</td><td>Primary</td><td>pamsq0:ethernet1/1</td><td>crmsq0:gigabitethernet0/0/2, csmsq0:gigabitethernet0/0/2, pamsq0:ethernet1/8</td><td>CO-ECA</td><td>0.00</td> <td>0.00</td><td> 0.00</td>  <td> 0.00</td> <td> 0.00%</td> <td> 0.00%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/belgium-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BELGIUM-ISP </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Primary</td><td>pabru0:ethernet1/1</td><td>crbru0:gigabitethernet0/0/1, csbru0:gigabitethernet0/0/1, pabru0:ethernet1/1</td><td>CO-EXT</td><td>-883,082,467,975,007.62</td> <td>-1,400,388,740,231,218.75</td><td> 0</td>  <td> 797170.34</td> <td> 0.00%</td> <td> 0.40%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/belgium-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BELGIUM-ISP2 </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>pabru0:ethernet1/8</td><td>crbru0:gigabitethernet0/0/2, csbru0:gigabitethernet0/0/2, pabru0:ethernet1/8</td><td>CO-EXT</td><td>-570,340,798,075,383.50</td> <td>-266,950,442,238,988.03</td><td> 0</td>  <td> 151961.36</td> <td> 0.00%</td> <td> 0.08%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/benin-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BENIN-ISP </a></td><td>ISP</td><td>140</td><td>Mb</td><td>Secondary</td><td>pacoo0:ethernet1/1</td><td>crcoo0:gigabitethernet0/0/1, cscoo0:gigabitethernet0/0/1, pacoo0:ethernet1/1</td><td>CO-AFR</td><td>-561,135,159,513,816.00</td> <td>-207,911,081,817,753.12</td><td> 0</td>  <td> 118353.24</td> <td> 0.00%</td> <td> 0.08%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/benin-mpls?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BENIN-MPLS </a></td><td>MPLS</td><td>5</td><td>Mb</td><td>Primary</td><td>crcoo0:Gi0/1</td><td>crcoo0:gigabitethernet0/0/2, cscoo0:gigabitethernet0/0/2</td><td>CO-AFR</td><td>-208,614,616,099,597.69</td> <td>-539,393,602,145,570.69</td><td> 0</td>  <td> 307049.44</td> <td> 0.00%</td> <td> 6.14%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/bhutan-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BHUTAN-ISP </a></td><td>ISP</td><td>75</td><td>Mb</td><td>Primary</td><td>papbh0:ethernet1/1</td><td>crpbh0:gigabitethernet0/0/1, cspbh0:gigabitethernet0/0/1, papbh0:ethernet1/1</td><td>CO-SAR</td><td>-1,612,503,546,181,743.50</td> <td>-1,403,274,234,165,105.00</td><td> 0</td>  <td> 798812.91</td> <td> 0.00%</td> <td> 1.07%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/bhutan-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BHUTAN-ISP2 </a></td><td>ISP</td><td>48</td><td>Mb</td><td>Secondary</td><td>papbh0:ethernet1/8</td><td>crpbh0:gigabitethernet0/0/2, cspbh0:gigabitethernet0/0/2, papbh0:ethernet1/8</td><td>CO-SAR</td><td>-37,839,482,084,910,824.00</td> <td>-2,497,839,048,446,905.50</td><td> 0</td>  <td> 1421893.19</td> <td> 0.00%</td> <td> 2.96%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/bolivia-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BOLIVIA-ISP </a></td><td>ISP</td><td>250</td><td>Mb</td><td>Primary</td><td>PALPB0:ETHERNET1/1</td><td>crlpb0:gigabitethernet0/0/1, cslpb0:gigabitethernet0/0/1, palpb0:ethernet1/1</td><td>CO-LCR</td><td>-454,479,248,672,831.19</td> <td>-699,735,147,002,792.75</td><td> 0</td>  <td> 398323.76</td> <td> 0.00%</td> <td> 0.16%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/bolivia-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BOLIVIA-ISP2 </a></td><td>ISP</td><td>250</td><td>Mb</td><td>Secondary</td><td>PALPB0:ETHERNET1/8.</td><td>crlpb0:gigabitethernet0/0/2, cslpb0:gigabitethernet0/0/2, palpb0:ethernet1/8</td><td>CO-LCR</td><td>-447,715,870,713,923.44</td> <td>-75,468,571,818,510.97</td><td> 0</td>  <td> 42960.43</td> <td> 0.00%</td> <td> 0.02%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/bosnia-ifc-wb-ll?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BOSNIA-IFC-WB-LL </a></td><td>Fiber</td><td>150</td><td>Mb</td><td>Local Links</td><td>LL</td><td>swsjj3:gigabitethernet1/0/48</td><td>CO-ECA</td><td>-558,708,166,558,103.50</td> <td>-181,025,568,500,123.12</td><td> 0</td>  <td> 103048.68</td> <td> 0.00%</td> <td> 0.07%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/bosnia-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BOSNIA-ISP </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Primary</td><td>pasjj0:ethernet1/1</td><td>crsjj0:gigabitethernet0/0/1, cssjj0:gigabitethernet0/0/1, pasjj0:ethernet1/1</td><td>CO-ECA</td><td>-487,284,287,253,605.19</td> <td>-775,305,845,457,967.00</td><td> 0</td>  <td> 441342.33</td> <td> 0.00%</td> <td> 0.22%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/bosnia-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BOSNIA-ISP2 </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>pasjj0:ethernet1/8</td><td>crsjj0:gigabitethernet0/0/2, cssjj0:gigabitethernet0/0/2, pasjj0:ethernet1/8</td><td>CO-ECA</td><td>-1,106,144,268,357,617.00</td> <td>-263,436,294,590,467.56</td><td> 0</td>  <td> 149960.93</td> <td> 0.00%</td> <td> 0.07%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/botswana-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BOTSWANA-ISP </a></td><td>ISP</td><td>20</td><td>Mb</td><td>Secondary</td><td>pagbe0:ethernet1/1</td><td>crgbe0:gigabitethernet0/0/1, csgbe0:gigabitethernet0/0/1, pagbe0:ethernet1/1</td><td>CO-AFR</td><td>-486,908,487,645,883.75</td> <td>-102,995,742,145,309.78</td><td> 0</td>  <td> 58630.26</td> <td> 0.00%</td> <td> 0.29%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/botswana-mpls?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BOTSWANA-MPLS </a></td><td>MPLS</td><td>4</td><td>Mb</td><td>Primary</td><td>crgbe0:Gi0/1</td><td>crgbe0:gigabitethernet0/0/2, csgbe0:gigabitethernet0/0/2</td><td>CO-AFR</td><td>-180,389,784,386,656.03</td> <td>-364,790,868,767,946.62</td><td> 0</td>  <td> 207656.95</td> <td> 0.00%</td> <td> 5.19%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/brazil~brasilia-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BRAZIL BRASILIA-ISP </a></td><td>ISP</td><td>500</td><td>Mb</td><td>Primary</td><td>pabsb0:ethernet1/1</td><td>crbsb0:gigabitethernet0/0/1, csbsb0:gigabitethernet0/0/1, pabsb0:ethernet1/1</td><td>CO-LCR</td><td>-1,199,458,141,426,161.00</td> <td>-1,672,751,544,939,350.00</td><td> 0</td>  <td> 952212.68</td> <td> 0.00%</td> <td> 0.19%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/brazil~brasilia-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BRAZIL BRASILIA-ISP2 </a></td><td>ISP</td><td>500</td><td>Mb</td><td>Secondary</td><td>pabsb0:ethernet1/8</td><td>crbsb0:gigabitethernet0/0/2, csbsb0:gigabitethernet0/0/2, pabsb0:ethernet1/8</td><td>CO-LCR</td><td>-559,145,533,023,416.38</td> <td>-248,399,857,866,403.12</td><td> 0</td>  <td> 141401.45</td> <td> 0.00%</td> <td> 0.03%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/brazil~sao~paulo-ifc-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BRAZIL SAO PAULO-IFC-ISP </a></td><td>ISP</td><td>500</td><td>Mb</td><td>Primary</td><td>PASAO1:ETHERNET1/1</td><td>rmsao1:gigabitethernet0/0/1, rhsao1:gigabitethernet0/0/1, pasao1:ethernet1/1</td><td>CO-LCR</td><td>-928,413,352,043,982.62</td> <td>-1,293,582,864,417,952.25</td><td> 0</td>  <td> 736371.17</td> <td> 0.00%</td> <td> 0.15%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/brazil~sao~paulo-ifc-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BRAZIL SAO PAULO-IFC-ISP2 </a></td><td>ISP</td><td>300</td><td>Mb</td><td>Secondary</td><td>PASAO1:ETHERNET1/8</td><td>rmsao1:gigabitethernet0/0/2, rhsao1:gigabitethernet0/0/2, pasao1:ethernet1/8</td><td>CO-LCR</td><td>-554,278,800,098,203.56</td> <td>-268,794,868,168,927.81</td><td> 0</td>  <td> 153011.30</td> <td> 0.00%</td> <td> 0.05%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/bulgaria-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BULGARIA-ISP </a></td><td>ISP</td><td>1</td><td>Gb</td><td>Primary</td><td>pasof0:ethernet1/1</td><td>crsof0:gigabitethernet0/0/1, cssof0:gigabitethernet0/0/1, pasof0:ethernet1/1</td><td>CO-ECA</td><td>-2,376,950,307,084,097.50</td> <td>-5,275,118,066,766,675.00</td><td> 0</td>  <td> 3002857.38</td> <td> 0.00%</td> <td> 0.30%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/bulgaria-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BULGARIA-ISP2 </a></td><td>ISP</td><td>1</td><td>Gb</td><td>Secondary</td><td>pasof0:ethernet 1/8</td><td>crsof0:gigabitethernet0/0/2, cssof0:gigabitethernet0/0/2, pasof0:ethernet1/8</td><td>CO-ECA</td><td>-13,575,442,264,625.28</td> <td>-9,710,482,413,410.36</td><td> 0</td>  <td> 5527.69</td> <td> 0.00%</td> <td> 0.00%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/burkina~faso-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BURKINA FASO-ISP </a></td><td>ISP</td><td>90</td><td>Mb</td><td>Primary</td><td>Paoua0 eth1/1</td><td>croua0:gigabitethernet0/0/1, csoua0:gigabitethernet0/0/1, paoua0:ethernet1/1</td><td>CO-AFR</td><td>-704,954,702,469,482.25</td> <td>-873,956,974,406,750.50</td><td> 0</td>  <td> 497499.42</td> <td> 0.00%</td> <td> 0.55%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/burkina~faso-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BURKINA FASO-ISP2 </a></td><td>ISP</td><td>80</td><td>Mb</td><td>Secondary</td><td>paoua0:ethernet1/8</td><td>croua0:gigabitethernet0/0/2, csoua0:gigabitethernet0/0/2, paoua0:ethernet1/8</td><td>CO-AFR</td><td>-545,118,411,955,946.69</td> <td>-244,350,937,412,419.53</td><td> 0</td>  <td> 139096.61</td> <td> 0.00%</td> <td> 0.17%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/burundi-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">BURUNDI-ISP </a></td><td>ISP</td><td>60</td><td>Mb</td><td>Secondary</td><td>pabjm0:ethernet1/8</td><td>crbjm0:gigabitethernet0/0/1, csbjm0:gigabitethernet0/0/1, pabjm0:ethernet1/1</td><td>CO-AFR</td><td>-237,547,049,588,843.66</td> <td>-779,228,946,714,319.12</td><td> 0</td>  <td> 443575.55</td> <td> 0.00%</td> <td> 0.74%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/cambodia-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">CAMBODIA-ISP </a></td><td>ISP</td><td>250</td><td>Mb</td><td>Primary</td><td>papnh0:ethernet 1/1</td><td>crpnh0:gigabitethernet0/0/1, cspnh0:gigabitethernet0/0/1, papnh0:ethernet1/1</td><td>CO-EAP</td><td>-34,401,607,508,745,468.00</td> <td>-29,612,959,330,307,600.00</td><td> 0</td>  <td> 16857157.03</td> <td> 0.00%</td> <td> 6.74%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/cambodia-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">CAMBODIA-ISP2 </a></td><td>ISP</td><td>450</td><td>Mb</td><td>Secondary</td><td>papnh0:ethernet 1/8</td><td>crpnh0:gigabitethernet0/0/2, cspnh0:gigabitethernet0/0/2, papnh0:ethernet1/8</td><td>CO-EAP</td><td>-53,931,657,622,690,352.00</td> <td>-5,828,089,605,224,019.00</td><td> 0</td>  <td> 3317636.06</td> <td> 0.00%</td> <td> 0.74%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/cameroon~douala-ifc-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">CAMEROON DOUALA-IFC-ISP </a></td><td>ISP</td><td>50</td><td>Mb</td><td>Primary</td><td>padla1:ethernet1/1</td><td>rmdla1:gigabitethernet0/0/1, rhdla1:gigabitethernet0/0/1, padla1:ethernet1/1</td><td>CO-AFR</td><td>-2,291,246,395,377,714.00</td> <td>-838,420,435,174,911.25</td><td> 0</td>  <td> 477270.26</td> <td> 0.00%</td> <td> 0.95%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/cameroon~douala-ifc-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">CAMEROON DOUALA-IFC-ISP2 </a></td><td>ISP</td><td>50</td><td>Mb</td><td>Secondary</td><td>padla1:ethernet1/8</td><td>rmdla1:gigabitethernet0/0/2, rhdla1:gigabitethernet0/0/2, padla1:ethernet1/8</td><td>CO-AFR</td><td>-491,190,289,835,683.56</td> <td>-101,530,521,065,622.39</td><td> 0</td>  <td> 57796.18</td> <td> 0.00%</td> <td> 0.12%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/cameroon~yaounde-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">CAMEROON YAOUNDE-ISP </a></td><td>ISP</td><td>75</td><td>Mb</td><td>Primary</td><td>payao0:ethernet1/1</td><td>cryao0:gigabitethernet0/0/1, csyao0:gigabitethernet0/0/1, payao0:ethernet1/1</td><td>CO-AFR</td><td>-813,754,639,103,900.75</td> <td>-1,030,510,804,819,621.75</td><td> 0</td>  <td> 586617.58</td> <td> 0.00%</td> <td> 0.78%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/cameroon~yaounde-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">CAMEROON YAOUNDE-ISP2 </a></td><td>ISP</td><td>75</td><td>Mb</td><td>Secondary</td><td>payao0:ethernet1/8</td><td>cryao0:gigabitethernet0/0/2, csyao0:gigabitethernet0/0/2, payao0:ethernet1/8</td><td>CO-AFR</td><td>-819,364,670,177,431.12</td> <td>-248,580,976,843,175.78</td><td> 0</td>  <td> 141504.55</td> <td> 0.00%</td> <td> 0.19%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/cape~verde-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">CAPE VERDE-ISP </a></td><td>ISP</td><td>50</td><td>Mb</td><td>Primary</td><td>Parai0 eth1/1</td><td>crrai0:gigabitethernet0/0/1, csrai0:gigabitethernet0/0/1, parai0:ethernet1/1</td><td>CO-AFR</td><td>-233,402,880,593,856.44</td> <td>-408,513,718,401,438.88</td><td> 0</td>  <td> 232546.16</td> <td> 0.00%</td> <td> 0.47%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/cape~verde-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">CAPE VERDE-ISP2 </a></td><td>ISP</td><td>50</td><td>Mb</td><td>Secondary</td><td>parai0:ethernet1/8</td><td>parai0:ethernet1/8</td><td>CO-AFR</td><td>-651,321,119,682,973.62</td> <td>-75,712,865,618,542.95</td><td> 0</td>  <td> 43099.50</td> <td> 0.00%</td> <td> 0.09%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/car-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">CAR-ISP </a></td><td>ISP</td><td>50</td><td>Mb</td><td>Secondary</td><td>pabgf0:ethernet1/8</td><td>crbgf0:gigabitethernet0/0/1, csbgf0:gigabitethernet0/0/1, pabgf0:ethernet1/1</td><td>CO-AFR</td><td>-393,651,248,974,893.56</td> <td>-654,098,507,082,507.50</td><td> 0</td>  <td> 372345.13</td> <td> 0.00%</td> <td> 0.74%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/car-vsat?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">CAR-VSAT </a></td><td>Satellite</td><td>10</td><td>Mb</td><td>Backup</td><td>crbgf0:gig0/0/3</td><td>crbgf0:gigabitethernet0/0/3</td><td>CO-AFR</td><td>-4,773,647,947,181.99</td> <td>-804,956,674,610.45</td><td> 0</td>  <td> 458.22</td> <td> 0.00%</td> <td> 0.00%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/chad-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">CHAD-ISP </a></td><td>ISP</td><td>70</td><td>Mb</td><td>Secondary</td><td>PANDJ0:ETHERNET1/1</td><td>crndj0:gigabitethernet0/0/1, csndj0:gigabitethernet0/0/1, pandj0:ethernet1/1</td><td>CO-AFR</td><td>-517,269,700,647,751.25</td> <td>-114,115,490,948,905.19</td><td> 0</td>  <td> 64960.17</td> <td> 0.00%</td> <td> 0.09%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/chad-vsat?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">CHAD-VSAT </a></td><td>Satellite</td><td>6</td><td>Mb</td><td>Primary</td><td>crndj0:Gi0/2</td><td>crndj0:gigabitethernet0/0/2, csndj0:gigabitethernet0/0/2</td><td>CO-AFR</td><td>-171,368,625,589,950.91</td> <td>-416,049,764,129,822.81</td><td> 0</td>  <td> 236836.05</td> <td> 0.00%</td> <td> 3.95%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/chile-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">CHILE-ISP </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Primary</td><td>pascl0:ethernet1/1</td><td>crscl0:gigabitethernet0/0/1, csscl0:gigabitethernet0/0/1, pascl0:ethernet1/1</td><td>CO-LCR</td><td>-297,006,259,105,905.06</td> <td>-588,927,414,411,587.25</td><td> 0</td>  <td> 335246.53</td> <td> 0.00%</td> <td> 0.34%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/chile-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">CHILE-ISP2 </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Secondary</td><td>pascl0:ethernet1/8</td><td>crscl0:gigabitethernet0/0/2, csscl0:gigabitethernet0/0/2, pascl0:ethernet1/8</td><td>CO-LCR</td><td>-597,683,141,564,617.12</td> <td>-120,815,910,544,442.66</td><td> 0</td>  <td> 68774.38</td> <td> 0.00%</td> <td> 0.07%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/china~beijing-iplc?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">CHINA BEIJING-IPLC </a></td><td>IPLC</td><td>200</td><td>Mb</td><td>Tertiary</td><td>swbjs0 G1/1/4</td><td>swbjs0:gigabitethernet1/1/4</td><td>CO-EAP</td><td>-23,131,599,511,822,592.00</td> <td>-9,131,012,928,155,312.00</td><td> 0</td>  <td> 5197822.92</td> <td> 0.00%</td> <td> 2.60%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/china~beijing-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">CHINA BEIJING-ISP </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>pabjs0:ethernet1/1</td><td>crbjs0:gigabitethernet0/0/1, csbjs0:gigabitethernet0/0/1, pabjs0:ethernet1/1</td><td>CO-EAP</td><td>-25,084,394,812,155,256.00</td> <td>-14,372,901,978,065,576.00</td><td> 0</td>  <td> 8181764.71</td> <td> 0.00%</td> <td> 4.09%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/china~beijing-mpls?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">CHINA BEIJING-MPLS </a></td><td>MPLS</td><td>100</td><td>Mb</td><td>Primary</td><td>crbjs0:Gi0/1</td><td>crbjs0:gigabitethernet0/0/2, csbjs0:gigabitethernet0/0/2</td><td>CO-EAP</td><td>-3,584,120,963,858,724.00</td> <td>-5,717,461,134,897,639.00</td><td> 0</td>  <td> 3254660.88</td> <td> 0.00%</td> <td> 3.25%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/china~hong~kong-ifc-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">CHINA HONG KONG-IFC-ISP </a></td><td>ISP</td><td>500</td><td>Mb</td><td>Secondary</td><td>pahkg1:ethernet1/1</td><td>rmhkg1:gigabitethernet0/0/1, rhhkg1:gigabitethernet0/0/1, pahkg1:ethernet1/1</td><td>CO-EAP</td><td>-81,004,401,956,804,368.00</td> <td>-56,282,114,870,219,944.00</td><td> 0</td>  <td> 32038555.75</td> <td> 0.00%</td> <td> 6.41%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/china~hong~kong-ifc-mpls?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">CHINA HONG KONG-IFC-MPLS </a></td><td>MPLS</td><td>30</td><td>Mb</td><td>Primary</td><td>rmhkg1:Gi0/1</td><td>rmhkg1:gigabitethernet0/0/2, rhhkg1:gigabitethernet0/0/2</td><td>CO-EAP</td><td>-865,171,955,945,372.12</td> <td>-4,853,547,629,341,329.00</td><td> 0</td>  <td> 2762878.70</td> <td> 0.00%</td> <td> 9.21%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/colombia-internet2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">COLOMBIA-INTERNET2 </a></td><td>Internet2</td><td>1</td><td>Gb</td><td>Primary</td><td>pabog0:ethernet1/1</td><td>crbog0:gigabitethernet0/0/1, csbog0:gigabitethernet0/0/1, pabog0:ethernet1/1</td><td>CO-LCR</td><td>-1,169,839,273,564,548.50</td> <td>-1,840,390,349,874,075.25</td><td> 0</td>  <td> 1047640.96</td> <td> 0.00%</td> <td> 0.10%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/colombia-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">COLOMBIA-ISP </a></td><td>ISP</td><td>1</td><td>Gb</td><td>Secondary</td><td>pabog0:ethernet1/8</td><td>crbog0:gigabitethernet0/0/2, csbog0:gigabitethernet0/0/2, pabog0:ethernet1/8</td><td>CO-LCR</td><td>-721,682,611,702,403.75</td> <td>-359,384,662,462,317.50</td><td> 0</td>  <td> 204579.48</td> <td> 0.00%</td> <td> 0.02%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/comoros-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">COMOROS-ISP </a></td><td>ISP</td><td>20</td><td>Mb</td><td>Primary</td><td>pahah0:ethernet1/1</td><td>crhah0:gigabitethernet0/0/1, cshah0:gigabitethernet0/0/1, pahah0:ethernet1/1</td><td>CO-AFR</td><td>-704,059,223,212,080.75</td> <td>-558,795,455,150,582.19</td><td> 0</td>  <td> 318093.93</td> <td> 0.00%</td> <td> 1.59%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/comoros-vsat?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">COMOROS-VSAT </a></td><td>Satellite</td><td>4</td><td>Mb</td><td>Secondary</td><td></td><td>crhah0:gigabitethernet0/0/2, cshah0:gigabitethernet0/0/2</td><td>CO-AFR</td><td>-5,703,065,312,073.47</td> <td>-1,383,304,816,603.34</td><td> 0</td>  <td> 787.45</td> <td> 0.00%</td> <td> 0.02%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/congo~brazzaville-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">CONGO BRAZZAVILLE-ISP </a></td><td>ISP</td><td>50</td><td>Mb</td><td>Primary</td><td>pabzv0:ethernet1/1</td><td>crbzv0:gigabitethernet0/0/1, csbzv0:gigabitethernet0/0/1, pabzv0:ethernet1/1</td><td>CO-AFR</td><td>-470,126,631,548,733.06</td> <td>-717,550,975,517,188.12</td><td> 0</td>  <td> 408465.41</td> <td> 0.00%</td> <td> 0.82%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/congo~brazzaville-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">CONGO BRAZZAVILLE-ISP2 </a></td><td>ISP</td><td>60</td><td>Mb</td><td>Secondary</td><td>pabzv0:ethernet1/8</td><td>crbzv0:gigabitethernet0/0/2, csbzv0:gigabitethernet0/0/2, pabzv0:ethernet1/8</td><td>CO-AFR</td><td>-478,763,891,189,424.00</td> <td>-60,481,484,321,843.50</td><td> 0</td>  <td> 34429.04</td> <td> 0.00%</td> <td> 0.06%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/congo~dr-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">CONGO DR-ISP </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Primary</td><td>pafih0 ethernet1/1</td><td>crfih0:gigabitethernet0/0/1, csfih0:gigabitethernet0/0/1, pafih0:ethernet1/1</td><td>CO-AFR</td><td>-659,663,965,607,789.75</td> <td>-1,127,345,001,787,565.75</td><td> 0</td>  <td> 641740.38</td> <td> 0.00%</td> <td> 0.32%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/congo~dr-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">CONGO DR-ISP2 </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>pafih0:ethernet1/8</td><td>crfih0:gigabitethernet0/0/2, csfih0:gigabitethernet0/0/2, pafih0:ethernet1/8</td><td>CO-AFR</td><td>-731,814,796,911,740.62</td> <td>-305,678,012,857,717.44</td><td> 0</td>  <td> 174007.00</td> <td> 0.00%</td> <td> 0.09%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/costa~rica-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">COSTA RICA-ISP </a></td><td>ISP</td><td>70</td><td>Mb</td><td>Primary</td><td>pasjo0:ethernet1/1</td><td>crsjo0:gigabitethernet0/0/1, cssjo0:gigabitethernet0/0/1, pasjo0:ethernet1/1</td><td>CO-LCR</td><td>-181,864,577,321,172.38</td> <td>-288,619,887,970,670.69</td><td> 0</td>  <td> 164296.68</td> <td> 0.00%</td> <td> 0.23%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/costa~rica-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">COSTA RICA-ISP2 </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Secondary</td><td>pasjo0:ethernet1/8</td><td>crsjo0:gigabitethernet0/0/2, cssjo0:gigabitethernet0/0/2, pasjo0:ethernet1/8</td><td>CO-LCR</td><td>-457,946,631,918,334.62</td> <td>-77,749,856,391,571.00</td><td> 0</td>  <td> 44259.05</td> <td> 0.00%</td> <td> 0.04%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/cote~d$ivoire-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">COTE D'IVOIRE-ISP </a></td><td>ISP</td><td>120</td><td>Mb</td><td>Primary</td><td>paabj0:ethernet1/1</td><td>crabj0:gigabitethernet0/0/1, csabj0:gigabitethernet0/0/1, paabj0:ethernet1/1</td><td>CO-AFR</td><td>-713,791,361,658,804.00</td> <td>-1,276,704,910,610,070.25</td><td> 0</td>  <td> 726763.41</td> <td> 0.00%</td> <td> 0.61%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/cote~d$ivoire-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">COTE D'IVOIRE-ISP2 </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>paabj0:ethernet1/8</td><td>crabj0:gigabitethernet0/0/2, csabj0:gigabitethernet0/0/2, paabj0:ethernet1/8</td><td>CO-AFR</td><td>-839,783,280,620,971.00</td> <td>-290,403,722,774,304.31</td><td> 0</td>  <td> 165312.12</td> <td> 0.00%</td> <td> 0.08%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/croatia-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">CROATIA-ISP </a></td><td>ISP</td><td>400</td><td>Mb</td><td>Secondary</td><td>pazag0:ethernet1/8</td><td>crzag0:gigabitethernet0/0/2, cszag0:gigabitethernet0/0/2, pazag0:ethernet1/8</td><td>CO-ECA</td><td>-699,068,571,231,742.75</td> <td>-146,792,647,038,860.94</td><td> 0</td>  <td> 83561.61</td> <td> 0.00%</td> <td> 0.02%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/croatia-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">CROATIA-ISP2 </a></td><td>ISP</td><td>300</td><td>Mb</td><td>Primary</td><td>pazag0:ethernet1/1</td><td>crzag0:gigabitethernet0/0/1, cszag0:gigabitethernet0/0/1, pazag0:ethernet1/1</td><td>CO-ECA</td><td>-305,696,921,415,846.19</td> <td>-627,432,963,872,765.38</td><td> 0</td>  <td> 357165.79</td> <td> 0.00%</td> <td> 0.12%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/djibouti-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">DJIBOUTI-ISP </a></td><td>ISP</td><td>50</td><td>Mb</td><td>Secondary</td><td>pajib0:ethernet1/1</td><td>crjib0:gigabitethernet0/0/1, csjib0:gigabitethernet0/0/1, pajib0:ethernet1/1</td><td>CO-MNA</td><td>-521,500,825,786,995.38</td> <td>-134,835,862,743,084.91</td><td> 0</td>  <td> 76755.22</td> <td> 0.00%</td> <td> 0.15%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/djibouti-mpls?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">DJIBOUTI-MPLS </a></td><td>MPLS</td><td>4</td><td>Mb</td><td>Primary</td><td>crjib0:Gi0/1</td><td>crjib0:gigabitethernet0/0/2, csjib0:gigabitethernet0/0/2</td><td>CO-MNA</td><td>-203,813,254,585,826.28</td> <td>-533,288,118,848,744.06</td><td> 0</td>  <td> 303573.90</td> <td> 0.00%</td> <td> 7.59%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/dominican~republic-ifc-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">DOMINICAN REPUBLIC-IFC-ISP </a></td><td>ISP</td><td>140</td><td>Mb</td><td>Primary</td><td>pasdq1:ethernet1/1</td><td>rmsdq1:gigabitethernet0/0/1, rhsdq1:gigabitethernet0/0/1, pasdq1:ethernet1/1</td><td>CO-LCR</td><td>-1,231,040,740,787,220.75</td> <td>-1,734,806,243,663,229.00</td><td> 0</td>  <td> 987537.28</td> <td> 0.00%</td> <td> 0.71%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/dominican~republic-ifc-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">DOMINICAN REPUBLIC-IFC-ISP2 </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>pasdq1:ethernet1/8</td><td>rmsdq1:gigabitethernet0/0/2, rhsdq1:gigabitethernet0/0/2, pasdq1:ethernet1/8</td><td>CO-LCR</td><td>-518,321,748,258,702.00</td> <td>-167,705,591,628,895.53</td><td> 0</td>  <td> 95466.29</td> <td> 0.00%</td> <td> 0.05%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/ecuador-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">ECUADOR-ISP </a></td><td>ISP</td><td>300</td><td>Mb</td><td>Primary</td><td>pauio0:ethernet1/1</td><td>cruio0:gigabitethernet0/0/1, csuio0:gigabitethernet0/0/1, pauio0:ethernet1/1</td><td>CO-LCR</td><td>-322,834,523,239,502.81</td> <td>-300,840,866,702,267.69</td><td> 0</td>  <td> 171253.46</td> <td> 0.00%</td> <td> 0.06%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/ecuador-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">ECUADOR-ISP2 </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>pauio0:ethernet1/8</td><td>cruio0:gigabitethernet0/0/2, csuio0:gigabitethernet0/0/2, pauio0:ethernet1/8</td><td>CO-LCR</td><td>-748,317,591,264,236.38</td> <td>-471,042,453,458,065.31</td><td> 0</td>  <td> 268140.60</td> <td> 0.00%</td> <td> 0.13%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/ecuador-starlink?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">ECUADOR-STARLINK </a></td><td>Satellite Starlink</td><td>200</td><td>Mb</td><td>Secondary</td><td>cruio0 Gig 0/0/2</td><td>cruio0:gigabitethernet0/0/3</td><td>CO-LCR</td><td>-23,575,062,285,335.32</td> <td>-11,337,500,555,992.75</td><td> 0</td>  <td> 6453.86</td> <td> 0.00%</td> <td> 0.00%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/egypt-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">EGYPT-ISP </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Primary</td><td>pacai1:ethernet1/1</td><td>rmcai1:gigabitethernet0/0/1, rhcai1:gigabitethernet0/0/1, pacai1:ethernet1/1</td><td>CO-MNA</td><td>-349,018,206,010,286.06</td> <td>-166,755,041,188,846.09</td><td> 0</td>  <td> 94925.19</td> <td> 0.00%</td> <td> 0.05%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/egypt-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">EGYPT-ISP2 </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>pacai1:ethernet1/8</td><td>rmcai1:gigabitethernet0/0/2, rhcai1:gigabitethernet0/0/2, pacai1:ethernet1/8</td><td>CO-MNA</td><td>-8,469,801,684,439,123.00</td> <td>-3,409,546,642,645,847.50</td><td> 0</td>  <td> 1940882.12</td> <td> 0.00%</td> <td> 0.97%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/el~salvador-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">EL SALVADOR-ISP </a></td><td>ISP</td><td>130</td><td>Mb</td><td>Primary</td><td>pasal0:ethernet1/1</td><td>crsal0:gigabitethernet0/0/1, cssal0:gigabitethernet0/0/1, pasal0:ethernet1/1</td><td>CO-LCR</td><td>-444,515,329,894,728.00</td> <td>-833,422,922,961,737.75</td><td> 0</td>  <td> 474425.43</td> <td> 0.00%</td> <td> 0.36%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/el~salvador-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">EL SALVADOR-ISP2 </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Secondary</td><td>pasal0:ethernet1/8</td><td>crsal0:gigabitethernet0/0/2, cssal0:gigabitethernet0/0/2, pasal0:ethernet1/8</td><td>CO-LCR</td><td>-617,843,946,601,288.12</td> <td>-163,392,371,489,850.59</td><td> 0</td>  <td> 93011.00</td> <td> 0.00%</td> <td> 0.09%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/eswatini-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">ESWATINI-ISP </a></td><td>ISP</td><td>40</td><td>Mb</td><td>Primary</td><td>crsho0 0/0/0</td><td>crsho0:gigabitethernet0/0/0, cssho0:gigabitethernet0/0/1</td><td>CO-AFR</td><td>-133,619,292,342,043.81</td> <td>-52,642,111,847,455.88</td><td> 0</td>  <td> 29966.49</td> <td> 0.00%</td> <td> 0.07%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/ethiopia-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">ETHIOPIA-ISP </a></td><td>ISP</td><td>220</td><td>Mb</td><td>Primary</td><td>paadd0:ethernet1/1</td><td>cradd0:gigabitethernet0/0/1, csadd0:gigabitethernet0/0/1, paadd0:ethernet1/1</td><td>CO-AFR</td><td>-1,976,573,214,201,935.75</td> <td>-2,181,453,790,195,311.25</td><td> 0</td>  <td> 1241791.09</td> <td> 0.00%</td> <td> 0.56%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/ethiopia-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">ETHIOPIA-ISP2 </a></td><td>ISP</td><td>220</td><td>Mb</td><td>Secondary</td><td>paadd0:ethernet1/8</td><td>cradd0:gigabitethernet0/0/2, csadd0:gigabitethernet0/0/2, paadd0:ethernet1/8</td><td>CO-AFR</td><td>-3,004,735,383,155,867.50</td> <td>-824,240,367,219,951.25</td><td> 0</td>  <td> 469198.27</td> <td> 0.00%</td> <td> 0.21%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/fiji-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">FIJI-ISP </a></td><td>ISP</td><td>30</td><td>Mb</td><td>Primary</td><td>pasuv0:ethernet1/1</td><td>crsuv0:gigabitethernet0/0/1, cssuv0:gigabitethernet0/0/1, pasuv0:ethernet1/1</td><td>CO-EAP</td><td>-778,423,832,883,052.88</td> <td>-1,623,791,695,357,788.00</td><td> 0</td>  <td> 924342.32</td> <td> 0.00%</td> <td> 3.08%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/fiji-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">FIJI-ISP2 </a></td><td>ISP</td><td>120</td><td>Mb</td><td>Secondary</td><td>pasuv0:ethernet1/8</td><td>crsuv0:gigabitethernet0/0/2, cssuv0:gigabitethernet0/0/2, pasuv0:ethernet1/8</td><td>CO-EAP</td><td>-8,721,952,892,839,215.00</td> <td>-3,972,148,712,604,944.50</td><td> 0</td>  <td> 2261142.96</td> <td> 0.00%</td> <td> 1.88%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/france~paris-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">FRANCE PARIS-ISP </a></td><td>ISP</td><td>3</td><td>Gb</td><td>Secondary</td><td>pacdg0:ethernet1/16</td><td>pacdg0:ethernet1/16, xvcdg01:gigabitethernet0/0/1, xvcdg02:gigabitethernet0/0/1, pacdg0:ethernet1/18, pacdg0:ethernet1/6</td><td>CO-CDG</td><td>-4,242,154,417,130,178.50</td> <td>-2,867,689,211,987,349.50</td><td> 0</td>  <td> 1632430.14</td> <td> 0.00%</td> <td> 0.05%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/france~paris-mpls-cmc1?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">FRANCE PARIS-MPLS-CMC1 </a></td><td>MPLS</td><td>300</td><td>Mb</td><td>Primary</td><td>crcdg0:Gi0/0/3</td><td>cdgcore1:tengigabitethernet1/0/34</td><td>CO-CDG</td><td>-1,492,744,831,684,704.25</td> <td>-4,468,370,300,606,408.00</td><td> 0</td>  <td> 2543616.77</td> <td> 0.00%</td> <td> 0.85%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/france~paris-mpls-sita?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">FRANCE PARIS-MPLS-SITA </a></td><td>MPLS</td><td>155</td><td>Mb</td><td>Primary</td><td>crcdg0:Gi0/0/2</td><td>cdgcore2:tengigabitethernet1/0/39</td><td>CO-CDG</td><td>-1,120,816,723,495,676.50</td> <td>-2,856,596,587,447,014.00</td><td> 0</td>  <td> 1626115.67</td> <td> 0.00%</td> <td> 1.05%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/gabon-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">GABON-ISP </a></td><td>ISP</td><td>25</td><td>Mb</td><td>Primary</td><td>palbv0:ethernet1/1</td><td>crlbv0:gigabitethernet0/0/1, cslbv0:gigabitethernet0/0/1, palbv0:ethernet1/1</td><td>CO-AFR</td><td>-197,756,597,508,981.41</td> <td>-405,791,959,307,664.88</td><td> 0</td>  <td> 230996.80</td> <td> 0.00%</td> <td> 0.92%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/gabon-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">GABON-ISP2 </a></td><td>ISP</td><td>50</td><td>Mb</td><td>Secondary</td><td>palbv0:ethernet1/8</td><td>crlbv0:gigabitethernet0/0/2, cslbv0:gigabitethernet0/0/2, palbv0:ethernet1/8</td><td>CO-AFR</td><td>-406,224,586,143,933.12</td> <td>-63,997,078,684,110.73</td><td> 0</td>  <td> 36430.29</td> <td> 0.00%</td> <td> 0.07%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/gambia-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">GAMBIA-ISP </a></td><td>ISP</td><td>50</td><td>Mb</td><td>Primary</td><td>pabjl0:ethernet1/1</td><td>crbjl0:gigabitethernet0/0/1, csbjl0:gigabitethernet0/0/1, pabjl0:ethernet1/1</td><td>CO-AFR</td><td>-284,087,203,688,602.62</td> <td>-594,141,266,129,228.12</td><td> 0</td>  <td> 338214.51</td> <td> 0.00%</td> <td> 0.68%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/gambia-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">GAMBIA-ISP2 </a></td><td>ISP</td><td>40</td><td>Mb</td><td>Secondary</td><td>pabjl0:ethernet1/8</td><td>crbjl0:gigabitethernet0/0/2, csbjl0:gigabitethernet0/0/2, pabjl0:ethernet1/8</td><td>CO-AFR</td><td>-514,218,107,873,192.19</td> <td>-125,924,272,795,266.14</td><td> 0</td>  <td> 71682.31</td> <td> 0.00%</td> <td> 0.18%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/georgia-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">GEORGIA-ISP </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Primary</td><td>patbs0:ethernet1/1</td><td>crtbs0:gigabitethernet0/0/1, cstbs0:gigabitethernet0/0/1, patbs0:ethernet1/1</td><td>CO-ECA</td><td>-587,859,928,257,809.25</td> <td>-1,006,217,894,518,455.62</td><td> 0</td>  <td> 572788.85</td> <td> 0.00%</td> <td> 0.29%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/germany~berlin-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">GERMANY BERLIN-ISP </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Primary</td><td>paber0:ethernet1/1</td><td>crber0:gigabitethernet0/0/0, csber0:gigabitethernet0/0/0, paber0:ethernet1/1</td><td>CO-EXT</td><td>-76,909,353,586,607.02</td> <td>-135,218,442,149,214.22</td><td> 0</td>  <td> 76973.01</td> <td> 0.00%</td> <td> 0.08%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/germany~frankfurt-ifc-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">GERMANY FRANKFURT-IFC-ISP </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Primary</td><td>pafra1:ethernet1/1</td><td>rmfra1:gigabitethernet0/0/0, rhfra1:gigabitethernet0/0/0</td><td>CO-EXT</td><td>-152,845,327,841,222.03</td> <td>-203,557,518,676,825.31</td><td> 0</td>  <td> 115874.98</td> <td> 0.00%</td> <td> 0.12%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/germany~frankfurt-ifc-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">GERMANY FRANKFURT-IFC-ISP2 </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Secondary</td><td>pafra1:ethernet1/8</td><td>rmfra1:gigabitethernet0/0/1, rhfra1:gigabitethernet0/0/1</td><td>CO-EXT</td><td>-10,587,818,382,073.46</td> <td>-10,225,151,569,478.53</td><td> 0</td>  <td> 5820.66</td> <td> 0.00%</td> <td> 0.01%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/ghana-ifc-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">GHANA-IFC-ISP </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Primary</td><td>paacc1:ethernet1/1</td><td>rmacc1:gigabitethernet0/0/1, rhacc1:gigabitethernet0/0/1, paacc1:ethernet1/1</td><td>CO-AFR</td><td>-1,183,965,281,182,462.50</td> <td>-1,498,757,291,684,722.00</td><td> 0</td>  <td> 853166.57</td> <td> 0.00%</td> <td> 0.43%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/ghana-ifc-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">GHANA-IFC-ISP2 </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>paacc1 : eth1/8</td><td>rmacc1:gigabitethernet0/0/2, rhacc1:gigabitethernet0/0/2, paacc1:ethernet1/8</td><td>CO-AFR</td><td>-644,445,044,407,565.25</td> <td>-425,682,913,959,150.06</td><td> 0</td>  <td> 242319.71</td> <td> 0.00%</td> <td> 0.12%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/guatemala-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">GUATEMALA-ISP </a></td><td>ISP</td><td>250</td><td>Mb</td><td>Primary</td><td>pagua0:ethernet1/1</td><td>crgua0:gigabitethernet0/0/1, csgua0:gigabitethernet0/0/1, pagua0:ethernet1/1</td><td>CO-LCR</td><td>-257,096,656,211,272.47</td> <td>-558,469,693,820,675.38</td><td> 0</td>  <td> 317908.49</td> <td> 0.00%</td> <td> 0.13%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/guatemala-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">GUATEMALA-ISP2 </a></td><td>ISP</td><td>250</td><td>Mb</td><td>Secondary</td><td>pagua0:ethernet1/8</td><td>crgua0:gigabitethernet0/0/2, csgua0:gigabitethernet0/0/2, pagua0:ethernet1/8</td><td>CO-LCR</td><td>-496,350,860,490,059.81</td> <td>-101,249,456,723,909.84</td><td> 0</td>  <td> 57636.18</td> <td> 0.00%</td> <td> 0.02%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/guinea~conakry-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">GUINEA CONAKRY-ISP </a></td><td>ISP</td><td>70</td><td>Mb</td><td>Primary</td><td>packy0:ethernet1/1</td><td>crcky0:gigabitethernet0/0/1, cscky0:gigabitethernet0/0/1, packy0:ethernet1/1</td><td>CO-AFR</td><td>-246,600,555,592,861.59</td> <td>-646,421,139,894,606.25</td><td> 0</td>  <td> 367974.80</td> <td> 0.00%</td> <td> 0.53%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/guinea~conakry-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">GUINEA CONAKRY-ISP2 </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Secondary</td><td>packy0:eth1/8</td><td>crcky0:gigabitethernet0/0/2, cscky0:gigabitethernet0/0/2, packy0:ethernet1/8</td><td>CO-AFR</td><td>-473,157,254,062,876.06</td> <td>-110,538,321,362,336.66</td><td> 0</td>  <td> 62923.86</td> <td> 0.00%</td> <td> 0.06%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/guyana-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">GUYANA-ISP </a></td><td>ISP</td><td>85</td><td>Mb</td><td>Primary</td><td>pageo0:ethernet1/1</td><td>crgeo0:gigabitethernet0/0/1, csgeo0:gigabitethernet0/0/1, pageo0:ethernet1/1</td><td>CO-LCR</td><td>-253,311,150,938,454.41</td> <td>-482,138,657,429,952.06</td><td> 0</td>  <td> 274457.10</td> <td> 0.00%</td> <td> 0.32%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/guyana-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">GUYANA-ISP2 </a></td><td>ISP</td><td>65</td><td>Mb</td><td>Secondary</td><td>pageo0:ethernetWorldbank</td><td>crgeo0:gigabitethernet0/0/2, csgeo0:gigabitethernet0/0/2, pageo0:ethernet1/8</td><td>CO-LCR</td><td>-489,351,520,586,205.94</td> <td>-85,346,188,525,294.34</td><td> 0</td>  <td> 48583.26</td> <td> 0.00%</td> <td> 0.07%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/haiti-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">HAITI-ISP2 </a></td><td>ISP</td><td>105</td><td>Mb</td><td>Secondary</td><td>papap0 eth1/8</td><td>papap0:ethernet1/1</td><td>CO-LCR</td><td>0.00</td> <td>0.00</td><td> 0.00</td>  <td> 0.00</td> <td> 0.00%</td> <td> 0.00%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/honduras-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">HONDURAS-ISP </a></td><td>ISP</td><td>190</td><td>Mb</td><td>Primary</td><td>patgu0:ethernet1/1</td><td>crtgu0:gigabitethernet0/0/1, cstgu0:gigabitethernet0/0/1, patgu0:ethernet1/1</td><td>CO-LCR</td><td>-812,294,712,662,299.38</td> <td>-610,238,337,919,784.75</td><td> 0</td>  <td> 347377.76</td> <td> 0.00%</td> <td> 0.18%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/honduras-mpls?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">HONDURAS-MPLS </a></td><td>MPLS</td><td>4</td><td>Mb</td><td>Secondary</td><td>crtgu0:Gi0/1</td><td>crtgu0:gigabitethernet0/0/2, cstgu0:gigabitethernet0/0/2</td><td>CO-LCR</td><td>-2,377,911,716,889.83</td> <td>-1,226,177,145,759.49</td><td> 0</td>  <td> 698.00</td> <td> 0.00%</td> <td> 0.02%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/hq-dc5-aws?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">HQ-DC5-AWS </a></td><td>Fiber</td><td>10</td><td>Gb</td><td>Primary</td><td>rdcclsw1:te1/0/31</td><td>rdcclsw1:tengigabitethernet1/0/31</td><td>HQ-WBG</td><td>-5,075,387,215,186.91</td> <td>-5,281,523,876,148.80</td><td> 0</td>  <td> 3006.50</td> <td> 0.00%</td> <td> 0.00%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/hq-dc5-azure_1?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">HQ-DC5-AZURE_1 </a></td><td>Fiber</td><td>1</td><td>Gb</td><td>Primary</td><td>rdcclsw1:TenGigabitEthernet1/31</td><td>rdcclsw1:tengigabitethernet1/0/32</td><td>HQ-WBG</td><td>-2,795,818,475,297.44</td> <td>-2,475,199,934,136.65</td><td> 0</td>  <td> 1409.01</td> <td> 0.00%</td> <td> 0.00%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/hq-dc5-azure_2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">HQ-DC5-AZURE_2 </a></td><td>Fiber</td><td>1</td><td>Gb</td><td>Primary</td><td>rdcclsw1:TenGigabitEthernet1/32</td><td>rdcclsw1:tengigabitethernet1/0/33</td><td>HQ-WBG</td><td>-2,793,390,954,358.11</td> <td>-2,470,004,054,520.59</td><td> 0</td>  <td> 1406.05</td> <td> 0.00%</td> <td> 0.00%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/hq-dc5-cmc-mpls-nanet-eth-us-cha-worldbank-crt143-nj001?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">HQ-DC5-CMC-MPLS-NANET-ETH-US-CHA-WORLDBANK-CRT143-NJ001 </a></td><td>MPLS</td><td>600</td><td>Mb</td><td>Primary</td><td>Rdcwanswitch2 Te 1/22</td><td>rdcwanswitch1:twentyfivegige1/0/36</td><td>HQ-WBG</td><td>-27,609,377,310,284,988.00</td> <td>-15,133,461,887,137,722.00</td><td> 0</td>  <td> 8614712.92</td> <td> 0.00%</td> <td> 1.44%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/hq-dc5-sita-mpls_xcbiad3807?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">HQ-DC5-SITA-MPLS_XCBIAD3807 </a></td><td>MPLS</td><td>250</td><td>Mb</td><td>Primary</td><td>cerdc0:GE1</td><td>rdcwanswitch1:twentyfivegige1/0/34</td><td>HQ-WBG</td><td>-15,043,257,605,479,434.00</td> <td>-5,919,460,437,253,599.00</td><td> 0</td>  <td> 3369648.84</td> <td> 0.00%</td> <td> 1.35%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/hq-dc5-sterling_odyx*236412**zyo?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">HQ-DC5-STERLING_ODYX/236412//ZYO </a></td><td>Fiber</td><td>1</td><td>Gb</td><td>Primary</td><td>From: rdccore1 Te2/4 To: : RDCCore1: Te</td><td>rdccore1:twentyfivegige1/0/34</td><td>HQ-WBG</td><td>-35,881,600,753,507.10</td> <td>-303,596,965,831,801.88</td><td> 0</td>  <td> 172822.37</td> <td> 0.00%</td> <td> 0.02%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/hq-dc6-odc-hcl-voice-vzb-w1d76185?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">HQ-DC6-ODC-HCL-VOICE-VZB-W1D76185 </a></td><td>Ethernet</td><td>7</td><td>Mb</td><td>Primary</td><td>ceodchcl0-sdc</td><td>sdcwanswitch1:tengigabitethernet1/0/26</td><td>HQ-ODC</td><td>-3,900,773,790,325.06</td> <td>-2,421,004,464,730.11</td><td> 0</td>  <td> 1378.16</td> <td> 0.00%</td> <td> 0.02%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/hq-f-cmc-lt-132577-et-washdcp2-asbnvacy?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">HQ-F-CMC-LT-132577-ET-WASHDCP2-ASBNVACY </a></td><td>MPLS</td><td>600</td><td>Mb</td><td>Primary</td><td>cefdc2:Gi0/0/2</td><td>fdcwanswitch1:tengigabitethernet1/0/15</td><td>HQ-WBG</td><td>-10,178,807,223,317.84</td> <td>-11,745,963,978,318.78</td><td> 0</td>  <td> 6686.38</td> <td> 0.00%</td> <td> 0.00%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/hq-f-odc-cog2_bkec.991412.ati?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">HQ-F-ODC-COG2_BKEC.991412.ATI </a></td><td>MPLS</td><td>200</td><td>Mb</td><td>Secondary</td><td>fdcwanswitch1:Gi3/44</td><td>fdcwanswitch1:tengigabitethernet1/0/20</td><td>HQ-ODC</td><td>-329,057,150,247.30</td> <td>-941,531,217,086.59</td><td> 0</td>  <td> 535.97</td> <td> 0.00%</td> <td> 0.00%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/hq-f-odc-hcl2_001wash623017021437?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">HQ-F-ODC-HCL2_001WASH623017021437 </a></td><td>MPLS</td><td>50</td><td>Mb</td><td>Secondary</td><td>fhwanswitch:Gi3/45</td><td>fdcwanswitch1:tengigabitethernet1/0/21</td><td>HQ-ODC</td><td>-344,562,660,202.58</td> <td>-965,862,089,888.77</td><td> 0</td>  <td> 549.82</td> <td> 0.00%</td> <td> 0.00%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/india~chennai~rmz-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">INDIA CHENNAI RMZ-ISP </a></td><td>ISP</td><td>450</td><td>Mb</td><td>Secondary</td><td>pamaa0-rmz:ethernet1/1</td><td>pamaa0-rmz:ethernet1/1, crmaa1-rmz:gigabitethernet0/0/1, crmaa2-rmz:gigabitethernet0/0/1</td><td>CO-SAR</td><td>-73,733,499,262,146,736.00</td> <td>-4,586,695,085,848,358.00</td><td> 0</td>  <td> 2610973.07</td> <td> 0.00%</td> <td> 0.58%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/india~chennai~rmz-local1?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">INDIA CHENNAI RMZ-LOCAL1 </a></td><td>Fiber</td><td>1</td><td>Gb</td><td>Local Links</td><td>crmaa1-rmz Gi0/0/1</td><td>crmaa1-rmz:gigabitethernet0/0/2</td><td>CO-SAR</td><td>-2,486,920,112,842,565.00</td> <td>-5,023,960,978,976,501.00</td><td> 0</td>  <td> 2859886.38</td> <td> 0.00%</td> <td> 0.29%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/india~chennai~rmz-spi-local1?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">INDIA CHENNAI RMZ-SPI-LOCAL1 </a></td><td>Fiber</td><td>1</td><td>Gb</td><td>Local Links</td><td>at RMZ: CRMAA2-RMZ G0/0/2</td><td>crmaa2-rmz:gigabitethernet0/0/2</td><td>CO-SAR</td><td>-54,440,041,590,587.81</td> <td>-107,448,475,079,951.88</td><td> 0</td>  <td> 61164.97</td> <td> 0.00%</td> <td> 0.01%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/india~chennai~sp~infocity-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">INDIA CHENNAI SP INFOCITY-ISP </a></td><td>ISP</td><td>480</td><td>Mb</td><td>Secondary</td><td>pamaa0-sp:ethernet1/1</td><td>pamaa0-sp:ethernet1/1, xvmaa02:gigabitethernet0/0/1, pamaa0-sp:ethernet1/6</td><td>CO-MAA</td><td>-15,732,505,078,452,018.00</td> <td>-2,700,410,228,413,819.50</td><td> 0</td>  <td> 1537206.69</td> <td> 0.00%</td> <td> 0.32%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/india~chennai~sp~infocity-local2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">INDIA CHENNAI SP INFOCITY-LOCAL2 </a></td><td>Fiber</td><td>1</td><td>Gb</td><td>Local Links</td><td>maacore1 gi3/45</td><td>maacore1-sp:tengigabitethernet1/0/20</td><td>CO-MAA</td><td>-1,525,684,568,796,086.00</td> <td>-3,127,525,662,498,158.00</td><td> 0</td>  <td> 1780341.86</td> <td> 0.00%</td> <td> 0.18%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/india~chennai-cmc-mpls?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">INDIA CHENNAI-CMC-MPLS </a></td><td>MPLS</td><td>250</td><td>Mb</td><td>Primary</td><td>cemaa2 Gi0/0/0</td><td>maacore2:tengigabitethernet1/0/28</td><td>CO-SAR</td><td>-2,446,517,166,682,756.50</td> <td>-9,413,325,962,072,630.00</td><td> 0</td>  <td> 5358529.43</td> <td> 0.00%</td> <td> 2.14%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/india~chennai-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">INDIA CHENNAI-ISP </a></td><td>ISP</td><td>1</td><td>Gb</td><td>Secondary</td><td>pamaa0:ethernet1/1</td><td>pamaa0:ethernet1/1, xvmaa01:gigabitethernet0/0/1, pamaa0:ethernet1/5, pamaa0:ethernet1/6</td><td>CO-MAA</td><td>-50,241,760,024,155,600.00</td> <td>-29,060,198,811,230,268.00</td><td> 0</td>  <td> 16542498.48</td> <td> 0.00%</td> <td> 1.65%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/india~chennai-sita-mpls?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">INDIA CHENNAI-SITA-MPLS </a></td><td>MPLS</td><td>250</td><td>Mb</td><td>Primary</td><td>crmaa1:Gi0/0/2</td><td>maacore1:tengigabitethernet1/0/39</td><td>CO-MAA</td><td>-2,871,632,347,816,964.50</td> <td>-4,790,030,661,237,898.00</td><td> 0</td>  <td> 2726721.71</td> <td> 0.00%</td> <td> 1.09%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/india~mumbai-ifc-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">INDIA MUMBAI-IFC-ISP </a></td><td>ISP</td><td>210</td><td>Mb</td><td>Primary</td><td>pabom1:ethernet1/1</td><td>rmbom1:gigabitethernet0/0/1, rhbom1:gigabitethernet0/0/1, pabom1:ethernet1/1</td><td>CO-SAR</td><td>-40,905,523,565,335,464.00</td> <td>-18,531,239,252,046,808.00</td><td> 0</td>  <td> 10548895.39</td> <td> 0.00%</td> <td> 5.02%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/india~mumbai-ifc-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">INDIA MUMBAI-IFC-ISP2 </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>pabom1:ethernet1/8</td><td>rmbom1:gigabitethernet0/0/2, rhbom1:gigabitethernet0/0/2, pabom1:ethernet1/8</td><td>CO-SAR</td><td>-16,104,457,920,530.55</td> <td>-8,834,340,798,597.50</td><td> 0</td>  <td> 5028.94</td> <td> 0.00%</td> <td> 0.00%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/india~new~delhi~70le-55le?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">INDIA NEW DELHI 70LE-55LE </a></td><td>Fiber</td><td>100</td><td>Mb</td><td>Local Links</td><td>CSDEL0- G0/0/2</td><td>csdel0:gigabitethernet0/0/2</td><td>CO-SAR</td><td>-2,045,532,712,761,455.25</td> <td>-6,884,135,044,309,029.00</td><td> 0</td>  <td> 3918789.21</td> <td> 0.00%</td> <td> 3.92%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/india~new~delhi~ht-55le?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">INDIA NEW DELHI HT-55LE </a></td><td>Fiber</td><td>280</td><td>Mb</td><td>Local Links</td><td>crdel1-ht:Gi0/1</td><td>csdel0-ht:gigabitethernet0/0/1</td><td>CO-SAR</td><td>-1,256,851,526,159,367.50</td> <td>-2,243,656,311,880,691.75</td><td> 0</td>  <td> 1277199.84</td> <td> 0.00%</td> <td> 0.46%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/india~new~delhi~ht-70le?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">INDIA NEW DELHI HT-70LE </a></td><td>Fiber</td><td>350</td><td>Mb</td><td>Local Links</td><td>crdel0-ht:Gi0/1</td><td>crdel0-ht:gigabitethernet0/0/1</td><td>CO-SAR</td><td>-46,215,456,772,727,816.00</td> <td>-12,809,195,490,976,698.00</td><td> 0</td>  <td> 7291625.85</td> <td> 0.00%</td> <td> 2.08%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/india~new~delhi-ifc-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">INDIA NEW DELHI-IFC-ISP </a></td><td>ISP</td><td>500</td><td>Mb</td><td>Primary</td><td>padel1:ethernet1/1</td><td>rmdel1:gigabitethernet0/0/1, rhdel1:gigabitethernet0/0/1, padel1:ethernet1/1</td><td>CO-SAR</td><td>-33,607,544,696,420,532.00</td> <td>-5,363,393,201,960,107.00</td><td> 0</td>  <td> 3053107.95</td> <td> 0.00%</td> <td> 0.61%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/india~new~delhi-ifc-mpls?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">INDIA NEW DELHI-IFC-MPLS </a></td><td>MPLS</td><td>80</td><td>Mb</td><td>Secondary</td><td>rmdel1:Gi0/1</td><td>rmdel1:gigabitethernet0/0/2, rhdel1:gigabitethernet0/0/2</td><td>CO-SAR</td><td>-1,201,897,591,355,913.50</td> <td>-2,550,139,338,869,973.50</td><td> 0</td>  <td> 1451665.09</td> <td> 0.00%</td> <td> 1.81%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/india~new~delhi-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">INDIA NEW DELHI-ISP </a></td><td>ISP</td><td>650</td><td>Mb</td><td>Primary</td><td>padel0:ethernet1/1</td><td>crdel0-55le:gigabitethernet0/0/1, csdel0-55le:gigabitethernet0/0/1, padel0:ethernet1/1</td><td>CO-SAR</td><td>-4,108,867,832,296,683.00</td> <td>-11,241,510,446,353,872.00</td><td> 0</td>  <td> 6399222.20</td> <td> 0.00%</td> <td> 0.98%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/india~new~delhi-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">INDIA NEW DELHI-ISP2 </a></td><td>ISP</td><td>500</td><td>Mb</td><td>Secondary</td><td>padel0:ethernet1/8</td><td>crdel0:gigabitethernet0/0/1, csdel0:gigabitethernet0/0/1, padel0:ethernet1/8</td><td>CO-SAR</td><td>-268,139,884,972,062,080.00</td> <td>-39,579,827,713,227,880.00</td><td> 0</td>  <td> 22530790.11</td> <td> 0.00%</td> <td> 4.51%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/indonesia-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">INDONESIA-ISP </a></td><td>ISP</td><td>700</td><td>Mb</td><td>Primary</td><td>pajkt0:ethernet1/1</td><td>crjkt0:gigabitethernet0/0/1, csjkt0:gigabitethernet0/0/1, pajkt0:ethernet1/1</td><td>CO-EAP</td><td>-25,715,872,095,826,648.00</td> <td>-15,343,016,137,623,666.00</td><td> 0</td>  <td> 8734001.54</td> <td> 0.00%</td> <td> 1.25%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/indonesia-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">INDONESIA-ISP2 </a></td><td>ISP</td><td>500</td><td>Mb</td><td>Secondary</td><td>PAJKT0 : ETHERNET 1/8</td><td>crjkt0:gigabitethernet0/0/2, csjkt0:gigabitethernet0/0/2, pajkt0:ethernet1/8</td><td>CO-EAP</td><td>-28,309,256,598,110,576.00</td> <td>-4,757,495,887,216,960.00</td><td> 0</td>  <td> 2708201.31</td> <td> 0.00%</td> <td> 0.54%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/iraq-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">IRAQ-ISP </a></td><td>ISP</td><td>50</td><td>Mb</td><td>Secondary</td><td>pabgw0:ethernet1/1</td><td>crbgw0:gigabitethernet0/0/1, csbgw0:gigabitethernet0/0/1, pabgw0:ethernet1/1</td><td>CO-MNA</td><td>-1,605,496,623,612.08</td> <td>-2,238,256,975,117.60</td><td> 0</td>  <td> 1274.13</td> <td> 0.00%</td> <td> 0.00%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/iraq-vsat?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">IRAQ-VSAT </a></td><td>Satellite</td><td>5</td><td>Mb</td><td>Primary</td><td>crbgw0:Gi0/2</td><td>crbgw0:gigabitethernet0/0/2, csbgw0:gigabitethernet0/0/2</td><td>CO-MNA</td><td>-1,556,722,417,202,307.75</td> <td>-1,189,395,210,360,457.25</td><td> 0</td>  <td> 677062.42</td> <td> 0.00%</td> <td> 13.54%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/italy-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">ITALY-ISP </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Primary</td><td>parom0:ethernet1/1</td><td>crrom0:gigabitethernet0/0/1, csrom0:gigabitethernet0/0/1, parom0:ethernet1/1</td><td>CO-EXT</td><td>-501,497,392,046,976.00</td> <td>-868,827,862,780,430.88</td><td> 0</td>  <td> 494579.67</td> <td> 0.00%</td> <td> 0.25%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/italy-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">ITALY-ISP2 </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>parom0:ethernet1/8</td><td>crrom0:gigabitethernet0/0/2, csrom0:gigabitethernet0/0/2, parom0:ethernet1/8</td><td>CO-EXT</td><td>-539,235,421,976,326.88</td> <td>-176,453,635,143,671.25</td><td> 0</td>  <td> 100446.11</td> <td> 0.00%</td> <td> 0.05%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/jamaica-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">JAMAICA-ISP </a></td><td>ISP</td><td>130</td><td>Mb</td><td>Primary</td><td>pakin0:ethernet1/1</td><td>crkin0:gigabitethernet0/0/1, cskin0:gigabitethernet0/0/1, pakin0:ethernet1/1</td><td>CO-LCR</td><td>-566,840,563,900,382.62</td> <td>-700,680,336,340,660.75</td><td> 0</td>  <td> 398861.81</td> <td> 0.00%</td> <td> 0.31%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/jamaica-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">JAMAICA-ISP2 </a></td><td>ISP</td><td>90</td><td>Mb</td><td>Secondary</td><td>pakin0:ethernet1/8</td><td>crkin0:gigabitethernet0/0/2, cskin0:gigabitethernet0/0/2, pakin0:ethernet1/8</td><td>CO-LCR</td><td>-478,887,376,792,073.62</td> <td>-91,108,175,505,239.11</td><td> 0</td>  <td> 51863.27</td> <td> 0.00%</td> <td> 0.06%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/japan-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">JAPAN-ISP </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Primary</td><td>pahnd0:ethernet1/1</td><td>crhnd0:gigabitethernet0/0/1, cshnd0:gigabitethernet0/0/1, pahnd0:ethernet1/1</td><td>CO-EXT</td><td>-4,134,844,911,985,102.50</td> <td>-6,216,656,541,492,918.00</td><td> 0</td>  <td> 3538827.52</td> <td> 0.00%</td> <td> 1.77%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/japan-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">JAPAN-ISP2 </a></td><td>ISP</td><td>500</td><td>Mb</td><td>Secondary</td><td>pahnd0:ethernet1/8</td><td>crhnd0:gigabitethernet0/0/2, cshnd0:gigabitethernet0/0/2, pahnd0:ethernet1/8</td><td>CO-EXT</td><td>-15,475,151,135,242,462.00</td> <td>-8,248,808,033,690,044.00</td><td> 0</td>  <td> 4695628.38</td> <td> 0.00%</td> <td> 0.94%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/jordan-ifc-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">JORDAN-IFC-ISP </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Primary</td><td>paamm0:ethernet1/1</td><td>cramm0:gigabitethernet0/0/1, csamm0:gigabitethernet0/0/1, paamm0:ethernet1/1</td><td>CO-MNA</td><td>-2,722,044,418,364,919.00</td> <td>-1,704,484,015,341,113.50</td><td> 0</td>  <td> 970276.37</td> <td> 0.00%</td> <td> 0.97%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/jordan-ifc-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">JORDAN-IFC-ISP2 </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Secondary</td><td>paamm0:ethernet1/8</td><td>cramm0:gigabitethernet0/0/2, csamm0:gigabitethernet0/0/2, paamm0:ethernet1/8</td><td>CO-MNA</td><td>-797,200,534,022,022.25</td> <td>-397,954,266,871,379.62</td><td> 0</td>  <td> 226535.20</td> <td> 0.00%</td> <td> 0.23%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/kazakhstan~almaty-internet2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">KAZAKHSTAN ALMATY-INTERNET2 </a></td><td>Internet2</td><td>200</td><td>Mb</td><td>Primary</td><td>paala0:ethernet1/1</td><td>crala0:gigabitethernet0/0/1, csala0:gigabitethernet0/0/1, paala0:ethernet1/1</td><td>CO-ECA</td><td>-1,409,262,625,024,685.75</td> <td>-1,380,271,832,419,304.25</td><td> 0</td>  <td> 785718.81</td> <td> 0.00%</td> <td> 0.39%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/kazakhstan~almaty-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">KAZAKHSTAN ALMATY-ISP </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>paala0:ethernet1/8</td><td>crala0:gigabitethernet0/0/2, csala0:gigabitethernet0/0/2, paala0:ethernet1/8</td><td>CO-ECA</td><td>-2,026,327,370,981,206.25</td> <td>-1,130,278,005,779,101.50</td><td> 0</td>  <td> 643409.99</td> <td> 0.00%</td> <td> 0.32%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/kazakhstan~astana-internet2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">KAZAKHSTAN ASTANA-INTERNET2 </a></td><td>Internet2</td><td>90</td><td>Mb</td><td>Primary</td><td>patse0:ethernet1/1</td><td>crtse0:gigabitethernet0/0/1, cstse0:gigabitethernet0/0/1, patse0:ethernet1/1</td><td>CO-ECA</td><td>-683,630,603,842,940.00</td> <td>-951,731,315,133,916.62</td><td> 0</td>  <td> 541772.41</td> <td> 0.00%</td> <td> 0.60%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/kazakhstan~astana-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">KAZAKHSTAN ASTANA-ISP </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>patse0 ethernet1/8</td><td>crtse0:gigabitethernet0/0/2, cstse0:gigabitethernet0/0/2, patse0:ethernet1/8</td><td>CO-ECA</td><td>-1,412,794,878,070,858.75</td> <td>-532,004,576,197,519.88</td><td> 0</td>  <td> 302843.24</td> <td> 0.00%</td> <td> 0.15%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/kenya-internet2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">KENYA-INTERNET2 </a></td><td>Internet2</td><td>400</td><td>Mb</td><td>Primary</td><td>panbo0:ethernet1/1</td><td>crnbo0:gigabitethernet0/0/1, csnbo0:gigabitethernet0/0/1, panbo0:ethernet1/1</td><td>CO-AFR</td><td>-6,369,701,579,784,308.00</td> <td>-4,561,413,145,850,813.00</td><td> 0</td>  <td> 2596581.34</td> <td> 0.00%</td> <td> 0.65%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/kenya-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">KENYA-ISP </a></td><td>ISP</td><td>400</td><td>Mb</td><td>Secondary</td><td>panbo0:ethernet1/8</td><td>crnbo0:gigabitethernet0/0/2, csnbo0:gigabitethernet0/0/2, panbo0:ethernet1/8</td><td>CO-AFR</td><td>-4,506,740,316,202,256.00</td> <td>-1,657,209,955,484,226.00</td><td> 0</td>  <td> 943365.64</td> <td> 0.00%</td> <td> 0.24%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/kiribati-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">KIRIBATI-ISP </a></td><td>ISP</td><td>10</td><td>Mb</td><td>Primary</td><td>PATRW0 Port :1</td><td>crtrw0:gigabitethernet0/0/0, cstrw0:gigabitethernet0/0/0, patrw0:ethernet1/1</td><td>CO-EAP</td><td>-655,444,095,380,573.00</td> <td>-440,109,987,015,235.44</td><td> 0</td>  <td> 250532.31</td> <td> 0.00%</td> <td> 2.51%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/korea-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">KOREA-ISP </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Secondary</td><td>paicn0:ethernet1/1</td><td>cricn0:gigabitethernet0/0/1, csicn0:gigabitethernet0/0/1, paicn0:ethernet1/1</td><td>CO-EAP</td><td>-8,162,378,831,366,214.00</td> <td>-2,372,832,687,363,637.00</td><td> 0</td>  <td> 1350733.40</td> <td> 0.00%</td> <td> 1.35%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/korea-mpls?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">KOREA-MPLS </a></td><td>MPLS</td><td>8</td><td>Mb</td><td>Primary</td><td>cricn0:GI0/1</td><td>cricn0:gigabitethernet0/0/2, csicn0:gigabitethernet0/0/2</td><td>CO-EAP</td><td>-565,469,045,920,452.50</td> <td>-1,453,524,365,010,552.25</td><td> 0</td>  <td> 827417.76</td> <td> 0.00%</td> <td> 10.34%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/kosovo-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">KOSOVO-ISP </a></td><td>ISP</td><td>450</td><td>Mb</td><td>Primary</td><td>paprn0:ethernet1/1</td><td>crprn0:gigabitethernet0/0/1, csprn0:gigabitethernet0/0/1, paprn0:ethernet1/1</td><td>CO-ECA</td><td>-333,546,608,841,890.50</td> <td>-483,567,480,925,665.00</td><td> 0</td>  <td> 275270.46</td> <td> 0.00%</td> <td> 0.06%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/kosovo-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">KOSOVO-ISP2 </a></td><td>ISP</td><td>250</td><td>Mb</td><td>Secondary</td><td>paprn0:ethernet1/8</td><td>crprn0:gigabitethernet0/0/2, csprn0:gigabitethernet0/0/2, paprn0:ethernet1/8</td><td>CO-ECA</td><td>-511,797,581,067,773.12</td> <td>-102,458,856,650,259.39</td><td> 0</td>  <td> 58324.63</td> <td> 0.00%</td> <td> 0.02%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/kuwait-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">KUWAIT-ISP </a></td><td>ISP</td><td>73</td><td>Mb</td><td>Primary</td><td>pakwi0:ethernet1/1</td><td>crkwi0:gigabitethernet0/0/1, cskwi0:gigabitethernet0/0/1, pakwi0:ethernet1/1</td><td>CO-MNA</td><td>-370,366,252,638,698.56</td> <td>-576,333,362,980,041.88</td><td> 0</td>  <td> 328077.38</td> <td> 0.00%</td> <td> 0.45%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/kuwait-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">KUWAIT-ISP2 </a></td><td>ISP</td><td>73</td><td>Mb</td><td>Secondary</td><td>pakwi0:ethernet1/8</td><td>crkwi0:gigabitethernet0/0/2, cskwi0:gigabitethernet0/0/2, pakwi0:ethernet1/8</td><td>CO-MNA</td><td>-507,772,244,098,999.31</td> <td>-133,099,782,173,094.03</td><td> 0</td>  <td> 75766.96</td> <td> 0.00%</td> <td> 0.10%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/kyrgyz~rep-internet2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">KYRGYZ REP-INTERNET2 </a></td><td>Internet2</td><td>50</td><td>Mb</td><td>Primary</td><td>pafru0:ethernet1/1</td><td>crfru0:gigabitethernet0/0/1, csfru0:gigabitethernet0/0/1, pafru0:ethernet1/1</td><td>CO-ECA</td><td>-497,702,961,133,714.94</td> <td>-989,704,767,431,938.50</td><td> 0</td>  <td> 563388.77</td> <td> 0.00%</td> <td> 1.13%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/kyrgyz~rep-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">KYRGYZ REP-ISP </a></td><td>ISP</td><td>150</td><td>Mb</td><td>Secondary</td><td>pafru0:ethernet1/8</td><td>crfru0:gigabitethernet0/0/2, csfru0:gigabitethernet0/0/2, pafru0:ethernet1/8</td><td>CO-ECA</td><td>-1,989,969,934,824,417.75</td> <td>-543,727,057,169,417.00</td><td> 0</td>  <td> 309516.26</td> <td> 0.00%</td> <td> 0.21%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/laos-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">LAOS-ISP </a></td><td>ISP</td><td>120</td><td>Mb</td><td>Primary</td><td>pavte0:ethernet1/1</td><td>crvte0:gigabitethernet0/0/1, csvte0:gigabitethernet0/0/1, pavte0:ethernet1/1</td><td>CO-EAP</td><td>-9,201,227,962,210,194.00</td> <td>-15,777,008,320,697,612.00</td><td> 0</td>  <td> 8981051.30</td> <td> 0.00%</td> <td> 7.48%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/laos-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">LAOS-ISP2 </a></td><td>ISP</td><td>120</td><td>Mb</td><td>Secondary</td><td>pavte0: Ethernet 1/8</td><td>crvte0:gigabitethernet0/0/2, csvte0:gigabitethernet0/0/2, pavte0:ethernet1/8</td><td>CO-EAP</td><td>-42,104,461,026,925,088.00</td> <td>-5,817,660,334,409,818.00</td><td> 0</td>  <td> 3311699.20</td> <td> 0.00%</td> <td> 2.76%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/lebanon-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">LEBANON-ISP </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Primary</td><td>pabey0:ethernet1/1</td><td>crbey0:gigabitethernet0/0/1, csbey0:gigabitethernet0/0/1, pabey0:ethernet1/1</td><td>CO-MNA</td><td>-3,288,215,547,284,114.50</td> <td>-2,710,406,373,816,261.00</td><td> 0</td>  <td> 1542896.99</td> <td> 0.00%</td> <td> 0.77%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/lebanon-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">LEBANON-ISP2 </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>pabey0:ethernet1/8</td><td>crbey0:gigabitethernet0/0/2, csbey0:gigabitethernet0/0/2, pabey0:ethernet1/8</td><td>CO-MNA</td><td>-5,902,479,698,926,536.00</td> <td>-1,553,486,576,444,423.00</td><td> 0</td>  <td> 884321.18</td> <td> 0.00%</td> <td> 0.44%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/lesotho-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">LESOTHO-ISP </a></td><td>ISP</td><td>25</td><td>Mb</td><td>Secondary</td><td>pales0:ethernet1/1</td><td>crles0:gigabitethernet0/0/1, csles0:gigabitethernet0/0/1, pales0:ethernet1/1</td><td>CO-AFR</td><td>-523,448,882,381,014.56</td> <td>-147,422,523,558,899.28</td><td> 0</td>  <td> 83920.17</td> <td> 0.00%</td> <td> 0.34%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/lesotho-mpls?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">LESOTHO-MPLS </a></td><td>MPLS</td><td>15</td><td>Mb</td><td>Primary</td><td>crles0:Gi0/1</td><td>crles0:gigabitethernet0/0/2, csles0:gigabitethernet0/0/2</td><td>CO-AFR</td><td>-204,306,831,213,315.94</td> <td>-540,149,592,586,277.62</td><td> 0</td>  <td> 307479.79</td> <td> 0.00%</td> <td> 2.05%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/liberia-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">LIBERIA-ISP </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Secondary</td><td>parob0:ethernet1/1</td><td>crrob0:gigabitethernet0/0/1, csrob0:gigabitethernet0/0/1, parob0:ethernet1/1</td><td>CO-AFR</td><td>-598,827,049,002,633.38</td> <td>-206,620,117,537,237.69</td><td> 0</td>  <td> 117618.36</td> <td> 0.00%</td> <td> 0.12%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/liberia-mpls?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">LIBERIA-MPLS </a></td><td>MPLS</td><td>8</td><td>Mb</td><td>Primary</td><td>crrob0:Gi0/1</td><td>crrob0:gigabitethernet0/0/2, csrob0:gigabitethernet0/0/2</td><td>CO-AFR</td><td>-250,774,452,253,677.62</td> <td>-670,845,656,655,521.62</td><td> 0</td>  <td> 381878.44</td> <td> 0.00%</td> <td> 4.77%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/macedonia-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MACEDONIA-ISP </a></td><td>ISP</td><td>300</td><td>Mb</td><td>Primary</td><td>paskp0:ethernet1/1</td><td>crskp0:gigabitethernet0/0/1, csskp0:gigabitethernet0/0/1, paskp0:ethernet1/1</td><td>CO-ECA</td><td>-351,291,820,840,791.56</td> <td>-682,340,708,503,637.38</td><td> 0</td>  <td> 388421.99</td> <td> 0.00%</td> <td> 0.13%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/macedonia-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MACEDONIA-ISP2 </a></td><td>ISP</td><td>300</td><td>Mb</td><td>Secondary</td><td>paskp0:ethernet1/8</td><td>crskp0:gigabitethernet0/0/2, csskp0:gigabitethernet0/0/2, paskp0:ethernet1/8</td><td>CO-ECA</td><td>-531,007,235,214,283.44</td> <td>-166,323,322,501,961.97</td><td> 0</td>  <td> 94679.44</td> <td> 0.00%</td> <td> 0.03%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/madagascar-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MADAGASCAR-ISP </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Secondary</td><td>patnr0:ethernet1/1</td><td>crtnr0:gigabitethernet0/0/1, cstnr0:gigabitethernet0/0/1, patnr0:ethernet1/1</td><td>CO-AFR</td><td>-712,322,998,822,826.38</td> <td>-368,706,626,117,227.50</td><td> 0</td>  <td> 209886.00</td> <td> 0.00%</td> <td> 0.21%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/madagascar-mpls?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MADAGASCAR-MPLS </a></td><td>MPLS</td><td>8</td><td>Mb</td><td>Primary</td><td>crtnr0:Gi0/1</td><td>crtnr0:gigabitethernet0/0/2, cstnr0:gigabitethernet0/0/2</td><td>CO-AFR</td><td>-692,425,986,885,467.75</td> <td>-951,018,509,225,817.25</td><td> 0</td>  <td> 541366.64</td> <td> 0.00%</td> <td> 6.77%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/malawi-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MALAWI-ISP </a></td><td>ISP</td><td>70</td><td>Mb</td><td>Primary</td><td>pallw0:ethernet1/1</td><td>crllw0:gigabitethernet0/0/1, csllw0:gigabitethernet0/0/1, pallw0:ethernet1/1</td><td>CO-AFR</td><td>-286,248,094,006,794.69</td> <td>-724,570,802,939,309.62</td><td> 0</td>  <td> 412461.44</td> <td> 0.00%</td> <td> 0.59%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/malawi-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MALAWI-ISP2 </a></td><td>ISP</td><td>80</td><td>Mb</td><td>Secondary</td><td>pallw0:ethernet1/8</td><td>crllw0:gigabitethernet0/0/2, csllw0:gigabitethernet0/0/2, pallw0:ethernet1/8</td><td>CO-AFR</td><td>-433,661,996,579,422.81</td> <td>-87,654,193,957,053.00</td><td> 0</td>  <td> 49897.09</td> <td> 0.00%</td> <td> 0.06%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/malaysia-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MALAYSIA-ISP </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Primary</td><td>pakul0:ethernet1/1</td><td>crkul0:gigabitethernet0/0/1, cskul0:gigabitethernet0/0/1, pakul0:ethernet1/1</td><td>CO-EAP</td><td>-302,022,260,522,236.50</td> <td>-686,506,814,688,235.50</td><td> 0</td>  <td> 390793.54</td> <td> 0.00%</td> <td> 0.39%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/malaysia-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MALAYSIA-ISP2 </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>Pakul0: Eth 1/8</td><td>crkul0:gigabitethernet0/0/2, cskul0:gigabitethernet0/0/2, pakul0:ethernet1/8</td><td>CO-EAP</td><td>-496,441,556,544,904.75</td> <td>-118,578,992,823,454.61</td><td> 0</td>  <td> 67501.01</td> <td> 0.00%</td> <td> 0.03%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/mali-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MALI-ISP </a></td><td>ISP</td><td>90</td><td>Mb</td><td>Primary</td><td>pabko0:ethernet1/1</td><td>crbko0:gigabitethernet0/0/1, csbko0:gigabitethernet0/0/1, pabko0:ethernet1/1</td><td>CO-AFR</td><td>-609,388,047,457,891.12</td> <td>-943,702,066,537,688.75</td><td> 0</td>  <td> 537201.76</td> <td> 0.00%</td> <td> 0.60%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/mali-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MALI-ISP2 </a></td><td>ISP</td><td>150</td><td>Mb</td><td>Secondary</td><td>pabko0:ethernet1/8</td><td>crbko0:gigabitethernet0/0/2, csbko0:gigabitethernet0/0/2, pabko0:ethernet1/8</td><td>CO-AFR</td><td>-1,011,948,700,881,324.00</td> <td>-415,396,691,676,368.12</td><td> 0</td>  <td> 236464.29</td> <td> 0.00%</td> <td> 0.16%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/mauritania-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MAURITANIA-ISP </a></td><td>ISP</td><td>75</td><td>Mb</td><td>Primary</td><td>pankc0:ethernet1/1</td><td>crnkc0:gigabitethernet0/0/1, csnkc0:gigabitethernet0/0/1, pankc0:ethernet1/1</td><td>CO-AFR</td><td>-304,845,857,173,003.31</td> <td>-581,227,613,551,762.38</td><td> 0</td>  <td> 330863.43</td> <td> 0.00%</td> <td> 0.44%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/mauritius-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MAURITIUS-ISP </a></td><td>ISP</td><td>10</td><td>Mb</td><td>Primary</td><td>pamru0:ethernet1/1</td><td>crmru0:gigabitethernet0/0/1, csmru0:gigabitethernet0/0/1, pamru0:ethernet1/1</td><td>CO-AFR</td><td>-198,501,799,858,531.06</td> <td>-387,898,980,593,351.12</td><td> 0</td>  <td> 220811.23</td> <td> 0.00%</td> <td> 2.21%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/mauritius-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MAURITIUS-ISP2 </a></td><td>ISP</td><td>15</td><td>Mb</td><td>Secondary</td><td>pamru0:ethernet1/8</td><td>crmru0:gigabitethernet0/0/2, csmru0:gigabitethernet0/0/2, pamru0:ethernet1/8</td><td>CO-AFR</td><td>-597,897,740,245,206.25</td> <td>-120,846,000,078,135.55</td><td> 0</td>  <td> 68791.50</td> <td> 0.00%</td> <td> 0.46%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/mexico-ifc-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MEXICO-IFC-ISP </a></td><td>ISP</td><td>400</td><td>Mb</td><td>Primary</td><td>pamex1:ethernet1/1</td><td>rmmex1:gigabitethernet0/0/1, rhmex1:gigabitethernet0/0/1, pamex1:ethernet1/1</td><td>CO-LCR</td><td>-1,573,368,092,370,480.25</td> <td>-1,587,371,447,963,638.00</td><td> 0</td>  <td> 903610.12</td> <td> 0.00%</td> <td> 0.23%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/mexico-ifc-mpls?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MEXICO-IFC-MPLS </a></td><td>MPLS</td><td>6</td><td>Mb</td><td>Secondary</td><td>rmmex1:Gi0/1</td><td>rmmex1:gigabitethernet0/0/2, rhmex1:gigabitethernet0/0/2</td><td>CO-LCR</td><td>-2,652,642,761,176.70</td> <td>-1,424,828,481,501.42</td><td> 0</td>  <td> 811.08</td> <td> 0.00%</td> <td> 0.01%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/mexico-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MEXICO-ISP </a></td><td>ISP</td><td>400</td><td>Mb</td><td>Primary</td><td>pamex0:ethernet1/1</td><td>crmex0:gigabitethernet0/0/1, csmex0:gigabitethernet0/0/1, pamex0:ethernet1/1</td><td>CO-LCR</td><td>-708,844,376,029,730.38</td> <td>-1,293,792,882,334,039.00</td><td> 0</td>  <td> 736490.72</td> <td> 0.00%</td> <td> 0.18%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/mexico-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MEXICO-ISP2 </a></td><td>ISP</td><td>400</td><td>Mb</td><td>Secondary</td><td>pamex0:ethernet1/8</td><td>crmex0:gigabitethernet0/0/2, csmex0:gigabitethernet0/0/2, pamex0:ethernet1/8</td><td>CO-LCR</td><td>-763,684,645,502,665.50</td> <td>-222,803,324,397,519.19</td><td> 0</td>  <td> 126830.64</td> <td> 0.00%</td> <td> 0.03%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/micronesia-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MICRONESIA-ISP </a></td><td>ISP</td><td>25</td><td>Mb</td><td>Primary</td><td>papni0:ethernet1/1</td><td>crpni0:gigabitethernet0/0/1, cspni0:gigabitethernet0/0/1, papni0:ethernet1/1</td><td>CO-EAP</td><td>-5,172,867,598,841,530.00</td> <td>-6,651,564,126,161,953.00</td><td> 0</td>  <td> 3786398.37</td> <td> 0.00%</td> <td> 15.15%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/moldova-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MOLDOVA-ISP </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Primary</td><td>pakiv0:ethernet1/1</td><td>crkiv0:gigabitethernet0/0/1, cskiv0:gigabitethernet0/0/1, pakiv0:ethernet1/1</td><td>CO-ECA</td><td>-897,330,092,814,761.50</td> <td>-927,115,442,692,480.50</td><td> 0</td>  <td> 527759.84</td> <td> 0.00%</td> <td> 0.53%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/moldova-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MOLDOVA-ISP2 </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Secondary</td><td>pakiv0:ethernet1/8</td><td>crkiv0:gigabitethernet0/0/2, cskiv0:gigabitethernet0/0/2, pakiv0:ethernet1/8</td><td>CO-ECA</td><td>-8,478,837,135,009.81</td> <td>-7,344,666,224,494.82</td><td> 0</td>  <td> 4180.95</td> <td> 0.00%</td> <td> 0.00%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/mongolia-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MONGOLIA-ISP </a></td><td>ISP</td><td>250</td><td>Mb</td><td>Primary</td><td>PAULN0:ETHERNET1</td><td>cruln0:gigabitethernet0/0/1, csuln0:gigabitethernet0/0/1, pauln0:ethernet1/1</td><td>CO-EAP</td><td>-4,235,470,363,699,349.00</td> <td>-3,945,945,062,880,304.00</td><td> 0</td>  <td> 2246226.55</td> <td> 0.00%</td> <td> 0.90%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/mongolia-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MONGOLIA-ISP2 </a></td><td>ISP</td><td>150</td><td>Mb</td><td>Secondary</td><td>PAULN0:Ethernet1:8</td><td>cruln0:gigabitethernet0/0/2, csuln0:gigabitethernet0/0/2, pauln0:ethernet1/8</td><td>CO-EAP</td><td>-18,026,388,869,531,572.00</td> <td>-4,271,109,497,067,914.00</td><td> 0</td>  <td> 2431326.19</td> <td> 0.00%</td> <td> 1.62%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/montenegro-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MONTENEGRO-ISP </a></td><td>ISP</td><td>80</td><td>Mb</td><td>Primary</td><td>patgd0:ethernet1/1</td><td>crtgd0:gigabitethernet0/0/1, cstgd0:gigabitethernet0/0/1, patgd0:ethernet1/1</td><td>CO-ECA</td><td>-142,669,299,584,191.88</td> <td>-247,687,227,530,113.81</td><td> 0</td>  <td> 140995.79</td> <td> 0.00%</td> <td> 0.18%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/montenegro-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MONTENEGRO-ISP2 </a></td><td>ISP</td><td>80</td><td>Mb</td><td>Secondary</td><td>patgd0:ethernet1/8</td><td>crtgd0:gigabitethernet0/0/2, cstgd0:gigabitethernet0/0/2, patgd0:ethernet1/8</td><td>CO-ECA</td><td>-478,634,746,834,706.69</td> <td>-116,919,075,316,676.11</td><td> 0</td>  <td> 66556.10</td> <td> 0.00%</td> <td> 0.08%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/morocco-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MOROCCO-ISP </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Primary</td><td>parba0:ethernet1/1</td><td>crrba0:gigabitethernet0/0/1, csrba0:gigabitethernet0/0/1, parba0:ethernet1/1</td><td>CO-MNA</td><td>-595,644,088,414,654.00</td> <td>-665,111,792,854,573.38</td><td> 0</td>  <td> 378614.44</td> <td> 0.00%</td> <td> 0.38%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/morocco-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MOROCCO-ISP2 </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Secondary</td><td>parba0:ethernet1/8</td><td>crrba0:gigabitethernet0/0/2, csrba0:gigabitethernet0/0/2, parba0:ethernet1/8</td><td>CO-MNA</td><td>-958,375,354,736,472.88</td> <td>-715,670,729,051,052.12</td><td> 0</td>  <td> 407395.08</td> <td> 0.00%</td> <td> 0.41%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/mozambique-ifc-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MOZAMBIQUE-IFC-ISP </a></td><td>ISP</td><td>80</td><td>Mb</td><td>Secondary</td><td>pampm1:ethernet1/1</td><td>rmmpm1:gigabitethernet0/0/2, rhmpm1:gigabitethernet0/0/2, pampm1:ethernet1/8</td><td>CO-AFR</td><td>-495,732,003,923,560.62</td> <td>-167,836,525,797,406.62</td><td> 0</td>  <td> 95540.83</td> <td> 0.00%</td> <td> 0.12%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/mozambique-ifc-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MOZAMBIQUE-IFC-ISP2 </a></td><td>ISP</td><td>80</td><td>Mb</td><td>Secondary</td><td>pampm1 Ethernet 1:8</td><td>rmmpm1:gigabitethernet0/0/2, rhmpm1:gigabitethernet0/0/2, pampm1:ethernet1/8</td><td>CO-AFR</td><td>-495,732,003,923,560.62</td> <td>-167,836,525,797,406.62</td><td> 0</td>  <td> 95540.83</td> <td> 0.00%</td> <td> 0.12%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/mozambique-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MOZAMBIQUE-ISP </a></td><td>ISP</td><td>120</td><td>Mb</td><td>Secondary</td><td>pampm0:ethernet1/8</td><td>crmpm0:gigabitethernet0/0/1, csmpm0:gigabitethernet0/0/1, pampm0:ethernet1/1</td><td>CO-AFR</td><td>-11,450,827,866,255.36</td> <td>-11,229,965,825,991.38</td><td> 0</td>  <td> 6392.65</td> <td> 0.00%</td> <td> 0.01%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/myanmar~yangon-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MYANMAR YANGON-ISP </a></td><td>ISP</td><td>120</td><td>Mb</td><td>Primary</td><td>pargn0:ethernet1/1</td><td>crrgn0:gigabitethernet0/0/1, csrgn0:gigabitethernet0/0/1, pargn0:ethernet1/1</td><td>CO-EAP</td><td>-7,012,620,351,452,261.00</td> <td>-7,948,828,769,587,826.00</td><td> 0</td>  <td> 4524865.39</td> <td> 0.00%</td> <td> 3.77%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/myanmar~yangon-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">MYANMAR YANGON-ISP2 </a></td><td>ISP</td><td>110</td><td>Mb</td><td>Secondary</td><td>pargn0 : Eth 1/1/8</td><td>crrgn0:gigabitethernet0/0/2, csrgn0:gigabitethernet0/0/2, pargn0:ethernet1/8</td><td>CO-EAP</td><td>-17,021,483,114,185,240.00</td> <td>-23,245,332,867,082,696.00</td><td> 0</td>  <td> 13232389.98</td> <td> 0.00%</td> <td> 12.03%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/nepal-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">NEPAL-ISP </a></td><td>ISP</td><td>300</td><td>Mb</td><td>Primary</td><td>paktm0:ethernet1/1</td><td>crktm0:gigabitethernet0/0/1, csktm0:gigabitethernet0/0/1, paktm0:ethernet1/1</td><td>CO-SAR</td><td>-25,628,043,594,850,516.00</td> <td>-15,946,954,374,723,756.00</td><td> 0</td>  <td> 9077792.97</td> <td> 0.00%</td> <td> 3.03%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/nepal-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">NEPAL-ISP2 </a></td><td>ISP</td><td>300</td><td>Mb</td><td>Secondary</td><td>paktm0 (Eth 1/8)</td><td>crktm0:gigabitethernet0/0/2, csktm0:gigabitethernet0/0/2, paktm0:ethernet1/8</td><td>CO-SAR</td><td>-53,513,930,527,696,056.00</td> <td>-23,097,099,802,544,776.00</td><td> 0</td>  <td> 13148008.41</td> <td> 0.00%</td> <td> 4.38%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/nicaragua-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">NICARAGUA-ISP </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Primary</td><td>pamga0:ethernet1/1</td><td>crmga0:gigabitethernet0/0/1, csmga0:gigabitethernet0/0/1, pamga0:ethernet1/1</td><td>CO-LCR</td><td>-272,710,415,572,790.53</td> <td>-469,153,302,419,172.38</td><td> 0</td>  <td> 267065.20</td> <td> 0.00%</td> <td> 0.13%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/nicaragua-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">NICARAGUA-ISP2 </a></td><td>ISP</td><td>110</td><td>Mb</td><td>Secondary</td><td>pamga0:ethernet1/8</td><td>crmga0:gigabitethernet0/0/2, csmga0:gigabitethernet0/0/2, pamga0:ethernet1/8</td><td>CO-LCR</td><td>-506,620,101,251,297.62</td> <td>-121,866,039,646,092.83</td><td> 0</td>  <td> 69372.16</td> <td> 0.00%</td> <td> 0.06%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/niger-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">NIGER-ISP2 </a></td><td>ISP</td><td>70</td><td>Mb</td><td>Secondary</td><td>panim0:ethernet1/8</td><td>crnim0:gigabitethernet0/0/1, csnim0:gigabitethernet0/0/1, panim0:ethernet1/1</td><td>CO-AFR</td><td>-336,666,566,897,385.44</td> <td>-694,931,153,288,721.62</td><td> 0</td>  <td> 395589.09</td> <td> 0.00%</td> <td> 0.57%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/niger-vsat?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">NIGER-VSAT </a></td><td>Satellite</td><td>3</td><td>Mb</td><td>Backup</td><td>crnim0:Gi0/2</td><td>crnim0:gigabitethernet0/0/3</td><td>CO-AFR</td><td>-14,549,880,235,592.42</td> <td>-8,041,749,125,562.05</td><td> 0</td>  <td> 4577.76</td> <td> 0.00%</td> <td> 0.15%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/nigeria~abuja-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">NIGERIA ABUJA-ISP </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Primary</td><td>paabv0:ethernet1/1</td><td>crabv0:gigabitethernet0/0/1, csabv0:gigabitethernet0/0/1, paabv0:ethernet1/1</td><td>CO-AFR</td><td>-1,917,063,251,281,038.25</td> <td>-1,706,315,562,040,003.00</td><td> 0</td>  <td> 971318.98</td> <td> 0.00%</td> <td> 0.49%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/nigeria~abuja-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">NIGERIA ABUJA-ISP2 </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>paabv0:ethernet1/8</td><td>crabv0:gigabitethernet0/0/2, csabv0:gigabitethernet0/0/2, paabv0:ethernet1/8</td><td>CO-AFR</td><td>-882,347,182,981,154.50</td> <td>-293,679,809,844,712.06</td><td> 0</td>  <td> 167177.03</td> <td> 0.00%</td> <td> 0.08%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/nigeria~lagos-ifc-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">NIGERIA LAGOS-IFC-ISP </a></td><td>ISP</td><td>120</td><td>Mb</td><td>Primary</td><td>palos1:ethernet1/1</td><td>rmlos1:gigabitethernet0/0/1, rhlos1:gigabitethernet0/0/1, palos1:ethernet1/1</td><td>CO-AFR</td><td>-392,335,683,759,256.25</td> <td>-772,306,288,784,696.75</td><td> 0</td>  <td> 439634.83</td> <td> 0.00%</td> <td> 0.37%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/nigeria~lagos-ifc-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">NIGERIA LAGOS-IFC-ISP2 </a></td><td>ISP</td><td>120</td><td>Mb</td><td>Secondary</td><td>palos1:ethernet1/8</td><td>rmlos1:gigabitethernet0/0/2, rhlos1:gigabitethernet0/0/2, palos1:ethernet1/8</td><td>CO-AFR</td><td>-601,509,533,687,347.75</td> <td>-89,829,654,032,708.53</td><td> 0</td>  <td> 51135.47</td> <td> 0.00%</td> <td> 0.04%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/pakistan~islamabad-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">PAKISTAN ISLAMABAD-ISP </a></td><td>ISP</td><td>230</td><td>Mb</td><td>Primary</td><td>PAISB0: ETHERNET1/1</td><td>crisb0:gigabitethernet0/0/1, csisb0:gigabitethernet0/0/1, paisb0:ethernet1/1</td><td>CO-SAR</td><td>-22,029,837,582,863,972.00</td> <td>-5,314,776,961,198,851.00</td><td> 0</td>  <td> 3025433.18</td> <td> 0.00%</td> <td> 1.32%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/pakistan~islamabad-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">PAKISTAN ISLAMABAD-ISP2 </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>paisb0: Ethernet 1/8</td><td>crisb0:gigabitethernet0/0/2, csisb0:gigabitethernet0/0/2, paisb0:ethernet1/8</td><td>CO-SAR</td><td>-37,529,139,881,651,384.00</td> <td>-5,516,027,459,891,913.00</td><td> 0</td>  <td> 3139994.89</td> <td> 0.00%</td> <td> 1.57%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/pakistan~karachi-ifc-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">PAKISTAN KARACHI-IFC-ISP </a></td><td>ISP</td><td>70</td><td>Mb</td><td>Primary</td><td>pakhi1: Ethernet 1:8</td><td>rmkhi1:gigabitethernet0/0/1, rhkhi1:gigabitethernet0/0/1, pakhi1:ethernet1/1</td><td>CO-SAR</td><td>-866,087,129,468,611.50</td> <td>-1,575,526,140,386,921.00</td><td> 0</td>  <td> 896867.19</td> <td> 0.00%</td> <td> 1.28%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/pakistan~karachi-ifc-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">PAKISTAN KARACHI-IFC-ISP2 </a></td><td>ISP</td><td>70</td><td>Mb</td><td>Secondary</td><td>pakhi1: Ethernet 1:8</td><td>rmkhi1:gigabitethernet0/0/2, rhkhi1:gigabitethernet0/0/2, pakhi1:ethernet1/8</td><td>CO-SAR</td><td>-3,701,107,835,805,870.50</td> <td>-1,924,899,102,873,293.00</td><td> 0</td>  <td> 1095747.51</td> <td> 0.00%</td> <td> 1.57%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/panama-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">PANAMA-ISP </a></td><td>ISP</td><td>1</td><td>Gb</td><td>Primary</td><td>papty0:ethernet1/1</td><td>crpty0:gigabitethernet0/0/1, cspty0:gigabitethernet0/0/1, papty0:ethernet1/1</td><td>CO-LCR</td><td>-562,052,232,748,439.31</td> <td>-918,369,491,329,237.75</td><td> 0</td>  <td> 522781.21</td> <td> 0.00%</td> <td> 0.05%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/panama-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">PANAMA-ISP2 </a></td><td>ISP</td><td>1</td><td>Gb</td><td>Secondary</td><td>papty0:ethernet1/8</td><td>crpty0:gigabitethernet0/0/2, cspty0:gigabitethernet0/0/2, papty0:ethernet1/8</td><td>CO-LCR</td><td>-464,505,682,024,162.56</td> <td>-125,436,889,467,190.83</td><td> 0</td>  <td> 71404.86</td> <td> 0.00%</td> <td> 0.01%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/papua~new~guinea-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">PAPUA NEW GUINEA-ISP </a></td><td>ISP</td><td>150</td><td>Mb</td><td>Secondary</td><td>papom0:ethernet1/1</td><td>crpom0:gigabitethernet0/0/2, cspom0:gigabitethernet0/0/2, papom0:ethernet1/8</td><td>CO-EAP</td><td>-8,408,680,097,313,449.00</td> <td>-2,365,610,360,302,092.00</td><td> 0</td>  <td> 1346622.09</td> <td> 0.00%</td> <td> 0.90%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/papua~new~guinea-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">PAPUA NEW GUINEA-ISP2 </a></td><td>ISP</td><td>120</td><td>Mb</td><td>Primary</td><td>papom0</td><td>crpom0:gigabitethernet0/0/1, cspom0:gigabitethernet0/0/1, papom0:ethernet1/1</td><td>CO-EAP</td><td>-4,054,971,010,390,133.00</td> <td>-2,788,307,532,821,576.50</td><td> 0</td>  <td> 1587242.17</td> <td> 0.00%</td> <td> 1.32%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/paraguay-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">PARAGUAY-ISP </a></td><td>ISP</td><td>160</td><td>Mb</td><td>Primary</td><td>paasu0:ethernet1/1</td><td>crasu0:gigabitethernet0/0/1, csasu0:gigabitethernet0/0/1, paasu0:ethernet1/1</td><td>CO-LCR</td><td>-359,756,455,586,906.94</td> <td>-562,115,364,525,451.75</td><td> 0</td>  <td> 319983.79</td> <td> 0.00%</td> <td> 0.20%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/paraguay-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">PARAGUAY-ISP2 </a></td><td>ISP</td><td>150</td><td>Mb</td><td>Secondary</td><td>paasu0:ethernet1/8</td><td>crasu0:gigabitethernet0/0/2, csasu0:gigabitethernet0/0/2, paasu0:ethernet1/8</td><td>CO-LCR</td><td>-504,056,053,965,199.81</td> <td>-89,914,493,348,138.36</td><td> 0</td>  <td> 51183.76</td> <td> 0.00%</td> <td> 0.03%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/peru-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">PERU-ISP </a></td><td>ISP</td><td>350</td><td>Mb</td><td>Primary</td><td>palim0:ethernet1/1</td><td>crlim0:gigabitethernet0/0/1, cslim0:gigabitethernet0/0/1, palim0:ethernet1/1</td><td>CO-LCR</td><td>-802,530,435,863,450.25</td> <td>-1,308,803,548,828,911.50</td><td> 0</td>  <td> 745035.53</td> <td> 0.00%</td> <td> 0.21%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/peru-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">PERU-ISP2 </a></td><td>ISP</td><td>350</td><td>Mb</td><td>Secondary</td><td>palim0:ethernet1/8</td><td>crlim0:gigabitethernet0/0/2, cslim0:gigabitethernet0/0/2, palim0:ethernet1/8</td><td>CO-LCR</td><td>-593,564,946,702,841.25</td> <td>-216,774,495,690,543.53</td><td> 0</td>  <td> 123398.73</td> <td> 0.00%</td> <td> 0.04%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/philippines-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">PHILIPPINES-ISP </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Primary</td><td>pamnl0:ethernet1/1</td><td>crmnl0:gigabitethernet0/0/1, csmnl0:gigabitethernet0/0/1, pamnl0:ethernet1/1</td><td>CO-EAP</td><td>-30,210,649,835,740,960.00</td> <td>-27,089,875,739,263,748.00</td><td> 0</td>  <td> 15420893.41</td> <td> 0.00%</td> <td> 7.71%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/philippines-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">PHILIPPINES-ISP2 </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>pamnl0:ethernet1/8</td><td>crmnl0:gigabitethernet0/0/2, csmnl0:gigabitethernet0/0/2, pamnl0:ethernet1/8</td><td>CO-EAP</td><td>-135,257,654,278,349,968.00</td> <td>-12,598,434,730,905,428.00</td><td> 0</td>  <td> 7171650.43</td> <td> 0.00%</td> <td> 3.59%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/poland-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">POLAND-ISP </a></td><td>ISP</td><td>600</td><td>Mb</td><td>Primary</td><td>pawaw0:ethernet1/1</td><td>crwaw0:gigabitethernet0/0/1, cswaw0:gigabitethernet0/0/1, pawaw0:ethernet1/1</td><td>CO-ECA</td><td>-475,453,682,131,496.19</td> <td>-769,190,940,383,778.12</td><td> 0</td>  <td> 437861.42</td> <td> 0.00%</td> <td> 0.07%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/poland-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">POLAND-ISP2 </a></td><td>ISP</td><td>1</td><td>Gb</td><td>Secondary</td><td>PAWAW0 :  Port 8</td><td>crwaw0:gigabitethernet0/0/2, cswaw0:gigabitethernet0/0/2, pawaw0:ethernet1/8</td><td>CO-ECA</td><td>-488,441,995,449,101.75</td> <td>-147,789,917,441,617.41</td><td> 0</td>  <td> 84129.31</td> <td> 0.00%</td> <td> 0.01%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/romania-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">ROMANIA-ISP </a></td><td>ISP</td><td>1</td><td>Gb</td><td>Secondary</td><td>pabuh0:ethernet1/8</td><td>crbuh0:gigabitethernet0/0/2, csbuh0:gigabitethernet0/0/2, pabuh0:ethernet1/8</td><td>CO-ECA</td><td>-627,700,844,757,036.88</td> <td>-179,502,456,901,925.25</td><td> 0</td>  <td> 102181.65</td> <td> 0.00%</td> <td> 0.01%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/romania-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">ROMANIA-ISP2 </a></td><td>ISP</td><td>1</td><td>Gb</td><td>Primary</td><td>pabuh0:ethernet1/1</td><td>crbuh0:gigabitethernet0/0/1, csbuh0:gigabitethernet0/0/1, pabuh0:ethernet1/1</td><td>CO-ECA</td><td>-659,136,895,920,355.38</td> <td>-941,668,871,162,468.38</td><td> 0</td>  <td> 536044.37</td> <td> 0.00%</td> <td> 0.05%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/russia-ifc-internet2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">RUSSIA-IFC-INTERNET2 </a></td><td>Internet2</td><td>250</td><td>Mb</td><td>Primary</td><td>pamow1:ethernet1/1</td><td>pamow1:ethernet1/1</td><td>CO-ECA</td><td>0.00</td> <td>0.00</td><td> 0</td>  <td> 0.00</td> <td> 0.00%</td> <td> 0.00%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/rwanda-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">RWANDA-ISP </a></td><td>ISP</td><td>80</td><td>Mb</td><td>Primary</td><td>pakgl0:ethernet1/1</td><td>crkgl0:gigabitethernet0/0/1, cskgl0:gigabitethernet0/0/1, pakgl0:ethernet1/1</td><td>CO-AFR</td><td>-679,566,976,490,871.75</td> <td>-1,122,493,313,560,429.00</td><td> 0</td>  <td> 638978.56</td> <td> 0.00%</td> <td> 0.80%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/rwanda-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">RWANDA-ISP2 </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>pakgl0 Eth1/8</td><td>crkgl0:gigabitethernet0/0/2, cskgl0:gigabitethernet0/0/2, pakgl0:ethernet1/8</td><td>CO-AFR</td><td>-551,694,230,590,887.94</td> <td>-218,549,495,122,047.12</td><td> 0</td>  <td> 124409.15</td> <td> 0.00%</td> <td> 0.06%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/samoa-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SAMOA-ISP </a></td><td>ISP</td><td>25</td><td>Mb</td><td>Secondary</td><td>paapw0:ethernet1/8</td><td>crapw0:gigabitethernet0/0/2, csapw0:gigabitethernet0/0/2, paapw0:ethernet1/8</td><td>CO-EAP</td><td>-452,275,361,000,111.50</td> <td>-93,570,831,969,433.34</td><td> 0</td>  <td> 53265.13</td> <td> 0.00%</td> <td> 0.21%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/samoa-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SAMOA-ISP2 </a></td><td>ISP</td><td>15</td><td>Mb</td><td>Primary</td><td>paapw0:ethernet1/1</td><td>crapw0:gigabitethernet0/0/1, csapw0:gigabitethernet0/0/1, paapw0:ethernet1/1</td><td>CO-EAP</td><td>-200,514,470,811,540.12</td> <td>-257,828,700,909,804.31</td><td> 0</td>  <td> 146768.81</td> <td> 0.00%</td> <td> 0.98%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/sao~tome~and~principe-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SAO TOME AND PRINCIPE-ISP </a></td><td>ISP</td><td>15</td><td>Mb</td><td>Primary</td><td>crtms0:Gi0/0/0</td><td>crtms0:gigabitethernet0/0/0, cstms0:gigabitethernet0/0/0</td><td>CO-AFR</td><td>-64,202,331,548,130.20</td> <td>-137,582,182,805,791.52</td><td> 0</td>  <td> 78318.56</td> <td> 0.00%</td> <td> 0.52%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/sao~tome~and~principe-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SAO TOME AND PRINCIPE-ISP2 </a></td><td>ISP</td><td>15</td><td>Mb</td><td>Secondary</td><td>crtms0:gi0/0/1</td><td>crtms0:gigabitethernet0/0/1, cstms0:gigabitethernet0/0/1</td><td>CO-AFR</td><td>-7,474,752,549,682.98</td> <td>-6,294,740,968,844.49</td><td> 0</td>  <td> 3583.28</td> <td> 0.00%</td> <td> 0.02%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/saudi~arabia-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SAUDI ARABIA-ISP </a></td><td>ISP</td><td>45</td><td>Mb</td><td>Secondary</td><td>paruh0:Ethernet1/1</td><td>crruh0:gigabitethernet0/0/1, csruh0:gigabitethernet0/0/1, paruh0:ethernet1/1</td><td>CO-MNA</td><td>-741,097,356,778,766.88</td> <td>-406,429,247,712,368.44</td><td> 0</td>  <td> 231359.57</td> <td> 0.00%</td> <td> 0.51%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/saudi~arabia-mpls?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SAUDI ARABIA-MPLS </a></td><td>MPLS</td><td>6</td><td>Mb</td><td>Primary</td><td>crruh0:Gi0/1</td><td>crruh0:gigabitethernet0/0/2, csruh0:gigabitethernet0/0/2</td><td>CO-MNA</td><td>-2,676,983,382,937,345.50</td> <td>-972,230,152,256,866.75</td><td> 0</td>  <td> 553441.36</td> <td> 0.00%</td> <td> 9.22%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/senegal-ifc-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SENEGAL-IFC-ISP </a></td><td>ISP</td><td>150</td><td>Mb</td><td>Primary</td><td>PADKR1:Ethernet1/1</td><td>rmdkr1:gigabitethernet0/0/1, rhdkr1:gigabitethernet0/0/1, padkr1:ethernet1/1</td><td>CO-AFR</td><td>-849,566,064,383,608.75</td> <td>-1,320,237,538,210,318.25</td><td> 0</td>  <td> 751544.32</td> <td> 0.00%</td> <td> 0.50%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/senegal-ifc-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SENEGAL-IFC-ISP2 </a></td><td>ISP</td><td>150</td><td>Mb</td><td>Secondary</td><td>padkr1:ethernet1/1</td><td>rmdkr1:gigabitethernet0/0/2, rhdkr1:gigabitethernet0/0/2, padkr1:ethernet1/8</td><td>CO-AFR</td><td>-507,441,510,274,521.62</td> <td>-180,624,527,729,227.53</td><td> 0</td>  <td> 102820.39</td> <td> 0.00%</td> <td> 0.07%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/senegal-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SENEGAL-ISP </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Primary</td><td>padkr0:ethernet1/1</td><td>crdkr0:gigabitethernet0/0/1, csdkr0:gigabitethernet0/0/1, padkr0:ethernet1/1</td><td>CO-AFR</td><td>-738,717,846,875,786.00</td> <td>-1,768,092,986,119,887.50</td><td> 0</td>  <td> 1006485.73</td> <td> 0.00%</td> <td> 1.01%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/senegal-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SENEGAL-ISP2 </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Secondary</td><td>padkr0:ethernet1/8</td><td>crdkr0:gigabitethernet0/0/2, csdkr0:gigabitethernet0/0/2, padkr0:ethernet1/8</td><td>CO-AFR</td><td>-510,219,021,895,682.62</td> <td>-160,199,522,556,691.50</td><td> 0</td>  <td> 91193.47</td> <td> 0.00%</td> <td> 0.09%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/serbia-ifc-internet2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SERBIA-IFC-INTERNET2 </a></td><td>Internet2</td><td>300</td><td>Mb</td><td>Secondary</td><td>pabeg1:ethernet1/1</td><td>rmbeg1:gigabitethernet0/0/2, rhbeg1:gigabitethernet0/0/2, pabeg1:ethernet1/8</td><td>CO-ECA</td><td>-684,426,887,588,549.00</td> <td>-363,983,295,317,100.69</td><td> 0</td>  <td> 207197.24</td> <td> 0.00%</td> <td> 0.07%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/serbia-ifc-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SERBIA-IFC-ISP </a></td><td>ISP</td><td>300</td><td>Mb</td><td>Primary</td><td>PABEG1 ethernet 1/8</td><td>rmbeg1:gigabitethernet0/0/1, rhbeg1:gigabitethernet0/0/1, pabeg1:ethernet1/1</td><td>CO-ECA</td><td>-866,367,669,143,477.25</td> <td>-1,327,964,814,244,985.00</td><td> 0</td>  <td> 755943.07</td> <td> 0.00%</td> <td> 0.25%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/sierra~leone-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SIERRA LEONE-ISP </a></td><td>ISP</td><td>90</td><td>Mb</td><td>Primary</td><td>pafna0:ethernet1/1</td><td>crfna0:gigabitethernet0/0/1, csfna0:gigabitethernet0/0/1, pafna0:ethernet1/1</td><td>CO-AFR</td><td>-354,317,281,235,122.62</td> <td>-659,865,179,615,618.75</td><td> 0</td>  <td> 375627.81</td> <td> 0.00%</td> <td> 0.42%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/sierra~leone-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SIERRA LEONE-ISP2 </a></td><td>ISP</td><td>80</td><td>Mb</td><td>Secondary</td><td>pafna0:ethernet1/8</td><td>crfna0:gigabitethernet0/0/2, csfna0:gigabitethernet0/0/2, pafna0:ethernet1/8</td><td>CO-AFR</td><td>-423,764,005,359,299.06</td> <td>-88,192,432,450,226.39</td><td> 0</td>  <td> 50203.48</td> <td> 0.00%</td> <td> 0.06%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/singapore-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SINGAPORE-ISP </a></td><td>ISP</td><td>500</td><td>Mb</td><td>Primary</td><td>pasin0:ethernet1/1</td><td>crsin0:gigabitethernet0/0/1, cssin0:gigabitethernet0/0/1, pasin0:ethernet1/1</td><td>CO-EAP</td><td>-42,552,843,752,592,680.00</td> <td>-49,970,921,898,262,096.00</td><td> 0</td>  <td> 28445913.43</td> <td> 0.00%</td> <td> 5.69%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/singapore-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SINGAPORE-ISP2 </a></td><td>ISP</td><td>500</td><td>Mb</td><td>Secondary</td><td>pasin0:ethernet1/8</td><td>crsin0:gigabitethernet0/0/2, cssin0:gigabitethernet0/0/2, pasin0:ethernet1/8</td><td>CO-EAP</td><td>-53,632,695,068,958,680.00</td> <td>-17,256,936,241,075,684.00</td><td> 0</td>  <td> 9823499.26</td> <td> 0.00%</td> <td> 1.96%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/solomon~islands-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SOLOMON ISLANDS-ISP </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Secondary</td><td>pahir0:ethernet1/1</td><td>crhir0:gigabitethernet0/0/2, cshir0:gigabitethernet0/0/2, pahir0:ethernet1/8</td><td>CO-EAP</td><td>-2,070,351,846,272,997.25</td> <td>-744,130,361,341,161.38</td><td> 0</td>  <td> 423595.70</td> <td> 0.00%</td> <td> 0.42%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/solomon~islands-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SOLOMON ISLANDS-ISP2 </a></td><td>ISP</td><td>500</td><td>Mb</td><td>Primary</td><td>PAHIR0 ETH 1/4</td><td>crhir0:gigabitethernet0/0/1, cshir0:gigabitethernet0/0/1, pahir0:ethernet1/1</td><td>CO-EAP</td><td>-3,628,307,822,363,047.50</td> <td>-4,925,734,643,290,149.00</td><td> 0</td>  <td> 2803971.11</td> <td> 0.00%</td> <td> 0.56%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/south~africa~joburg1-ifc-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SOUTH AFRICA JOBURG1-IFC-ISP </a></td><td>ISP</td><td>220</td><td>Mb</td><td>Primary</td><td>pajnb1:ethernet1/1</td><td>rmjnb1:gigabitethernet0/0/1, rhjnb1:gigabitethernet0/0/1, pajnb1:ethernet1/1</td><td>CO-AFR</td><td>-1,083,056,742,471,675.62</td> <td>-1,863,241,885,084,090.00</td><td> 0</td>  <td> 1060649.18</td> <td> 0.00%</td> <td> 0.48%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/south~africa~joburg1-ifc-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SOUTH AFRICA JOBURG1-IFC-ISP2 </a></td><td>ISP</td><td>220</td><td>Mb</td><td>Secondary</td><td>pajnb1 : ethernet1/8</td><td>rmjnb1:gigabitethernet0/0/2, rhjnb1:gigabitethernet0/0/2, pajnb1:ethernet1/8</td><td>CO-AFR</td><td>-10,867,089,877,310,698.00</td> <td>-1,637,069,753,164,225.75</td><td> 0</td>  <td> 931900.85</td> <td> 0.00%</td> <td> 0.42%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/south~africa-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SOUTH AFRICA-ISP </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Secondary</td><td>papry0:ethernet1/1</td><td>crpry0:gigabitethernet0/0/1, cspry0:gigabitethernet0/0/1, papry0:ethernet1/1</td><td>CO-AFR</td><td>-570,689,425,855,740.50</td> <td>-221,073,011,597,515.97</td><td> 0</td>  <td> 125845.66</td> <td> 0.00%</td> <td> 0.13%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/south~africa-mpls?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SOUTH AFRICA-MPLS </a></td><td>MPLS</td><td>7</td><td>Mb</td><td>Primary</td><td>crpry0:Gi0/1</td><td>crpry0:gigabitethernet0/0/2, cspry0:gigabitethernet0/0/2</td><td>CO-AFR</td><td>-490,400,150,023,726.31</td> <td>-724,500,443,550,506.88</td><td> 0</td>  <td> 412421.39</td> <td> 0.00%</td> <td> 5.89%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/sri~lanka-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SRI LANKA-ISP </a></td><td>ISP</td><td>175</td><td>Mb</td><td>Primary</td><td>pacmb0:ethernet1/1</td><td>crcmb0:gigabitethernet0/0/1, cscmb0:gigabitethernet0/0/1, pacmb0:ethernet1/1</td><td>CO-SAR</td><td>-16,946,226,769,659,290.00</td> <td>-16,088,250,334,145,244.00</td><td> 0</td>  <td> 9158225.60</td> <td> 0.00%</td> <td> 5.23%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/sri~lanka-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SRI LANKA-ISP2 </a></td><td>ISP</td><td>175</td><td>Mb</td><td>Secondary</td><td>pacmb0:ethernet1/8</td><td>crcmb0:gigabitethernet0/0/2, cscmb0:gigabitethernet0/0/2, pacmb0:ethernet1/8</td><td>CO-SAR</td><td>-27,316,489,172,723,448.00</td> <td>-5,978,340,187,589,437.00</td><td> 0</td>  <td> 3403166.10</td> <td> 0.00%</td> <td> 1.94%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/sudan~juba-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SUDAN JUBA-ISP </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Primary</td><td>pajub0:ethernet1/1</td><td>crjub0:gigabitethernet0/0/1, csjub0:gigabitethernet0/0/1, pajub0:ethernet1/1</td><td>CO-AFR</td><td>-655,352,074,701,439.00</td> <td>-1,484,681,094,130,664.25</td><td> 0</td>  <td> 845153.71</td> <td> 0.00%</td> <td> 0.85%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/sudan~juba-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SUDAN JUBA-ISP2 </a></td><td>ISP</td><td>60</td><td>Mb</td><td>Secondary</td><td>pajub0:ethernet1/8</td><td>crjub0:gigabitethernet0/0/2, csjub0:gigabitethernet0/0/2, pajub0:ethernet1/8</td><td>CO-AFR</td><td>-4,984,853,143,072,419.00</td> <td>-1,431,960,328,571,756.00</td><td> 0</td>  <td> 815142.45</td> <td> 0.00%</td> <td> 1.36%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/switzerland-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SWITZERLAND-ISP </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Primary</td><td>pagva0:ethernet1/1</td><td>crgva0:gigabitethernet0/0/1, csgva0:gigabitethernet0/0/1, pagva0:ethernet1/1</td><td>CO-EXT</td><td>-454,557,462,761,617.25</td> <td>-685,439,364,755,496.62</td><td> 0</td>  <td> 390185.89</td> <td> 0.00%</td> <td> 0.39%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/switzerland-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">SWITZERLAND-ISP2 </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Secondary</td><td>pagva0:ethernet1/8</td><td>crgva0:gigabitethernet0/0/2, csgva0:gigabitethernet0/0/2, pagva0:ethernet1/8</td><td>CO-EXT</td><td>-503,018,501,007,441.75</td> <td>-153,715,984,463,233.91</td><td> 0</td>  <td> 87502.72</td> <td> 0.00%</td> <td> 0.09%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/tajikistan-internet2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">TAJIKISTAN-INTERNET2 </a></td><td>Internet2</td><td>50</td><td>Mb</td><td>Primary</td><td>Padyu0:ethernet1/1</td><td>crdyu0:gigabitethernet0/0/1, csdyu0:gigabitethernet0/0/1, padyu0:ethernet1/1</td><td>CO-ECA</td><td>-2,450,777,119,020,990.50</td> <td>-2,282,209,328,200,816.50</td><td> 0</td>  <td> 1299146.11</td> <td> 0.00%</td> <td> 2.60%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/tajikistan-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">TAJIKISTAN-ISP </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>padyu0 : Ethernet 1/8</td><td>crdyu0:gigabitethernet0/0/2, csdyu0:gigabitethernet0/0/2, padyu0:ethernet1/8</td><td>CO-ECA</td><td>-8,189,617,704,925,511.00</td> <td>-1,731,330,690,096,370.50</td><td> 0</td>  <td> 985558.82</td> <td> 0.00%</td> <td> 0.49%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/tanzania~dodoma-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">TANZANIA DODOMA-ISP </a></td><td>ISP</td><td>50</td><td>Mb</td><td>Primary</td><td>padod0:ethernet1/1</td><td>crdod0:gigabitethernet0/0/1, csdod0:gigabitethernet0/0/1, padod0:ethernet1/1</td><td>CO-AFR</td><td>-165,885,013,542,468.28</td> <td>-256,886,429,563,295.62</td><td> 0</td>  <td> 146232.43</td> <td> 0.00%</td> <td> 0.29%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/tanzania~dodoma-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">TANZANIA DODOMA-ISP2 </a></td><td>ISP</td><td>30</td><td>Mb</td><td>Secondary</td><td>padod0:ethernet1/8</td><td>crdod0:gigabitethernet0/0/2, csdod0:gigabitethernet0/0/2, padod0:ethernet1/8</td><td>CO-AFR</td><td>-629,702,753,163,602.38</td> <td>-58,707,831,983,470.05</td><td> 0</td>  <td> 33419.39</td> <td> 0.00%</td> <td> 0.11%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/tanzania-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">TANZANIA-ISP </a></td><td>ISP</td><td>150</td><td>Mb</td><td>Primary</td><td>padar0:ethernet1/1</td><td>crdar0:gigabitethernet0/0/1, csdar0:gigabitethernet0/0/1, padar0:ethernet1/1</td><td>CO-AFR</td><td>-6,815,501,520,346,272.00</td> <td>-3,234,310,025,988,536.00</td><td> 0</td>  <td> 1841128.79</td> <td> 0.00%</td> <td> 1.23%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/tanzania-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">TANZANIA-ISP2 </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Secondary</td><td>Eth1/8</td><td>crdar0:gigabitethernet0/0/2, csdar0:gigabitethernet0/0/2, padar0:ethernet1/8</td><td>CO-AFR</td><td>-66,269,573,826,620,568.00</td> <td>-3,620,843,848,633,229.00</td><td> 0</td>  <td> 2061162.91</td> <td> 0.00%</td> <td> 2.06%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/thailand-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">THAILAND-ISP </a></td><td>ISP</td><td>300</td><td>Mb</td><td>Primary</td><td>pabkk0:ethernet1/1</td><td>crbkk0:gigabitethernet0/0/1, csbkk0:gigabitethernet0/0/1, pabkk0:ethernet1/1</td><td>CO-EAP</td><td>-39,708,505,986,163,664.00</td> <td>-36,856,855,505,945,200.00</td><td> 0</td>  <td> 20980740.02</td> <td> 0.00%</td> <td> 6.99%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/thailand-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">THAILAND-ISP2 </a></td><td>ISP</td><td>250</td><td>Mb</td><td>Secondary</td><td>pabkk0:ethernet1/8</td><td>crbkk0:gigabitethernet0/0/2, csbkk0:gigabitethernet0/0/2, pabkk0:ethernet1/8</td><td>CO-EAP</td><td>-28,798,974,939,356,816.00</td> <td>-11,816,692,591,912,306.00</td><td> 0</td>  <td> 6726644.25</td> <td> 0.00%</td> <td> 2.69%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/timor~leste-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">TIMOR LESTE-ISP </a></td><td>ISP</td><td>50</td><td>Mb</td><td>Secondary</td><td>padil0:ethernet1/1</td><td>crdil0:gigabitethernet0/0/1, csdil0:gigabitethernet0/0/1, padil0:ethernet1/1</td><td>CO-EAP</td><td>-33,781,369,545,743,184.00</td> <td>-44,925,370,881,222,664.00</td><td> 0</td>  <td> 25573736.93</td> <td> 0.00%</td> <td> 51.15%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/timor~leste-mpls?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">TIMOR LESTE-MPLS </a></td><td>MPLS</td><td>4</td><td>Mb</td><td>Primary</td><td>crdil0:Gi0/1</td><td>crdil0:gigabitethernet0/0/2, csdil0:gigabitethernet0/0/2</td><td>CO-EAP</td><td>-344,182,254,443,262.31</td> <td>-1,567,202,438,770,383.25</td><td> 0</td>  <td> 892128.93</td> <td> 0.00%</td> <td> 22.30%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/togo-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">TOGO-ISP </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>palfw0:ethernet1/1</td><td>crlfw0:gigabitethernet0/0/1, cslfw0:gigabitethernet0/0/1, palfw0:ethernet1/1</td><td>CO-AFR</td><td>-594,763,119,271,215.25</td> <td>-224,376,124,315,790.47</td><td> 0</td>  <td> 127725.96</td> <td> 0.00%</td> <td> 0.06%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/togo-mpls?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">TOGO-MPLS </a></td><td>MPLS</td><td>4</td><td>Mb</td><td>Primary</td><td>crlfw0:Gi0/1</td><td>crlfw0:gigabitethernet0/0/2, cslfw0:gigabitethernet0/0/2</td><td>CO-AFR</td><td>-2,298,602,844,789,956.00</td> <td>-873,421,729,612,774.75</td><td> 0</td>  <td> 497194.73</td> <td> 0.00%</td> <td> 12.43%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/tonga-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">TONGA-ISP </a></td><td>ISP</td><td>10</td><td>Mb</td><td>Primary</td><td>patbu0 1/1</td><td>crtbu0:gigabitethernet0/0/0, cstbu0:gigabitethernet0/0/0, patbu0:ethernet1/1</td><td>CO-EAP</td><td>-3,481,133,083,960,061.00</td> <td>-760,541,777,462,878.50</td><td> 0</td>  <td> 432937.89</td> <td> 0.00%</td> <td> 4.33%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/tunisia-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">TUNISIA-ISP </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Primary</td><td>patun0:ethernet1/1</td><td>crtun0:gigabitethernet0/0/1, cstun0:gigabitethernet0/0/1, patun0:ethernet1/1</td><td>CO-MNA</td><td>-665,337,292,179,556.88</td> <td>-1,082,385,097,381,967.75</td><td> 0</td>  <td> 616146.98</td> <td> 0.00%</td> <td> 0.62%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/tunisia-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">TUNISIA-ISP2 </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Secondary</td><td>patun0:ethernet1/8</td><td>crtun0:gigabitethernet0/0/2, cstun0:gigabitethernet0/0/2, patun0:ethernet1/8</td><td>CO-MNA</td><td>-493,373,523,480,604.25</td> <td>-174,864,354,598,191.88</td><td> 0</td>  <td> 99541.42</td> <td> 0.00%</td> <td> 0.10%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/turkey~ankara-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">TURKEY ANKARA-ISP </a></td><td>ISP</td><td>300</td><td>Mb</td><td>Primary</td><td>paank0:ethernet1/1</td><td>crank0:gigabitethernet0/0/1, csank0:gigabitethernet0/0/1, paank0:ethernet1/1</td><td>CO-ECA</td><td>-680,850,379,808,965.75</td> <td>-789,414,060,191,905.88</td><td> 0</td>  <td> 449373.42</td> <td> 0.00%</td> <td> 0.15%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/turkey~ankara-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">TURKEY ANKARA-ISP2 </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>paank0:ethernet8</td><td>crank0:gigabitethernet0/0/2, csank0:gigabitethernet0/0/2, paank0:ethernet1/8</td><td>CO-ECA</td><td>-548,394,064,561,436.88</td> <td>-181,314,718,130,551.94</td><td> 0</td>  <td> 103213.28</td> <td> 0.00%</td> <td> 0.05%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/turkey~istanbul-ifc-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">TURKEY ISTANBUL-IFC-ISP </a></td><td>ISP</td><td>600</td><td>Mb</td><td>Primary</td><td>paist1:ethernet1/1</td><td>rmist1:gigabitethernet0/0/1, rhist1:gigabitethernet0/0/1, paist1:ethernet1/1</td><td>CO-ECA</td><td>-1,136,229,403,121,553.50</td> <td>-1,687,994,950,647,989.75</td><td> 0</td>  <td> 960889.98</td> <td> 0.00%</td> <td> 0.16%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/turkey~istanbul-ifc-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">TURKEY ISTANBUL-IFC-ISP2 </a></td><td>ISP</td><td>500</td><td>Mb</td><td>Secondary</td><td>paist1:ethernet1/8</td><td>rmist1:gigabitethernet0/0/2, rhist1:gigabitethernet0/0/2, paist1:ethernet1/8</td><td>CO-ECA</td><td>-688,105,484,789,193.12</td> <td>-355,639,255,999,556.06</td><td> 0</td>  <td> 202447.41</td> <td> 0.00%</td> <td> 0.04%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/turkmenistan-internet2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">TURKMENISTAN-INTERNET2 </a></td><td>Internet2</td><td>4</td><td>Mb</td><td>Primary</td><td>paasb0 eth1/1</td><td>crasb0:gigabitethernet0/0/1, csasb0:gigabitethernet0/0/1, paasb0:ethernet1/1</td><td>CO-ECA</td><td>-705,296,976,234,402.12</td> <td>-670,198,476,152,316.38</td><td> 0</td>  <td> 381510.03</td> <td> 0.00%</td> <td> 9.54%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/tuvalu-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">TUVALU-ISP </a></td><td>ISP</td><td>5</td><td>Mb</td><td>Primary</td><td>PAFUN0 port:1</td><td>crfun0:gigabitethernet0/0/0, csfun0:gigabitethernet0/0/0, pafun0:ethernet1/1</td><td>CO-EAP</td><td>-116,204,412,394,679.77</td> <td>-236,134,439,926,630.59</td><td> 0</td>  <td> 134419.37</td> <td> 0.00%</td> <td> 2.69%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/uae-abu~dhabi-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">UAE-ABU DHABI-ISP </a></td><td>ISP</td><td>80</td><td>Mb</td><td>Primary</td><td>Paauh0:ethernet1/1</td><td>crauh0:gigabitethernet0/0/1, csauh0:gigabitethernet0/0/1, paauh0:ethernet1/1</td><td>CO-MNA</td><td>-250,098,262,877,959.47</td> <td>-549,205,528,820,701.75</td><td> 0</td>  <td> 312634.88</td> <td> 0.00%</td> <td> 0.39%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/uae-abu~dhabi-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">UAE-ABU DHABI-ISP2 </a></td><td>ISP</td><td>30</td><td>Mb</td><td>Secondary</td><td>paauh0:ethernet1/8</td><td>crauh0:gigabitethernet0/0/2, csauh0:gigabitethernet0/0/2, paauh0:ethernet1/8</td><td>CO-MNA</td><td>-488,692,777,761,012.38</td> <td>-95,406,126,674,896.14</td><td> 0</td>  <td> 54309.87</td> <td> 0.00%</td> <td> 0.18%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/uae-dubai-ifc-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">UAE-DUBAI-IFC-ISP </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Primary</td><td>padxb1:ethernet1/1</td><td>rmdxb1:gigabitethernet0/0/1, rhdxb1:gigabitethernet0/0/1, padxb1:ethernet1/1</td><td>CO-MNA</td><td>-2,137,431,410,336,792.00</td> <td>-1,065,046,094,098,706.88</td><td> 0</td>  <td> 606276.77</td> <td> 0.00%</td> <td> 0.30%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/uae-dubai-ifc-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">UAE-DUBAI-IFC-ISP2 </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Secondary</td><td>padxb1:ethernet1/8</td><td>rmdxb1:gigabitethernet0/0/2, rhdxb1:gigabitethernet0/0/2, padxb1:ethernet1/8</td><td>CO-MNA</td><td>-2,295,013,608,246,189.50</td> <td>-452,695,620,544,141.94</td><td> 0</td>  <td> 257696.68</td> <td> 0.00%</td> <td> 0.26%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/uganda-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">UGANDA-ISP </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Primary</td><td>paebb0:ethernet1/1</td><td>crebb0:gigabitethernet0/0/1, csebb0:gigabitethernet0/0/1, paebb0:ethernet1/1</td><td>CO-AFR</td><td>-4,432,040,292,532,721.00</td> <td>-1,624,334,033,821,961.00</td><td> 0</td>  <td> 924651.05</td> <td> 0.00%</td> <td> 0.46%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/uganda-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">UGANDA-ISP2 </a></td><td>ISP</td><td>100</td><td>Mb</td><td>Secondary</td><td>PAEBB0 Ethernet port 8</td><td>crebb0:gigabitethernet0/0/2, csebb0:gigabitethernet0/0/2, paebb0:ethernet1/8</td><td>CO-AFR</td><td>-15,172,351,003,167,056.00</td> <td>-1,445,448,357,093,711.25</td><td> 0</td>  <td> 822820.50</td> <td> 0.00%</td> <td> 0.82%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/ukraine-ifc-internet2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">UKRAINE-IFC-INTERNET2 </a></td><td>Internet2</td><td>300</td><td>Mb</td><td>Primary</td><td>pakbp0:ethernet1/1</td><td>crkbp0:gigabitethernet0/0/1, cskbp0:gigabitethernet0/0/1, pakbp0:ethernet1/1</td><td>CO-ECA</td><td>-223,705,126,615,369.62</td> <td>-411,619,706,629,957.56</td><td> 0</td>  <td> 234314.24</td> <td> 0.00%</td> <td> 0.08%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/ukraine-ifc-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">UKRAINE-IFC-ISP </a></td><td>ISP</td><td>300</td><td>Mb</td><td>Secondary</td><td>pakbp0:ethernet1/8</td><td>crkbp0:gigabitethernet0/0/2, cskbp0:gigabitethernet0/0/2, pakbp0:ethernet1/8</td><td>CO-ECA</td><td>-546,289,215,803,448.38</td> <td>-183,750,914,509,265.66</td><td> 0</td>  <td> 104600.08</td> <td> 0.00%</td> <td> 0.03%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/united~kingdom-ifc-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">UNITED KINGDOM-IFC-ISP </a></td><td>ISP</td><td>500</td><td>Mb</td><td>Primary</td><td>palon1:ethernet1/1</td><td>rmlon1:gigabitethernet0/0/1, rhlon1:gigabitethernet0/0/1, palon1:ethernet1/1</td><td>CO-EXT</td><td>-1,559,930,108,138,750.50</td> <td>-2,158,547,705,409,444.00</td><td> 0</td>  <td> 1228751.82</td> <td> 0.00%</td> <td> 0.25%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/united~kingdom-ifc-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">UNITED KINGDOM-IFC-ISP2 </a></td><td>ISP</td><td>1</td><td>Gb</td><td>Secondary</td><td>palon1:ethernet1/8</td><td>rmlon1:gigabitethernet0/0/2, rhlon1:gigabitethernet0/0/2, palon1:ethernet1/8</td><td>CO-EXT</td><td>-1,895,881,242,712,016.00</td> <td>-751,804,552,051,052.25</td><td> 0</td>  <td> 427964.23</td> <td> 0.00%</td> <td> 0.04%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/uruguay-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">URUGUAY-ISP </a></td><td>ISP</td><td>120</td><td>Mb</td><td>Primary</td><td>pamvd0:ethernet1/1</td><td>crmvd0:gigabitethernet0/0/1, csmvd0:gigabitethernet0/0/1, pamvd0:ethernet1/1</td><td>CO-LCR</td><td>-697,926,240,638,282.62</td> <td>-594,116,979,814,185.62</td><td> 0</td>  <td> 338200.69</td> <td> 0.00%</td> <td> 0.28%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/uruguay-mpls?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">URUGUAY-MPLS </a></td><td>MPLS</td><td>3</td><td>Mb</td><td>Secondary</td><td>crmvd0:Gi0/1</td><td>crmvd0:gigabitethernet0/0/2, csmvd0:gigabitethernet0/0/2</td><td>CO-LCR</td><td>-1,141,783,836,281.51</td> <td>-806,940,964,476.64</td><td> 0</td>  <td> 459.35</td> <td> 0.00%</td> <td> 0.02%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/uzbekistan-internet2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">UZBEKISTAN-INTERNET2 </a></td><td>Internet2</td><td>80</td><td>Mb</td><td>Primary</td><td>patas0 eth1/1</td><td>crtas0:gigabitethernet0/0/1, cstas0:gigabitethernet0/0/1, patas0:ethernet1/1</td><td>CO-ECA</td><td>-878,981,654,533,316.25</td> <td>-1,471,888,583,912,635.50</td><td> 0</td>  <td> 837871.58</td> <td> 0.00%</td> <td> 1.05%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/uzbekistan-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">UZBEKISTAN-ISP </a></td><td>ISP</td><td>250</td><td>Mb</td><td>Secondary</td><td>patas0:ethernet1/1</td><td>crtas0:gigabitethernet0/0/2, cstas0:gigabitethernet0/0/2, patas0:ethernet1/8</td><td>CO-ECA</td><td>-683,902,502,110,307.12</td> <td>-355,358,462,227,541.12</td><td> 0</td>  <td> 202287.56</td> <td> 0.00%</td> <td> 0.08%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/vanuatu-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">VANUATU-ISP </a></td><td>ISP</td><td>30</td><td>Mb</td><td>Secondary</td><td>pavli0:ethernet1/1</td><td>pavli0:ethernet1/1</td><td>CO-EAP</td><td>0.00</td> <td>0.00</td><td> 0.00</td>  <td> 0.00</td> <td> 0.00%</td> <td> 0.00%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/vietnam-ifc-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">VIETNAM-IFC-ISP </a></td><td>ISP</td><td>50</td><td>Mb</td><td>Primary</td><td>pasgn1: Ethernet 1/1</td><td>rmsgn1:gigabitethernet0/0/1, rhsgn1:gigabitethernet0/0/1, pasgn1:ethernet1/1</td><td>CO-EAP</td><td>-476,087,217,686,469.25</td> <td>-643,515,453,947,396.12</td><td> 0</td>  <td> 366320.74</td> <td> 0.00%</td> <td> 0.73%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/vietnam-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">VIETNAM-ISP </a></td><td>ISP</td><td>250</td><td>Mb</td><td>Primary</td><td>pahan0:ethernet1/1</td><td>crhan0:gigabitethernet0/0/1, cshan0:gigabitethernet0/0/1, pahan0:ethernet1/1</td><td>CO-EAP</td><td>-2,001,457,381,419,403.25</td> <td>-3,015,936,305,585,943.50</td><td> 0</td>  <td> 1716819.70</td> <td> 0.00%</td> <td> 0.69%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/vietnam-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">VIETNAM-ISP2 </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>pahan0 Eth 1/8</td><td>crhan0:gigabitethernet0/0/2, cshan0:gigabitethernet0/0/2, pahan0:ethernet1/8</td><td>CO-EAP</td><td>-5,269,315,975,941,864.00</td> <td>-839,166,029,178,188.38</td><td> 0</td>  <td> 477694.69</td> <td> 0.00%</td> <td> 0.24%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/west~bank~jerusalem-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">WEST BANK JERUSALEM-ISP </a></td><td>ISP</td><td>200</td><td>Mb</td><td>Secondary</td><td>pawbg0:ethernet1/8</td><td>crwbg0:gigabitethernet0/0/2, cswbg0:gigabitethernet0/0/2, pawbg0:ethernet1/8</td><td>CO-MNA</td><td>-565,915,382,959,503.88</td> <td>-203,508,318,788,679.78</td><td> 0</td>  <td> 115846.97</td> <td> 0.00%</td> <td> 0.06%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/west~bank~jerusalem-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">WEST BANK JERUSALEM-ISP2 </a></td><td>ISP</td><td>80</td><td>Mb</td><td>Primary</td><td>pawbg0:ethernet1/1</td><td>crwbg0:gigabitethernet0/0/1, cswbg0:gigabitethernet0/0/1, pawbg0:ethernet1/1</td><td>CO-MNA</td><td>-2,693,380,509,049,130.00</td> <td>-1,280,148,419,467,386.00</td><td> 0</td>  <td> 728723.62</td> <td> 0.00%</td> <td> 0.91%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/zambia-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">ZAMBIA-ISP </a></td><td>ISP</td><td>70</td><td>Mb</td><td>Primary</td><td>palun0:ethernet1/1</td><td>crlun0:gigabitethernet0/0/1, cslun0:gigabitethernet0/0/1, palun0:ethernet1/1</td><td>CO-AFR</td><td>0.00</td> <td>0.00</td><td> 0</td>  <td> 0.00</td> <td> 0.00%</td> <td> 0.00%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/zambia-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">ZAMBIA-ISP2 </a></td><td>ISP</td><td>70</td><td>Mb</td><td>Secondary</td><td>palun0 Ethernet 1:8</td><td>crlun0:gigabitethernet0/0/2, cslun0:gigabitethernet0/0/2, palun0:ethernet1/8</td><td>CO-AFR</td><td>0.00</td> <td>0.00</td><td> 0</td>  <td> 0.00</td> <td> 0.00%</td> <td> 0.00%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/zimbabwe-isp?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">ZIMBABWE-ISP </a></td><td>ISP</td><td>45</td><td>Mb</td><td>Primary</td><td>pahre0:ethernet1/1</td><td>crhre0:gigabitethernet0/0/1, cshre0:gigabitethernet0/0/1, pahre0:ethernet1/1</td><td>CO-AFR</td><td>-2,448,864,944,670,480.50</td> <td>-791,328,851,340,120.38</td><td> 0</td>  <td> 450463.41</td> <td> 0.00%</td> <td> 1.00%</td>
+    </tr>
+        <tr>
+    <td><a href="http://neta/cricket/totals/co-traffic/zimbabwe-isp2?view=Bits;range=0&start=1756699200;maxrows=720" target=_blank class="demo_img">ZIMBABWE-ISP2 </a></td><td>ISP</td><td>55</td><td>Mb</td><td>Secondary</td><td>pahre0:ethernet1/8</td><td>crhre0:gigabitethernet0/0/2, cshre0:gigabitethernet0/0/2, pahre0:ethernet1/8</td><td>CO-AFR</td><td>-165,875,829,581,658.72</td> <td>-92,720,348,654,570.38</td><td> 0</td>  <td> 52781.00</td> <td> 0.00%</td> <td> 0.10%</td>
+    </tr>
+    </table>

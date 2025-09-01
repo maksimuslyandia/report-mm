@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 use App\Models\WanStatTotal;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use InfluxDB2\Client;
 
 class WanStatTotalController extends Controller
 {
     public function index()
     {
-        $wanStats = WanStatTotal::all();
+        $wanStats = WanStatTotal::orderBy('id', 'desc')->get();
         return view('wan_stats.index', compact('wanStats'));
     }
+
 
     public function create()
     {
@@ -124,5 +126,53 @@ class WanStatTotalController extends Controller
 
         return response()->stream($callback, 200, $headers);
     }
+    public function exportToInflux()
+    {
 
+        $now = Carbon::now();
+        $monthStart = $now->copy()->subMonth()->startOfMonth();
+
+        // Get all records for the previous month
+        $stats = WanStatTotal::where('start_datetime', $monthStart)->get();
+
+        if ($stats->isEmpty()) {
+            return response()->json(['message' => 'No records found for previous month.'], 404);
+        }
+
+        $client = new Client([
+            "url" => 'http://localhost:8086',
+            "token" => '7dRogxWiGdluSbNgTybq8ju_RDHN2DrQ1il8j0mhGKgav_vHczhFBKka7A76KGEZX8LTcWEziNQOqQiXbuW-5Q==',
+            "org" => 'wbg',
+            "bucket" => 'wan_stats',
+            "precision" => "s", // timestamps in seconds
+        ]);
+
+        $writeApi = $client->createWriteApi();
+
+
+        foreach ($stats as $record) {
+            $point = \InfluxDB2\Point::measurement('wan_stats')
+                ->addTag('link_name', $record->link_name)
+                ->addTag('link_type', $record->link_type)
+                ->addTag('region', $record->region)
+                ->addField('bandwidth_bits', $record->bandwidth_bits)
+                ->addField('traffic_in', $record->traffic_in)
+                ->addField('traffic_out', $record->traffic_out)
+                ->addField('q_95_in', $record->q_95_in)
+                ->addField('q_95_out', $record->q_95_out)
+                ->time($record->start_datetime->timestamp); // seconds
+
+            $points[] = $point; // ✅ add point to array
+        }
+
+        // Write all points in batch
+        $writeApi->write($points);
+
+        $client->close();
+
+        return response()->json([
+            'message' => 'Records written to InfluxDB successfully.',
+            'count' => count($points)
+        ]);
+    }
 }

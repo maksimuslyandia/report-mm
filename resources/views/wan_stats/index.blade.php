@@ -6,7 +6,7 @@
             <h2>WAN Stat Totals</h2>
             <a href="{{ route('wan_stats.create') }}" class="btn btn-primary">+ Add New</a>
             <a href="{{ route('wan_stats.export') }}" class="btn btn-success mb-3">
-                Download Current Month CSV
+                Download Last Month CSV
             </a>
 
         </div>

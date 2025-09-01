@@ -39,8 +39,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('device_interfaces', DeviceInterfaceController::class);
     Route::resource('pools', PoolController::class);
     Route::resource('wan_stats', WanStatTotalController::class);
-    Route::get('/wan-stats/export', [WanStatTotalController::class, 'exportCsv'])
-        ->name('wan_stats.export');
+
+
+    Route::get('/wan-stats/influx', [WanStatTotalController::class, 'exportToInflux']);
+
 
     Route::get('/settings', function () {
         return view('dashboard');
@@ -48,11 +50,14 @@ Route::middleware('auth')->group(function () {
 
 });
 
+Route::get('/wan-stats/export', [WanStatTotalController::class, 'exportCsv'])
+    ->name('wan_stats.export');
 
-
-Route::get('/export', [MetricsController::class, 'getMetrics']);
-Route::get('/export-test', [MetricsController::class, 'getMetrics_good']);
+//Route::get('/export', [MetricsController::class, 'getMetrics']);
+//Route::get('/export-test', [MetricsController::class, 'getMetrics_good']);
 
 Route::get('/export-sum-test', [SumMetricsController::class, 'getSumMetricsOneDeviceInterface']);
+//Route::get('/export-sum', [SumMetricsController::class, 'getSumMetrics']);
 Route::get('/export-sum', [SumMetricsController::class, 'getSumMetrics']);
+Route::get('/export-sum-norm', [SumMetricsController::class, 'getSumMetrics_norm']);
 Route::get('/export-sum-may', [SumMetricsController::class, 'getSumMetricsMay']);

@@ -9,9 +9,9 @@ use App\Models\Device;
 use App\Models\DeviceInterface;
 use League\Csv\Reader;
 use Carbon\Carbon;
-class ImportDevicesFromCsv extends Command
+class ImportDevicesFromCsvNoRand extends Command
 {
-    protected $signature = 'import:devices {file}';
+    protected $signature = 'importnorand:devices {file}';
     protected $description = 'Import devices and interfaces from CSV file';
 
     /**
@@ -55,7 +55,18 @@ class ImportDevicesFromCsv extends Command
         // Get the start/end datetime for this file
         $dates = $getMonthDateRangeFromFileName($file);
 
-             $csv = Reader::createFromPath($file, 'r');
+//        // Generate single random percentage for this import
+//        $percent = mt_rand(20, 300) / 100; // 0.2% → 3%
+//        $sign    = mt_rand(0,1) ? 1 : -1;
+//        $factor_in  = 1 + ($percent / 100) * $sign;
+//
+//        // Generate single random percentage for this import
+//        $percent = mt_rand(20, 300) / 100; // 0.2% → 3%
+//        $sign    = mt_rand(0,1) ? 1 : -1;
+//        $factor_out  = 1 + ($percent / 100) * $sign;
+
+
+        $csv = Reader::createFromPath($file, 'r');
         $csv->setHeaderOffset(0);
 
         foreach ($csv as $record) {
@@ -115,17 +126,17 @@ class ImportDevicesFromCsv extends Command
                 // 5. WanStatTotal
 dump($record['Link']);
 //dd($record);
-//                $except = [
-//                    'hq-dc5-azure_2',
-//                    'hq-dc5-sterling_odyx/236412//zyo',
-//                    'hq-dc5-azure_1',
-//                    'hq-dc5-cmc-mpls-nanet-eth-us-cha-worldbank-crt143-nj001',
-//                    'hq-dc5-sita-mpls_xcbiad3807',
-//                    'hq-dc5-aws'
-//                ];
-//                if (in_array($record['Link'], $except)) {
-//                    continue; // skip this CSV row
-//                }
+                $except = [
+                    'hq-dc5-azure_2',
+                    'hq-dc5-sterling_odyx/236412//zyo',
+                    'hq-dc5-azure_1',
+                    'hq-dc5-cmc-mpls-nanet-eth-us-cha-worldbank-crt143-nj001',
+                    'hq-dc5-sita-mpls_xcbiad3807',
+                    'hq-dc5-aws'
+                ];
+                if (in_array($record['Link'], $except)) {
+                    continue; // skip this CSV row
+                }
 
                 $exists = WanStatTotal::where([
                     'link_name'      => $record['Link'],
@@ -135,21 +146,11 @@ dump($record['Link']);
                     'end_datetime'   => $dates['end'],
                 ])->exists();
 
-                // Generate single random percentage for this import
-                $percent = mt_rand(20, 300) / 100; // 0.2% → 3%
-                $sign    = mt_rand(0,1) ? 1 : -1;
-                $factor_in  = 1 + ($percent / 100) * $sign;
-
-                // Generate single random percentage for this import
-                $percent = mt_rand(20, 300) / 100; // 0.2% → 3%
-                $sign    = mt_rand(0,1) ? 1 : -1;
-                $factor_out  = 1 + ($percent / 100) * $sign;
-
                 if (!$exists) {
-                    $trafficIn  = isset($record['Total In - Bits']) ? (float) str_replace(',', '', $record['Total In - Bits']) * $factor_in : 0;
-                    $trafficOut = isset($record['Total Out - Bits']) ? (float) str_replace(',', '', $record['Total Out - Bits']) * $factor_out : 0;
-                    $q95In  = isset($record['95Percentile-In(Bits/s)']) ? (float) str_replace(',', '', $record['95Percentile-In(Bits/s)']) * $factor_in : 0;
-                    $q95Out = isset($record['95Percentile-Out(Bits/s)']) ? (float) str_replace(',', '', $record['95Percentile-Out(Bits/s)']) * $factor_out : 0;
+                    $trafficIn  = isset($record['Total In - Bits']) ? (float) str_replace(',', '', $record['Total In - Bits']) : 0;
+                    $trafficOut = isset($record['Total Out - Bits']) ? (float) str_replace(',', '', $record['Total Out - Bits']) : 0;
+                    $q95In  = isset($record['95Percentile-In(Bits/s)']) ? (float) str_replace(',', '', $record['95Percentile-In(Bits/s)'])  : 0;
+                    $q95Out = isset($record['95Percentile-Out(Bits/s)']) ? (float) str_replace(',', '', $record['95Percentile-Out(Bits/s)']) : 0;
 
                     WanStatTotal::updateOrCreate(
                         [
