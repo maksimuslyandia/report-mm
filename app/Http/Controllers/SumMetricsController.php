@@ -370,8 +370,7 @@ class SumMetricsController extends Controller
         $key = implode('|', $flattened);
         return $this->predefinedMetricsMay[$key] ?? null;
     }
-
-
+    
     public function getSumMetrics(Request $request)
     {
         $pairs = [];

@@ -76,6 +76,18 @@ class ImportDevicesFromCsv extends Command
                 if (!str_contains($if, ':')) continue;
 
                 [$deviceName, $interfaceName] = explode(':', $if, 2);
+                
+                // Normalize interface names
+                $interfaceName = trim($interfaceName);
+                $replacements = [
+                    'HundredGigE' => 'Hu',
+                    'TwentyFiveGig1' => 'Twe',
+                    'GigabitEthernet' => 'Gi',
+                ];
+
+                foreach ($replacements as $search => $replace) {
+                    $interfaceName = str_replace($search, $replace, $interfaceName);
+                }
 
                 // 1. Device
                 $device = Device::firstOrCreate(['hostname' => $deviceName]);
