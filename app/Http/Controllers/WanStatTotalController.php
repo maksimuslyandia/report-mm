@@ -22,7 +22,7 @@ class WanStatTotalController extends Controller
 
     public function store(Request $request): \Illuminate\Http\RedirectResponse
     {
-        $request->validate([
+        $validated = $request->validate([
             'link_name' => 'required|string',
             'link_type' => 'required|string',
             'region' => 'required|string',
@@ -33,9 +33,25 @@ class WanStatTotalController extends Controller
             'q_95_out' => 'required|numeric',
             'start_datetime' => 'required|date',
             'end_datetime' => 'required|date',
+
+            // meta data
+            'airport_code' => 'nullable|string',
+            'isp_type' => 'nullable|string',
         ]);
 
         WanStatTotal::create($request->all());
+
+        // create WAN Stat
+        $wanStat = WanStatTotal::create($validated);
+
+        // create meta data if provided
+        if ($request->filled('airport_code') || $request->filled('isp_type')) {
+            $wanStat->metaData()->create([
+                'airport_code' => $request->airport_code,
+                'isp_type' => $request->isp_type,
+            ]);
+        }
+
 
         return redirect()->route('wan_stats.index')
             ->with('success','WAN Stat Total created successfully.');
@@ -51,9 +67,9 @@ class WanStatTotalController extends Controller
         return view('wan_stats.edit', compact('wan_stat'));
     }
 
-    public function update(Request $request, WanStatTotal $wanStatTotal): \Illuminate\Http\RedirectResponse
+    public function update(Request $request, WanStatTotal $wanStatTotal)
     {
-        $request->validate([
+        $validated = $request->validate([
             'link_name' => 'required|string',
             'link_type' => 'required|string',
             'region' => 'required|string',
@@ -64,12 +80,25 @@ class WanStatTotalController extends Controller
             'q_95_out' => 'required|numeric',
             'start_datetime' => 'required|date',
             'end_datetime' => 'required|date',
+
+            'airport_code' => 'nullable|string',
+            'isp_type' => 'nullable|string',
         ]);
 
-        $wanStatTotal->update($request->all());
+        // update WAN Stat
+        $wanStatTotal->update($validated);
+
+        // update or create metadata
+        $wanStatTotal->metaData()->updateOrCreate(
+            ['wan_stat_total_id' => $wanStatTotal->id],
+            [
+                'airport_code' => $request->airport_code,
+                'isp_type' => $request->isp_type,
+            ]
+        );
 
         return redirect()->route('wan_stats.index')
-            ->with('success','WAN Stat Total updated successfully.');
+            ->with('success','WAN Stat Total with metadata updated successfully.');
     }
 
     public function destroy(WanStatTotal $wan_stat): \Illuminate\Http\RedirectResponse

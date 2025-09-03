@@ -52,4 +52,6 @@
                value="{{ old('end_datetime', isset($wanStatTotal) ? \Carbon\Carbon::parse($wanStatTotal->end_datetime)->format('Y-m-d\TH:i') : '') }}"
                class="form-control">
     </div>
+    
+
 </div>

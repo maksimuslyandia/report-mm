@@ -56,6 +56,7 @@
                 <label class="form-label">End Datetime</label>
                 <input type="datetime-local" name="end_datetime" value="{{ old('end_datetime', \Carbon\Carbon::parse($wan_stat->end_datetime)->format('Y-m-d\TH:i')) }}" class="form-control" required>
             </div>
+
             <button type="submit" class="btn btn-primary">Update</button>
             <a href="{{ route('wan_stats.index') }}" class="btn btn-secondary">Cancel</a>
         </form>

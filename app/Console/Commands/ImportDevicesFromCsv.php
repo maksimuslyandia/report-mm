@@ -76,9 +76,14 @@ class ImportDevicesFromCsv extends Command
                 $interfaceName = strtolower(trim($interfaceName));
 
                 $replacements = [
-                    'hundredgige'      => 'Hu',
-                    'twentyfivegig1'   => 'Twe',
-                    'gigabitethernet'  => 'Gi',
+                    'hundredgige0'      => 'Hu0',
+                    'hundredgige1'      => 'Hu1',
+                    'twentyfivegige0'   => 'Twe0',
+                    'twentyfivegige1'   => 'Twe1',
+                    'tengigabitethernet0'  => 'Te0',
+                    'tengigabitethernet1'  => 'Te1',
+                    'gigabitethernet1'  => 'Gi1',
+                    'gigabitethernet0'  => 'Gi0',
                 ];
 
                 foreach ($replacements as $search => $replace) {

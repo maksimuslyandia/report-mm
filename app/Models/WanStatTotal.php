@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class WanStatTotal extends Model
 {
     protected $fillable = [
@@ -24,4 +25,8 @@ class WanStatTotal extends Model
         'end_datetime' => 'datetime',
     ];
 
+    public function metaData()
+    {
+        return $this->hasOne(MetaData::class);
+    }
 }
