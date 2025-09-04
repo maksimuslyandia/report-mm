@@ -22,24 +22,24 @@
                 <span> {{ __('Devices') }} </span>
             </a>
         </li>
-        <li class="nav-item {{ Str::startsWith(Route::currentRouteName(), 'pools.') ? 'active' : '' }}">
-            <a href="{{ route('pools.index') }}" class="nav-link d-flex align-items-center">
-                <i class="bi bi-gear"></i>
-                <span> {{ __('Pools') }} </span>
-            </a>
-        </li>
+{{--        <li class="nav-item {{ Str::startsWith(Route::currentRouteName(), 'pools.') ? 'active' : '' }}">--}}
+{{--            <a href="{{ route('pools.index') }}" class="nav-link d-flex align-items-center">--}}
+{{--                <i class="bi bi-gear"></i>--}}
+{{--                <span> {{ __('Pools') }} </span>--}}
+{{--            </a>--}}
+{{--        </li>--}}
         <li class="nav-item {{ Str::startsWith(Route::currentRouteName(), 'wan_stats.') ? 'active' : '' }}">
             <a href="{{ route('wan_stats.index') }}" class="nav-link d-flex align-items-center">
                 <i class="bi bi-gear"></i>
                 <span> {{ __('WAN Stats') }} </span>
             </a>
         </li>
-        <li class="nav-item {{ Str::startsWith(Route::currentRouteName(), 'settings.') ? 'active' : '' }}">
-            <a href="{{ route('settings') }}" class="nav-link d-flex align-items-center">
-                <i class="bi bi-gear"></i>
-                <span> {{ __('Settings') }} </span>
-            </a>
-        </li>
+{{--        <li class="nav-item {{ Str::startsWith(Route::currentRouteName(), 'settings.') ? 'active' : '' }}">--}}
+{{--            <a href="{{ route('settings') }}" class="nav-link d-flex align-items-center">--}}
+{{--                <i class="bi bi-gear"></i>--}}
+{{--                <span> {{ __('Settings') }} </span>--}}
+{{--            </a>--}}
+{{--        </li>--}}
 
         <!-- Move Logout to the end -->
         <li class="mt-auto"><i class="bi bi-box-arrow-right"></i> <span>Logout</span></li>

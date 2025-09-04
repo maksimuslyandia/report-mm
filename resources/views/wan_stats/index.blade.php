@@ -8,6 +8,9 @@
             <a href="{{ route('wan_stats.export') }}" class="btn btn-success mb-3">
                 Download Last Month CSV
             </a>
+            <a href="{{ route('wan_stats.totals') }}" class="btn btn-warning mb-3">
+                Download Last Month Totals CSV
+            </a>
 
         </div>
 
@@ -56,6 +59,9 @@
                                 <th>Traffic Out</th>
                                 <th>95% In</th>
                                 <th>95% Out</th>
+                                <th>Airport Code</th>
+                                <th>ISP Type</th>
+                                <th>Is IBO</th> <!-- NEW -->
                                 <th>Start</th>
                                 <th>End</th>
                                 <th>Actions</th>
@@ -63,7 +69,6 @@
                             </thead>
                             <tbody>
                             @foreach ($stats as $stat)
-
                                 <tr>
                                     <td>{{ $stat->link_name }}</td>
                                     <td>{{ $stat->link_type }}</td>
@@ -73,6 +78,9 @@
                                     <td>{{ number_format($stat->traffic_out) }}</td>
                                     <td>{{ number_format($stat->q_95_in) }}</td>
                                     <td>{{ number_format($stat->q_95_out) }}</td>
+                                    <td>{{ $stat->metaData->airport_code ?? '-' }}</td>
+                                    <td>{{ $stat->metaData->isp_type ?? '-' }}</td>
+                                    <td>{{ $stat->metaData?->is_ibo ? 'Yes' : 'No' }}</td>
                                     <td>{{ $stat->start_datetime }}</td>
                                     <td>{{ $stat->end_datetime }}</td>
                                     <td>
@@ -89,6 +97,8 @@
                                 </tr>
                             @endforeach
                             </tbody>
+
+
                         </table>
                     </div>
 

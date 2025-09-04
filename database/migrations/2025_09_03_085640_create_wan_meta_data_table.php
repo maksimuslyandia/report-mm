@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('wan_meta_data', function (Blueprint $table) {
             $table->id();
             $table->string('airport_code');
-            $table->string('isp_type');
-            $table->foreignId('wan_stat_total_id');
+            $table->string('isp')->nullable(); // isp-a or isp-b
+            $table->string('isp_type')->nullable(); // ibrd, pfr, mpls, vsat
+            $table->foreignId('wan_stat_total_id')->constrained()->onDelete('cascade');
+            $table->boolean('is_ibo')->default(false);
             $table->timestamps();
         });
     }

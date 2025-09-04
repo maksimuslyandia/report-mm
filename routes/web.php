@@ -50,8 +50,20 @@ Route::middleware('auth')->group(function () {
 
 });
 
+Route::get('/grafana/totals', [WanStatTotalController::class, 'exportTotalsCsv'])
+    ->name('wan_stats.totals');
 Route::get('/wan-stats/export', [WanStatTotalController::class, 'exportCsv'])
     ->name('wan_stats.export');
+Route::get('/wan-stats/add-pfr', [WanStatTotalController::class, 'addPfr'])
+    ->name('wan_stats.add-pfr');
+Route::get('/wan-stats/add-ibo', [WanStatTotalController::class, 'addIBO'])
+    ->name('wan_stats.add-ibo');
+
+
+Route::get('/wan-stats/metadata/get', [WanStatTotalController::class, 'addMetaData']);
+Route::get('/wan-stats/metadata', [WanStatTotalController::class, 'metaData']);
+
+
 
 //Route::get('/export', [MetricsController::class, 'getMetrics']);
 //Route::get('/export-test', [MetricsController::class, 'getMetrics_good']);

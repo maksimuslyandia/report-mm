@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 
+
 class WanStatTotal extends Model
 {
     protected $fillable = [
@@ -27,6 +28,23 @@ class WanStatTotal extends Model
 
     public function metaData()
     {
-        return $this->hasOne(MetaData::class);
+        return $this->hasOne(WanMetaData::class);
+    }
+
+    public function pool()
+    {
+        return $this->hasOne(Pool::class, 'name', 'link_name');
+    }
+    // shortcut to device (through pool)
+    public function device()
+    {
+        return $this->hasOneThrough(
+            Device::class,   // final model
+            Pool::class,     // intermediate model
+            'name',          // FK on Pool (maps to WanStatTotal.link_name)
+            'id',            // FK on Device
+            'link_name',     // local key on WanStatTotal
+            'device_id'      // local key on Pool
+        );
     }
 }

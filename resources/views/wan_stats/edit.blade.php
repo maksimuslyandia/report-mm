@@ -57,6 +57,32 @@
                 <input type="datetime-local" name="end_datetime" value="{{ old('end_datetime', \Carbon\Carbon::parse($wan_stat->end_datetime)->format('Y-m-d\TH:i')) }}" class="form-control" required>
             </div>
 
+
+            <div class="mb-3">
+                <label>Airport Code</label>
+                <input type="text" name="airport_code"
+                       value="{{ old('airport_code', $wan_stat->metaData->airport_code ?? '') }}"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label>ISP Type</label>
+                <input type="text" name="isp_type"
+                       value="{{ old('isp_type', $wan_stat->metaData->isp_type ?? '') }}"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <input type="checkbox"
+                       class="form-check-input"
+                       id="is_ibo"
+                       name="is_ibo"
+                       value="1"
+                       @if(isset($wan_stat->metaData) && $wan_stat->metaData->is_ibo) checked @endif>
+
+                <label class="form-check-label" for="is_ibo">Is IBO</label>
+            </div>
+
+            <input type="hidden" name="wan_stat_total_id" value="{{ $wan_stat->id }}">
+
             <button type="submit" class="btn btn-primary">Update</button>
             <a href="{{ route('wan_stats.index') }}" class="btn btn-secondary">Cancel</a>
         </form>
