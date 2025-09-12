@@ -157,6 +157,7 @@ dump($record['Link']);
                             'link_name' => $record['Link'],
                             'link_type' =>$record['Type'],
                             'region'    => $record['RegionVPU'],
+                            'is_wan_stat'    => 1,
                             'start_datetime' => $dates['start'],
                             'end_datetime'   => $dates['end'],
                         ],

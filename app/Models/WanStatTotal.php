@@ -12,6 +12,7 @@ class WanStatTotal extends Model
         'link_name',
         'link_type',
         'region',
+        'is_wan_stat_',
         'bandwidth_bits',
         'pool_name',       // or 'pool_id' if you use foreign key
         'traffic_in',

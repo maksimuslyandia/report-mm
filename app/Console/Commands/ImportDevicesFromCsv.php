@@ -118,7 +118,7 @@ class ImportDevicesFromCsv extends Command
                 };
 
                 // 5. WanStatTotal
-dump($record['Link']);
+                dump($record['Link']);
 //dd($record);
 //                $except = [
 //                    'hq-dc5-azure_2',
@@ -161,6 +161,7 @@ dump($record['Link']);
                             'link_name' => $record['Link'],
                             'link_type' =>$record['Type'],
                             'region'    => $record['RegionVPU'],
+                            'is_wan_stat'    => 1,
                             'start_datetime' => $dates['start'],
                             'end_datetime'   => $dates['end'],
                         ],
