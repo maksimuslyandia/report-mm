@@ -176,7 +176,9 @@ class WanStatTotalController extends Controller
         $monthStart = Carbon::now()->subMonth()->startOfMonth()->format('Y-m-d H:i:s');
 
         // Подгружаем metaData
-        $stats = WanStatTotal::with('metaData')->where('start_datetime', $monthStart)->get();
+        $stats = WanStatTotal::with('metaData')
+            ->where('start_datetime', $monthStart)
+            ->get();
 
         $headers = [
             "Content-type" => "text/csv",
@@ -186,44 +188,65 @@ class WanStatTotalController extends Controller
             "Expires" => "0"
         ];
 
-        // Добавляем новые колонки
         $columns = [
             'airport_code',
             'isp_type',
             'isp',
-//            'link_name',
-//            'link_type',
-//            'region',
-//            'bandwidth_bits',
             'traffic_in',
             'traffic_out',
             'q_95_in',
             'q_95_out',
-//            'start_datetime', 'end_datetime',
-//            'is_ibo' // новые колонки
         ];
 
         $callback = function () use ($stats, $columns) {
             $file = fopen('php://output', 'w');
             fputcsv($file, $columns);
 
+            $totalsByIspType = [];
+
             foreach ($stats as $row) {
+                $ispType = $row->metaData->isp_type ?? 'unknown';
+
+                // Add row to CSV
                 fputcsv($file, [
                     $row->metaData->airport_code ?? '',
-                    $row->metaData->isp_type ?? '',
+                    $ispType,
                     $row->metaData->isp ?? '',
-//                    $row->link_name,
-//                    $row->link_type,
-//                    $row->region,
-//                    $row->bandwidth_bits,
                     $row->traffic_in,
                     $row->traffic_out,
                     $row->q_95_in,
                     $row->q_95_out,
-//                    $row->start_datetime,
-//                    $row->end_datetime,
+                ]);
 
-//                    $row->metaData->is_ibo ? 'Yes' : 'No',
+                // Calculate totals per ISP type
+                if (!isset($totalsByIspType[$ispType])) {
+                    $totalsByIspType[$ispType] = [
+                        'traffic_in' => 0,
+                        'traffic_out' => 0,
+                        'q_95_in' => 0,
+                        'q_95_out' => 0,
+                    ];
+                }
+
+                $totalsByIspType[$ispType]['traffic_in'] += $row->traffic_in;
+                $totalsByIspType[$ispType]['traffic_out'] += $row->traffic_out;
+                $totalsByIspType[$ispType]['q_95_in'] += $row->q_95_in;
+                $totalsByIspType[$ispType]['q_95_out'] += $row->q_95_out;
+            }
+
+            // Add a blank row
+            fputcsv($file, []);
+
+            // Add totals rows per ISP type
+            foreach ($totalsByIspType as $ispType => $totals) {
+                fputcsv($file, [
+                    '',               // airport_code blank
+                    $ispType,         // isp_type
+                    'TOTAL',          // isp column shows TOTAL
+                    $totals['traffic_in'],
+                    $totals['traffic_out'],
+//                    $totals['q_95_in'],
+//                    $totals['q_95_out'],
                 ]);
             }
 
@@ -232,6 +255,7 @@ class WanStatTotalController extends Controller
 
         return response()->stream($callback, 200, $headers);
     }
+
 
 
     public function exportToInflux()
