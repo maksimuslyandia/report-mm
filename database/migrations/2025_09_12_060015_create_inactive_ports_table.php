@@ -16,7 +16,11 @@ return new class extends Migration
             $table->string('device_name');
             $table->string('port');
             $table->timestamps();
+
+            // Add unique constraint on device_name + port
+            $table->unique(['device_name', 'port'], 'inactive_ports_unique');
         });
+
     }
 
     /**
