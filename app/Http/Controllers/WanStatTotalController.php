@@ -707,4 +707,6 @@ class WanStatTotalController extends Controller
 
 
     }
+
+ 
 }

@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 
 
 use Illuminate\Support\Facades\Auth;
+
 //
 Route::get('/', function () {
     return Auth::check()
@@ -28,7 +29,6 @@ Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name(
 Route::get('registration', [CustomAuthController::class, 'registration'])->name('register-user');
 Route::post('custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom');
 Route::get('logout', [CustomAuthController::class, 'signOut'])->name('logout');
-
 
 
 //Clients
@@ -62,10 +62,12 @@ Route::get('/wan-stats/add-pfr', [WanStatTotalController::class, 'addPfr'])
 Route::get('/wan-stats/add-ibo', [WanStatTotalController::class, 'addIBO'])
     ->name('wan_stats.add-ibo');
 
+Route::get('/wan-stats/get-inactive-pots', [SumMetricsController::class, 'getInactivePorts'])
+    ->name('wan_stats.get-inactive-pots');
+
 
 Route::get('/wan-stats/metadata/get', [WanStatTotalController::class, 'addMetaData']);
 Route::get('/wan-stats/metadata', [WanStatTotalController::class, 'metaData']);
-
 
 
 //Route::get('/export', [MetricsController::class, 'getMetrics']);
