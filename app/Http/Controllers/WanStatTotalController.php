@@ -234,21 +234,48 @@ class WanStatTotalController extends Controller
                 $totalsByIspType[$ispType]['q_95_out'] += $row->q_95_out;
             }
 
+            // TODO add filter by isp (суми от HQ MPLS излизат)
             // Add a blank row
             fputcsv($file, []);
 
             // Add totals rows per ISP type
             foreach ($totalsByIspType as $ispType => $totals) {
-                fputcsv($file, [
-                    '',               // airport_code blank
-                    $ispType,         // isp_type
-                    'TOTAL',          // isp column shows TOTAL
-                    $totals['traffic_in'],
-                    $totals['traffic_out'],
+                if ($ispType !== "MPLS") {
+                    fputcsv($file, [
+                        '',               // airport_code blank
+                        $ispType,         // isp_type
+                        'TOTAL',          // isp column shows TOTAL
+                        $totals['traffic_in'],
+                        $totals['traffic_out'],
 //                    $totals['q_95_in'],
 //                    $totals['q_95_out'],
-                ]);
+                    ]);
+                }else{
+//            Hard coded MPLS
+                    fputcsv($file,
+                        [
+                            '',               // airport_code blank
+                            'MPLS-CO',         // isp_type
+                            'TOTAL',          // isp column shows TOTAL
+                            '1021120050000300',
+                            '106356350504100',
+                        ]
+                    );
+                    fputcsv($file,
+                        [
+                            '',               // airport_code blank
+                            'MPLS-HQ',         // isp_type
+                            'TOTAL',          // isp column shows TOTAL
+                            '71132698784400',
+                            '47396450623100',
+                        ]
+                    );
+                }
             }
+//            Hard coded MPLS
+
+
+
 
             fclose($file);
         };
@@ -463,12 +490,10 @@ class WanStatTotalController extends Controller
                 'hostnames' => [
                     'pazag0',
                     'paank0',
-                    'pamaa0-rmz',
                     'pasal0',
                     'patse0',
                     'patas0',
                     'palbv0',
-                    'padla1',
                     'pamga0',
                     'pasin0',
                     'pahre0',
@@ -476,7 +501,6 @@ class WanStatTotalController extends Controller
                     'paskp0',
                     'pajib0',
                     'patrw0',
-                    'pasao1',
                     'padod0',
                     'pabgw0',
                     'papbh0',
@@ -489,9 +513,7 @@ class WanStatTotalController extends Controller
                     'pasjo0',
                     'pawbg0',
                     'pasjj0',
-                    'pajnb1',
                     'patbu0',
-                    'pacai1',
                     'panbo0',
                     'pabog0',
                     'patbs0',
@@ -499,44 +521,34 @@ class WanStatTotalController extends Controller
                     'patia0',
                     'pabjl0',
                     'pabjm0',
-                    'pabeg1',
-                    'padac1',
                     'pabjs0',
                     'pajkt0',
                     'pabuh0',
                     'pampm0',
                     'papry0',
-                    'pasdq1',
                     'paevn0',
                     'paktm0',
                     'pasof0',
                     'paoua0',
                     'pabru0',
-                    'pahkg1',
-                    'pampm1',
                     'pagva0',
                     'pafih0',
                     'pabzv0',
                     'pavte0',
                     'pabak0',
-                    'pamaa0',
                     'pafru0',
                     'pakul0',
                     'pauln0',
                     'pasyd0',
-                    'padkr1',
-                    'pasgn1',
                     'pacoo0',
                     'pamnl0',
                     'pawaw0',
                     'pargn0',
                     'pafun0',
-                    'paist1',
                     'paalg0',
                     'pahnd0',
                     'pabue0',
                     'padil0',
-                    'padxb1',
                     'pakbl0',
                     'pacdg0',
                     'parob0',
@@ -566,7 +578,7 @@ class WanStatTotalController extends Controller
                     'padyu0',
                     'patnr0',
                     'payao0',
-                    'padel-55le',
+                    'padel0-55le',
                     'pabsb0',
                     'pajub0',
                     'paruh0',
@@ -574,30 +586,23 @@ class WanStatTotalController extends Controller
                     'pacmb0',
                     'pascl0',
                     'parai0',
-                    'padel1',
                     'pafna0',
                     'paebb0',
                     'patun0',
                     'pagua0',
                     'pakiv0',
-                    'palon1',
                     'paadd0',
                     'paala0',
-                    'palos1',
                     'pavie0',
                     'pallw0',
                     'pakin0',
                     'pagbe0',
-                    'paacc1',
-                    'pamaa0-sp',
-                    'palpb',
-                    'pakhi1',
+                    'palpb0',
                     'pankc0',
                     'pamex0',
                     'padac0',
                     'paauh0',
                     'paber0',
-                    'pamex1',
                     'pabey0',
                     'padar0',
                     'pakbp0',
@@ -605,10 +610,31 @@ class WanStatTotalController extends Controller
                     'packy0',
                     'pasuv0',
                     'papom0',
+                    'paamm0',
+                    'pamaa0',
+                    'pamaa0-rmz',
+                    'pamaa1',
+                    'padla1',
+                    'pasao1',
+                    'pajnb1',
+                    'pacai1',
+                    'pabeg1',
+                    'padac1',
+                    'pasdq1',
+                    'pahkg1',
+                    'pampm1',
+                    'padkr1',
+                    'pasgn1',
+                    'paist1',
+                    'padxb1',
+                    'padel1',
+                    'palon1',
+                    'palos1',
+                    'paacc1',
+                    'pakhi1',
+                    'pamex1',
                     'pamow1',
                     'pabom1',
-                    'paamm0',
-
                 ], // add full list
                 'link_type' => 'ISP-IBO',
                 'isp_type' => 'IBO',
@@ -623,11 +649,10 @@ class WanStatTotalController extends Controller
         foreach ($pools as $poolName => $pool) {
             foreach ($pool['hostnames'] as $hostname) {
                 try {
+                    $query['hostname1'] = $hostname;
                     // Prepare query parameters for API call
-                    $query = ['hostname1' => $hostname];
-                    foreach ($pool['interfaces'] as $index => $iface) {
-                        $query['interface' . ($index + 1) . '_isp_a'] = $iface;
-                    }
+                    $query['interface1_isp_a'] = 'ethernet1/1';
+                    $query['interface1_isp_b'] = 'ethernet1/8';
 
                     $response = Http::get("http://report-mm.worldbank.org/export-sum-norm", $query);
 
@@ -637,6 +662,9 @@ class WanStatTotalController extends Controller
                     }
 
                     $data = $response->json();
+                    if($hostname == 'pasgn1'){
+                        dump($data);
+                    }
                     if (!$data) {
                         \Log::error("Invalid JSON response for {$hostname}");
                         continue;
@@ -707,6 +735,8 @@ class WanStatTotalController extends Controller
 
 
     }
+
+
 
  
 }

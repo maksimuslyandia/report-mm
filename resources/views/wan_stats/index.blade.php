@@ -8,6 +8,10 @@
             <a href="{{ route('wan_stats.export') }}" class="btn btn-success mb-3">
                 Download Last Month CSV
             </a>
+            <a href="{{ route('wan_stats.get-inactive-pots.csv') }}" class="btn btn-warning mb-3">
+                Download Inactive ports -90d
+            </a>
+
             <a href="{{ route('wan_stats.totals') }}" class="btn btn-warning mb-3">
                 Download Last Month Totals CSV
             </a>

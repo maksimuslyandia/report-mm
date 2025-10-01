@@ -53,6 +53,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/grafana/totals', [WanStatTotalController::class, 'exportTotalsCsv'])
     ->name('wan_stats.totals');
 
+
 Route::get('/wan-stats/export', [WanStatTotalController::class, 'exportCsv'])
     ->name('wan_stats.export');
 
@@ -62,8 +63,12 @@ Route::get('/wan-stats/add-pfr', [WanStatTotalController::class, 'addPfr'])
 Route::get('/wan-stats/add-ibo', [WanStatTotalController::class, 'addIBO'])
     ->name('wan_stats.add-ibo');
 
-Route::get('/wan-stats/get-inactive-pots', [SumMetricsController::class, 'getInactivePorts'])
+Route::get('/wan-stats/get-inactive-ports', [SumMetricsController::class, 'getInactivePorts'])
     ->name('wan_stats.get-inactive-pots');
+
+Route::get('/wan-stats/get-inactive-pots/csv', [SumMetricsController::class, 'downloadInactivePortsCsv'])
+    ->name('wan_stats.get-inactive-pots.csv');
+
 
 
 Route::get('/wan-stats/metadata/get', [WanStatTotalController::class, 'addMetaData']);

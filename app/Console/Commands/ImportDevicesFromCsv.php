@@ -118,7 +118,7 @@ class ImportDevicesFromCsv extends Command
                 };
 
                 // 5. WanStatTotal
-                dump($record['Link']);
+
 //dd($record);
 //                $except = [
 //                    'hq-dc5-azure_2',
@@ -151,6 +151,7 @@ class ImportDevicesFromCsv extends Command
                 $factor_out  = 1 + ($percent / 100) * $sign;
 
                 if (!$exists) {
+                    dump($record['Link'].' / '.$record['Total In - Bits'].' / '.$record['Total Out - Bits']);
                     $trafficIn  = isset($record['Total In - Bits']) ? (float) str_replace(',', '', $record['Total In - Bits']) * $factor_in : 0;
                     $trafficOut = isset($record['Total Out - Bits']) ? (float) str_replace(',', '', $record['Total Out - Bits']) * $factor_out : 0;
                     $q95In  = isset($record['95Percentile-In(Bits/s)']) ? (float) str_replace(',', '', $record['95Percentile-In(Bits/s)']) * $factor_in : 0;
