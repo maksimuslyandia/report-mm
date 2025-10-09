@@ -123,7 +123,7 @@ class WanStatTotalController extends Controller
     public function exportCsv()
     {
         $now = Carbon::now();
-        $monthStart = $now->copy()->startOfMonth()->format('Y-m-d H:i:s');
+//        $monthStart = $now->copy()->startOfMonth()->format('Y-m-d H:i:s');
         $monthStart = \Carbon\Carbon::now()->subMonth()->startOfMonth()->format('Y-m-d H:i:s');
 
 //        $stats = WanStatTotal::where('start_datetime', $monthStart)
@@ -257,8 +257,8 @@ class WanStatTotalController extends Controller
                             '',               // airport_code blank
                             'MPLS-CO',         // isp_type
                             'TOTAL',          // isp column shows TOTAL
-                            '1021120050000300',
-                            '106356350504100',
+                            '119300000000000',
+                            '128100000000000',
                         ]
                     );
                     fputcsv($file,
@@ -266,8 +266,8 @@ class WanStatTotalController extends Controller
                             '',               // airport_code blank
                             'MPLS-HQ',         // isp_type
                             'TOTAL',          // isp column shows TOTAL
-                            '71132698784400',
-                            '47396450623100',
+                            '86334000000000',
+                            '61554600000000',
                         ]
                     );
                 }
