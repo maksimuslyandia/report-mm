@@ -398,6 +398,7 @@ class SumMetricsController extends Controller
             }
         }
 
+
         // Get matching pools
         $pools = Pool::where(function ($query) use ($pairs) {
             foreach ($pairs as $pair) {
@@ -407,6 +408,11 @@ class SumMetricsController extends Controller
                 });
             }
         })->first();
+
+// 🔁 If no pool found, fallback to getSumMetrics_norm()
+        if (!$pools) {
+            return $this->getSumMetrics_norm($request);
+        }
         // Determine previous month range
         $startPrevMonthStr = Carbon::now()->subMonth()->startOfMonth()->toDateTimeString();
 
@@ -466,7 +472,7 @@ class SumMetricsController extends Controller
         if (count($pairs) == 1) {
 
             if(count($pairs[0]['interfaces']) > 1){
-              return  $this->getSumMetricsOneDeviceMoreInterfaces($pairs[0]);
+                return  $this->getSumMetricsOneDeviceMoreInterfaces($pairs[0]);
             }
 
             return $this->getSumMetricsOneDeviceInterface($pairs[0]);
