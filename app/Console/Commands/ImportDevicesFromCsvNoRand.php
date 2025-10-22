@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\Pool;
-use App\Models\WanStatTotal;
+use App\Models\WanStatTotalsReal;
 use Illuminate\Console\Command;
 use App\Models\Device;
 use App\Models\DeviceInterface;
@@ -126,19 +126,19 @@ class ImportDevicesFromCsvNoRand extends Command
                 // 5. WanStatTotal
 dump($record['Link']);
 //dd($record);
-                $except = [
-                    'hq-dc5-azure_2',
-                    'hq-dc5-sterling_odyx/236412//zyo',
-                    'hq-dc5-azure_1',
-                    'hq-dc5-cmc-mpls-nanet-eth-us-cha-worldbank-crt143-nj001',
-                    'hq-dc5-sita-mpls_xcbiad3807',
-                    'hq-dc5-aws'
-                ];
-                if (in_array($record['Link'], $except)) {
-                    continue; // skip this CSV row
-                }
+//                $except = [
+//                    'hq-dc5-azure_2',
+//                    'hq-dc5-sterling_odyx/236412//zyo',
+//                    'hq-dc5-azure_1',
+//                    'hq-dc5-cmc-mpls-nanet-eth-us-cha-worldbank-crt143-nj001',
+//                    'hq-dc5-sita-mpls_xcbiad3807',
+//                    'hq-dc5-aws'
+//                ];
+//                if (in_array($record['Link'], $except)) {
+//                    continue; // skip this CSV row
+//                }
 
-                $exists = WanStatTotal::where([
+                $exists = WanStatTotalsReal::where([
                     'link_name'      => $record['Link'],
                     'link_type'      => $record['Type'],
                     'region'         => $record['RegionVPU'],
@@ -152,7 +152,7 @@ dump($record['Link']);
                     $q95In  = isset($record['95Percentile-In(Bits/s)']) ? (float) str_replace(',', '', $record['95Percentile-In(Bits/s)'])  : 0;
                     $q95Out = isset($record['95Percentile-Out(Bits/s)']) ? (float) str_replace(',', '', $record['95Percentile-Out(Bits/s)']) : 0;
 
-                    WanStatTotal::updateOrCreate(
+                    WanStatTotalsReal::updateOrCreate(
                         [
                             'link_name' => $record['Link'],
                             'link_type' =>$record['Type'],

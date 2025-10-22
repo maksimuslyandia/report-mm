@@ -4,10 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-
-
-class WanStatTotal extends Model
+class WanStatTotalsReal extends Model
 {
+
     protected $fillable = [
         'link_name',
         'link_type',

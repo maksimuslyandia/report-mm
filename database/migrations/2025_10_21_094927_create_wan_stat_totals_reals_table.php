@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('wan_stat_totals', function (Blueprint $table) {
+        Schema::create('wan_stat_totals_reals', function (Blueprint $table) {
             $table->id();
             $table->string('link_name');
             $table->string('link_type');
@@ -38,6 +38,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('wan_stat_totals');
+        Schema::dropIfExists('wan_stat_totals_reals');
     }
 };

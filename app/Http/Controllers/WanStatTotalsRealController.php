@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\WanMetaData;
-use App\Models\WanStatTotal;
-use Illuminate\Http\Request;
+use App\Models\WanMetaDataReal;
+use App\Models\WanStatTotalsReal;
 use Carbon\Carbon;
-use InfluxDB2\Client;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use InfluxDB2\Client;
 
-class WanStatTotalController extends Controller
+class WanStatTotalsRealController extends Controller
 {
     public function index()
     {
-        $wanStats = WanStatTotal::orderBy('id', 'desc')->with('metaData')->get();
+        $wanStats = WanStatTotalsReal::orderBy('id', 'desc')->with('metaData')->get();
 
         return view('wan_stats.index', compact('wanStats'));
     }
@@ -41,14 +41,14 @@ class WanStatTotalController extends Controller
             // meta data
             'airport_code' => 'nullable|string',
             'isp_type' => 'nullable|string',
-            'wan_stat_total_id' => 'required|exists:wan_stat_totals,id',
+            'wan_stat_totals_real_id' => 'required|exists:wan_stat_totals,id',
             'is_ibo' => 'sometimes|boolean',
         ]);
 
-        WanStatTotal::create($request->all());
+        WanStatTotalsReal::create($request->all());
 
         // create WAN Stat
-        $wanStat = WanStatTotal::create($validated);
+        $wanStat = WanStatTotalsReal::create($validated);
 
         if ($request->filled('airport_code') || $request->filled('isp_type')) {
             $wanStat->metaData()->create([
@@ -62,17 +62,17 @@ class WanStatTotalController extends Controller
             ->with('success', 'WAN Stat Total created successfully.');
     }
 
-    public function show(WanStatTotal $wan_stat)
+    public function show(WanStatTotalsReal $wan_stat)
     {
         return view('wan_stats.show', compact('wan_stat'));
     }
 
-    public function edit(WanStatTotal $wan_stat)
+    public function edit(WanStatTotalsReal $wan_stat)
     {
         return view('wan_stats.edit', compact('wan_stat'));
     }
 
-    public function update(Request $request, WanStatTotal $wanStatTotal)
+    public function update(Request $request, WanStatTotalsReal $wanStatTotal)
     {
 
         $validated = $request->validate([
@@ -90,20 +90,20 @@ class WanStatTotalController extends Controller
             'airport_code' => 'nullable|string',
             'isp_type' => 'nullable|string',
             'is_ibo' => 'sometimes|boolean',
-            'wan_stat_total_id' => 'required|numeric',
+            'wan_stat_totals_real_id' => 'required|numeric',
         ]);
-        $wanStatTotal = WanStatTotal::findOrFail($validated['wan_stat_total_id']);
+        $wanStatTotal = WanStatTotalsReal::findOrFail($validated['wan_stat_totals_real_id']);
 
         // Update WAN Statd
         $wanStatTotal->update($validated);
 
         // Update or create meta data
         $wanStatTotal->metaData()->updateOrCreate(
-            ['wan_stat_total_id' => $request->wan_stat_total_id],
+            ['wan_stat_totals_real_id' => $request->wan_stat_totals_real_id],
             [
                 'airport_code' => $request->airport_code,
                 'isp_type' => $request->isp_type,
-                'wan_stat_total_id' => $request->wan_stat_total_id,
+                'wan_stat_totals_real_id' => $request->wan_stat_totals_real_id,
                 'is_ibo' => $request->has('is_ibo') ? true : false,
             ]
         );
@@ -112,7 +112,7 @@ class WanStatTotalController extends Controller
             ->with('success', 'WAN Stat Total with metadata updated successfully.');
     }
 
-    public function destroy(WanStatTotal $wan_stat): \Illuminate\Http\RedirectResponse
+    public function destroy(WanStatTotalsReal $wan_stat): \Illuminate\Http\RedirectResponse
     {
         $wan_stat->delete();
 
@@ -125,11 +125,13 @@ class WanStatTotalController extends Controller
         $now = Carbon::now();
 //        $monthStart = $now->copy()->startOfMonth()->format('Y-m-d H:i:s');
         $monthStart = \Carbon\Carbon::now()->subMonth()->startOfMonth()->format('Y-m-d H:i:s');
-//        $stats = WanStatTotal::where('start_datetime', $monthStart)
+
+//        $stats = WanStatTotalsReal::where('start_datetime', $monthStart)
 //            ->get();
-        $stats = WanStatTotal::where('start_datetime', $monthStart)
+        $stats = WanStatTotalsReal::where('start_datetime', $monthStart)
             ->where('is_wan_stat', 1)
             ->get();
+
         $headers = [
             "Content-type" => "text/csv",
             "Content-Disposition" => "attachment; filename=wan_stats_{$now->format('Y_m')}.csv",
@@ -174,7 +176,7 @@ class WanStatTotalController extends Controller
         $monthStart = Carbon::now()->subMonth()->startOfMonth()->format('Y-m-d H:i:s');
 
         // Подгружаем metaData
-        $stats = WanStatTotal::with('metaData')
+        $stats = WanStatTotalsReal::with('metaData')
             ->where('start_datetime', $monthStart)
             ->get();
 
@@ -281,8 +283,6 @@ class WanStatTotalController extends Controller
         return response()->stream($callback, 200, $headers);
     }
 
-
-
     public function exportToInflux()
     {
 
@@ -290,7 +290,7 @@ class WanStatTotalController extends Controller
         $monthStart = $now->copy()->subMonth()->startOfMonth();
 
         // Get all records for the previous month
-        $stats = WanStatTotal::where('start_datetime', $monthStart)->get();
+        $stats = WanStatTotalsReal::where('start_datetime', $monthStart)->get();
 
         if ($stats->isEmpty()) {
             return response()->json(['message' => 'No records found for previous month.'], 404);
@@ -332,10 +332,9 @@ class WanStatTotalController extends Controller
         ]);
     }
 
-
     public function addMetaData()
     {
-        $stats = WanStatTotal::with(['pool.device'])->get();
+        $stats = WanStatTotalsReal::with(['pool.device'])->get();
 
         foreach ($stats as $stat) {
             if ($stat->pool && $stat->pool->device && $stat->pool->device->hostname) {
@@ -390,8 +389,8 @@ class WanStatTotalController extends Controller
                 }
 
                 // insert or update to avoid duplicates
-                WanMetaData::updateOrCreate(
-                    ['wan_stat_total_id' => $stat->id],
+                WanMetaDataReal::updateOrCreate(
+                    ['wan_stat_totals_real_id' => $stat->id],
                     [
                         'airport_code' => $airportCode,
                         'isp_type' => $ispType,
@@ -435,7 +434,7 @@ class WanStatTotalController extends Controller
                 }
 
                 $airport_code = strtoupper(substr($hostname, 2, 3));
-                $wanStat = WanStatTotal::with('metaData')
+                $wanStat = WanStatTotalsReal::with('metaData')
                     ->whereHas('metaData', function ($query) use ($airport_code) {
                         $query->where('airport_code', $airport_code);
                     })
@@ -446,7 +445,7 @@ class WanStatTotalController extends Controller
 
 //select from WAN Stat Total where aircode to get region
                 // Create or update WAN Stat Total
-                $wanStatTotal = WanStatTotal::updateOrCreate(
+                $wanStatTotal = WanStatTotalsReal::updateOrCreate(
                     [
                         'link_name'      => $hostname,
                         'start_datetime' => $start,
@@ -465,7 +464,7 @@ class WanStatTotalController extends Controller
 
                 // Create or update WAN Meta Data linked to it
                 $wanStatTotal->metaData()->updateOrCreate(
-                    ['wan_stat_total_id' => $wanStatTotal->id],
+                    ['wan_stat_totals_real_id' => $wanStatTotal->id],
                     [
                         'airport_code' => $airport_code,
                         'isp'          => null,
@@ -670,7 +669,7 @@ class WanStatTotalController extends Controller
 
                     $airport_code = strtoupper(substr($hostname, 2, 3));
 
-                    $wanStat = WanStatTotal::with('metaData')
+                    $wanStat = WanStatTotalsReal::with('metaData')
                         ->whereHas('metaData', function ($query) use ($airport_code) {
                             $query->where('airport_code', $airport_code);
                         })
@@ -680,7 +679,7 @@ class WanStatTotalController extends Controller
                     $region = $wanStat->region ?? null;
 
                     // Update or create WAN Stat Total
-                    $wanStatTotal = WanStatTotal::updateOrCreate(
+                    $wanStatTotal = WanStatTotalsReal::updateOrCreate(
                         [
                             'link_name' => $hostname,
                             'start_datetime' => $start,
@@ -714,7 +713,7 @@ class WanStatTotalController extends Controller
                     }
                     // Update or create metadata
                     $wanStatTotal->metaData()->updateOrCreate(
-                        ['wan_stat_total_id' => $wanStatTotal->id],
+                        ['wan_stat_totals_real_id' => $wanStatTotal->id],
                         [
                             'airport_code' => $airport_code,
                             'isp' => null,
@@ -736,5 +735,4 @@ class WanStatTotalController extends Controller
 
 
 
- 
 }

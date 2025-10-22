@@ -7,6 +7,7 @@ use App\Http\Controllers\MetricsController;
 use App\Http\Controllers\PoolController;
 use App\Http\Controllers\SumMetricsController;
 use App\Http\Controllers\WanStatTotalController;
+use App\Http\Controllers\WanStatTotalsRealController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -40,9 +41,9 @@ Route::middleware('auth')->group(function () {
     Route::resource('pools', PoolController::class);
     Route::resource('wan_stats', WanStatTotalController::class);
 
-
+    # Writing to influx on hold for now
     Route::get('/wan-stats/influx', [WanStatTotalController::class, 'exportToInflux']);
-
+    Route::get('/wan-stats/get-from-influx-by-pool', [WanStatTotalsRealController::class, 'getFromInfluxByPool']);
 
     Route::get('/settings', function () {
         return view('dashboard');
@@ -57,8 +58,14 @@ Route::get('/grafana/totals', [WanStatTotalController::class, 'exportTotalsCsv']
 Route::get('/wan-stats/export', [WanStatTotalController::class, 'exportCsv'])
     ->name('wan_stats.export');
 
+Route::get('/wan-stats/add-pfrreal', [WanStatTotalsRealController::class, 'addPfr'])
+    ->name('wan_stats.add-pfrreal');
+
 Route::get('/wan-stats/add-pfr', [WanStatTotalController::class, 'addPfr'])
     ->name('wan_stats.add-pfr');
+
+Route::get('/wan-stats/add-iboreal', [WanStatTotalsRealController::class, 'addIBO'])
+    ->name('wan_stats.add-iboreal');
 
 Route::get('/wan-stats/add-ibo', [WanStatTotalController::class, 'addIBO'])
     ->name('wan_stats.add-ibo');
@@ -69,10 +76,11 @@ Route::get('/wan-stats/get-inactive-ports', [SumMetricsController::class, 'getIn
 Route::get('/wan-stats/get-inactive-pots/csv', [SumMetricsController::class, 'downloadInactivePortsCsv'])
     ->name('wan_stats.get-inactive-pots.csv');
 
-
-
 Route::get('/wan-stats/metadata/get', [WanStatTotalController::class, 'addMetaData']);
 Route::get('/wan-stats/metadata', [WanStatTotalController::class, 'metaData']);
+
+Route::get('/wan-stats/metadatareal/get', [WanStatTotalsRealController::class, 'addMetaData']);
+Route::get('/wan-stats/metadatareal', [WanStatTotalsRealController::class, 'metaData']);
 
 
 //Route::get('/export', [MetricsController::class, 'getMetrics']);
