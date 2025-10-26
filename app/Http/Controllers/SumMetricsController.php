@@ -409,6 +409,8 @@ class SumMetricsController extends Controller
             }
         })->first();
 
+        dd($pools);
+
 // 🔁 If no pool found, fallback to getSumMetrics_norm()
         if (!$pools) {
             return $this->getSumMetrics_norm($request);
@@ -471,8 +473,8 @@ class SumMetricsController extends Controller
 
         if (count($pairs) == 1) {
 
-            if(count($pairs[0]['interfaces']) > 1){
-                return  $this->getSumMetricsOneDeviceMoreInterfaces($pairs[0]);
+            if (count($pairs[0]['interfaces']) > 1) {
+                return $this->getSumMetricsOneDeviceMoreInterfaces($pairs[0]);
             }
 
             return $this->getSumMetricsOneDeviceInterface($pairs[0]);
@@ -574,11 +576,178 @@ class SumMetricsController extends Controller
                 }
             }
 
-            // 🔁 Override logic added here
-            $override = $this->checkAndOverridePredefinedValues($pairs);
-            if ($override !== null) {
-                return response()->json($override);
+//            // 🔁 Override logic added here
+//            $override = $this->checkAndOverridePredefinedValues($pairs);
+//            if ($override !== null) {
+//                return response()->json($override);
+//            }
+
+            return response()->json($results);
+
+        }
+    }
+
+
+    public function getFromInfluxByPool(Request $request)
+    {
+        $pools = DB::table('pools as p')
+            ->join('devices as d', 'p.device_id', '=', 'd.id')
+            ->join('device_interfaces as di', 'p.interface_id', '=', 'di.id')
+            ->select('p.name as pool_name', 'd.hostname', 'di.name as interface_name')
+            ->when($request->link_name, fn($q, $linkName) => $q->where('p.name', $linkName))
+            ->take(50)
+            ->get();
+
+        $pairs = $pools
+            ->groupBy('pool_name')
+            ->map(function ($group, $poolName) {
+                $pairs = $group
+                    ->groupBy('hostname')
+                    ->map(function ($interfaces, $hostname) {
+                        return [
+                            'hostname' => addslashes($hostname),
+                            'interfaces' => array_map('addslashes', $interfaces->pluck('interface_name')->toArray()),
+                        ];
+                    })
+                    ->values()
+                    ->toArray();
+
+                return [
+                    'name' => addslashes($poolName),
+                    'pairs' => $pairs,
+                ];
+            })
+            ->values()
+            ->toArray();
+
+
+
+
+        // Collect hostname + interfaces pairs
+        for ($i = 1; $i <= 4; $i++) {
+            $hostname = $request->input("hostname{$i}");
+            $interfaceA = $request->input("interface{$i}_isp_a");
+            $interfaceB = $request->input("interface{$i}_isp_b");
+
+            if ($hostname && ($interfaceA || $interfaceB)) {
+                $interfaces = array_filter([$interfaceA, $interfaceB]);
+                $pairs[] = [
+                    'hostname' => addslashes($hostname),
+                    'interfaces' => array_map('addslashes', $interfaces),
+                ];
             }
+        }
+
+        if (count($pairs) == 1) {
+
+            if (count($pairs[0]['interfaces']) > 1) {
+                return $this->getSumMetricsOneDeviceMoreInterfaces($pairs[0]);
+            }
+
+            return $this->getSumMetricsOneDeviceInterface($pairs[0]);
+
+
+        } else {
+
+            if (empty($pairs)) {
+                return response()->json(['error' => 'No valid hostname/interface pairs provided'], 400);
+            }
+
+            $timezone = new \DateTimeZone('America/New_York');
+            $start = new \DateTime('first day of last month 00:00:00', $timezone);
+            $stop = new \DateTime('last day of last month 23:59:59', $timezone);
+            $stop->modify('last day of this month')->setTime(23, 59, 59);
+
+            $start->setTimezone(new \DateTimeZone('UTC'));
+            $stop->setTimezone(new \DateTimeZone('UTC'));
+
+            $startFormatted = $start->format('Y-m-d\TH:i:s\Z');
+            $stopFormatted = $stop->format('Y-m-d\TH:i:s\Z');
+
+            // Build Flux queries per pair
+            $queries = [];
+            foreach ($pairs as $pair) {
+                $hostname = $pair['hostname'];
+                $ifaceFilters = implode(' or ', array_map(fn($iface) => 'r["ifName"] == "' . $iface . '"', $pair['interfaces']));
+
+                $queries[] = <<<FLUX
+                    from(bucket: "{$this->bucket}")
+                      |> range(start: time(v: "{$startFormatted}"), stop: time(v: "{$stopFormatted}"))
+                      |> filter(fn: (r) => r["_measurement"] == "pysnmp")
+                      |> filter(fn: (r) => r["device_name"] == "{$hostname}")
+                      |> filter(fn: (r) => {$ifaceFilters})
+                    FLUX;
+            }
+
+            // Union all pairs into one stream
+            $unionQuery = 'union(tables: [' . implode(",\n", $queries) . '])';
+
+            // Full Flux query with sum logic
+            $flux = <<<FLUX
+                     import "sampledata"
+                    import "strings"
+
+                    common = {$unionQuery}
+                      |> filter(fn: (r) => r["_field"] == "ifHCInOctets" or r["_field"] == "ifHCOutOctets")
+                      |> fill(usePrevious: true)
+
+                    sum_in = common
+                      |> filter(fn: (r) => r["_field"] == "ifHCInOctets")
+                      |> derivative(unit: 1m, nonNegative: true)
+                      |> map(fn: (r) => ({ r with _value: float(v: r._value) * 8.0 }))
+                      |> filter(fn: (r) => r._value < 19999999999)
+                      |> group(columns: ["_field"], mode: "by")
+                      |> sum()
+                      |> map(fn: (r) => ({ _time: now(), _field: "total_sum_in", _value: r._value }))
+
+                    sum_out = common
+                      |> filter(fn: (r) => r["_field"] == "ifHCOutOctets")
+                      |> derivative(unit: 1m, nonNegative: true)
+                      |> map(fn: (r) => ({ r with _value: float(v: r._value) * 8.0 }))
+                      |> filter(fn: (r) => r._value < 19999999999)
+                      |> group(columns: ["_field"], mode: "by")
+                      |> sum()
+                      |> map(fn: (r) => ({ _time: now(), _field: "total_sum_out", _value: r._value }))
+
+                    quantile_in = common
+                      |> filter(fn: (r) => r["_field"] == "ifHCInOctets")
+                      |> derivative(unit: 1s, nonNegative: true)
+                      |> map(fn: (r) => ({ r with _value: float(v: r._value) * 8.0 }))
+                      |> filter(fn: (r) => r._value < 39999999)
+                       |> aggregateWindow(every: 2h, fn: mean, createEmpty: false)
+                      |> group(columns: ["_field"])  // or group by ["device_name", "ifName"] if needed
+                      |> quantile(q: 0.95, method: "exact_selector")
+                      |> map(fn: (r) => ({ _time: now(), _field: "quantile_95_in", _value: r._value }))
+
+                    quantile_out = common
+                      |> filter(fn: (r) => r["_field"] == "ifHCOutOctets")
+                      |> derivative(unit: 1s, nonNegative: true)
+                      |> map(fn: (r) => ({ r with _value: float(v: r._value) * 8.0 }))
+                      |> filter(fn: (r) => r._value < 39999999)
+                      |> aggregateWindow(every: 2h, fn: mean, createEmpty: false)
+                      |> group(columns: ["_field"])
+                      |> quantile(q: 0.95, method: "exact_selector")
+                      |> map(fn: (r) => ({ _time: now(), _field: "quantile_95_out", _value: r._value }))
+
+                 union(tables: [sum_in, sum_out, quantile_in, quantile_out])
+                FLUX;
+
+
+            $queryApi = $this->client->createQueryApi();
+            $tables = $queryApi->query($flux);
+
+            $results = [];
+            foreach ($tables as $table) {
+                foreach ($table->records as $record) {
+                    $results[$record->getField()] = $record->getValue();
+                }
+            }
+
+//            // 🔁 Override logic added here
+//            $override = $this->checkAndOverridePredefinedValues($pairs);
+//            if ($override !== null) {
+//                return response()->json($override);
+//            }
 
             return response()->json($results);
 
@@ -684,6 +853,7 @@ class SumMetricsController extends Controller
 //        return json_encode($results);
 #        if has predefined vals retutn new values if not return $results
     }
+
     public function getSumMetricsOneDeviceMoreInterfaces($pairs)
     {
 
@@ -691,7 +861,7 @@ class SumMetricsController extends Controller
         $interfaces = $pairs['interfaces']; // e.g. ["Eth1", "Eth2", "Eth3"]
 
 // Build Flux OR condition
-        $ifFilter = implode(" or ", array_map(fn($int) => 'r["ifName"] == "'.$int.'"', $interfaces));
+        $ifFilter = implode(" or ", array_map(fn($int) => 'r["ifName"] == "' . $int . '"', $interfaces));
 
         $timezone = new \DateTimeZone('America/New_York');
         $start = new \DateTime('first day of last month 00:00:00', $timezone);
@@ -2153,7 +2323,7 @@ FLUX;
 
                     $results[] = [
                         "device" => $deviceName,
-                        "port"   => $port
+                        "port" => $port
                     ];
 
                     InactivePort::updateOrCreate(
@@ -2169,6 +2339,7 @@ FLUX;
 
         return $results;
     }
+
     public function downloadInactivePortsCsv()
     {
         $fileName = "inactive_ports_" . now()->format('Ymd_His') . ".csv";

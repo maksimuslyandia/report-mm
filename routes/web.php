@@ -58,14 +58,14 @@ Route::get('/grafana/totals', [WanStatTotalController::class, 'exportTotalsCsv']
 Route::get('/wan-stats/export', [WanStatTotalController::class, 'exportCsv'])
     ->name('wan_stats.export');
 
-Route::get('/wan-stats/add-pfrreal', [WanStatTotalsRealController::class, 'addPfr'])
-    ->name('wan_stats.add-pfrreal');
+//Route::get('/wan-stats/add-pfrreal', [WanStatTotalsRealController::class, 'addPfr'])
+//    ->name('wan_stats.add-pfrreal');
 
 Route::get('/wan-stats/add-pfr', [WanStatTotalController::class, 'addPfr'])
     ->name('wan_stats.add-pfr');
-
-Route::get('/wan-stats/add-iboreal', [WanStatTotalsRealController::class, 'addIBO'])
-    ->name('wan_stats.add-iboreal');
+//
+//Route::get('/wan-stats/add-iboreal', [WanStatTotalsRealController::class, 'addIBO'])
+//    ->name('wan_stats.add-iboreal');
 
 Route::get('/wan-stats/add-ibo', [WanStatTotalController::class, 'addIBO'])
     ->name('wan_stats.add-ibo');
